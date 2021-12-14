@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: var(--color--thirdary);
   }
   a {
     text-decoration: none;
