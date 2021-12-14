@@ -14,13 +14,16 @@ export const BlueHome = styled(Home)`
   color: var(--color--primary);
   height: 75px;
   width: 50px;
-  margin-right: 10px;
+  margin-right: 0px;
   :hover {
     cursor: pointer;
   }
+  @media (max-width: 1400px) {
+    margin-right: -15px;
+  }
   @media (max-width: 768px) {
     height: 35px;
-    margin-right: 0px;
+    margin-right: -15px;
     width: 35px;
   }
 `;
@@ -29,14 +32,18 @@ export const BlueUser = styled(User)`
   color: var(--color--primary);
   min-width: 50px;
   max-height: 75px;
+  min-height: 75px;
   max-width: 50px;
   margin-right: 10px;
   :hover {
     cursor: pointer;
   }
+
   @media (max-width: 768px) {
     height: 35px;
-    margin-right: 3px;
+    margin-right: 10px;
+    min-height: 0px;
+    max-height: 35px;
   }
 `;
 
@@ -119,11 +126,24 @@ export const Ul = styled.ul`
   text-decoration: none;
   margin-top: 37px;
   padding-right: 20px;
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 35px;
+    margin: 0;
+    padding: 50px 0 0 0;
+  }
+  @media (max-width: 1400px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0px;
+    padding: 70px 0 0 0;
+    font-size: 35px;
+  }
 `;
 
 export const Li = styled.a`
-  color: var(--color--thirdary);
-  text-decoration: none;
+  margin: 0 0 30px 0;
 `;
 
 export const Row = styled.div`
@@ -146,6 +166,9 @@ export const Row2 = styled.div`
   flex-direction: row;
   float: right;
   background-color: var(--color--secondary);
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Img = styled.img`
@@ -190,6 +213,28 @@ export const DropLogin = styled.div`
   }
 `;
 
+export const Overlay = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color--secondary);
+  display: flex;
+  justify-content: center;
+  animation: Fade 0.4s ease-in-out;
+  @keyframes Fade {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
+  @media (min-width: 1400px) {
+    display: none;
+  }
+`;
+
 export default {
   SHeader,
   Img,
@@ -202,4 +247,5 @@ export default {
   Row2,
   DropLogin,
   BlueBars,
+  Overlay,
 };

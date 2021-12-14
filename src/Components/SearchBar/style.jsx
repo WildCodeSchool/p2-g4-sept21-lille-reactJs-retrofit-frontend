@@ -49,5 +49,7 @@ export const SearchBtn = styled(Search)`
   @media (max-width: 768px) {
     height: 30px;
     margin-top: 4px;
+    margin: auto;
+    margin-right: 5px;
   }
 `;

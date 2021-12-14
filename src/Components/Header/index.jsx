@@ -11,15 +11,22 @@ import {
   Row,
   Row2,
   Ul,
+  Li,
   BlueHome,
   BlueUser,
   DropLogin,
   BlueBars,
+  Overlay,
 } from './style';
 import Logo from '../../Assets/Logo.png';
 
 export default function Header() {
   const [style, setStyle] = useState({ display: 'none' });
+  const [open, setOpen] = useState(false);
+
+  const showMenu = () => {
+    setOpen(!open);
+  };
 
   return (
     <>
@@ -46,15 +53,21 @@ export default function Header() {
             <Link to="/home">
               <BlueHome />
             </Link>
-            <BlueUser
-              onMouseEnter={() => {
-                setStyle({ display: 'block' });
-              }}
-              onMouseLeave={() => {
-                setStyle({ display: 'none' });
+            <Link to="/connection">
+              <BlueUser
+                onMouseEnter={() => {
+                  setStyle({ display: 'block' });
+                }}
+                onMouseLeave={() => {
+                  setStyle({ display: 'none' });
+                }}
+              />
+            </Link>
+            <BlueBars
+              onClick={() => {
+                showMenu();
               }}
             />
-            <BlueBars />
           </Col4>
         </Row>
         <Row2
@@ -68,6 +81,30 @@ export default function Header() {
           <DropLogin style={style}>inscription</DropLogin>
           <DropLogin style={style}>connexion</DropLogin>
         </Row2>
+        {open ? (
+          <Overlay>
+            {' '}
+            <Ul>
+              <Li>
+                <Link to="/vehicules">Véhicules</Link>
+              </Li>
+              <Li>
+                <Link to="/technologie">Technologie</Link>
+              </Li>
+              <Li>
+                <Link to="/equipe">L&apos;équipe</Link>
+              </Li>
+              <Li>
+                <Link to="/localisation">Localisation</Link>
+              </Li>
+              <Li>
+                <Link to="/faq">FAQ</Link>
+              </Li>
+            </Ul>
+          </Overlay>
+        ) : (
+          ''
+        )}
       </SHeader>
     </>
   );
