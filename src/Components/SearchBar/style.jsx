@@ -5,10 +5,10 @@ export const Ssearchbar = styled.div`
   padding-top: 18px;
   @media (max-width: 1400px) {
     padding-top: 0;
-    @media (max-width: 768px) {
-      height: 50px;
-      margin-bottom: 5px;
-    }
+  }
+  @media (max-width: 768px) {
+    height: 50px;
+    margin-bottom: 5px;
   }
 `;
 
