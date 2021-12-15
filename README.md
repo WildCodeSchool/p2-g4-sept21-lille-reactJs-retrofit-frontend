@@ -1,21 +1,14 @@
-# Template for Frontend project
+<a href="https://zupimages.net/viewer.php?id=21/49/6rw0.png"><img src="https://zupimages.net/up/21/49/6rw0.png" alt="" /></a>
 
-## Why this project
-This repo aims to provide a comfortable Developer Experience (DX) to newbie React developpers.
-It comes with a lo of tools with a asic config:
-- Create React App (CRA)
-- ESLint
-- Prettier
-- StyleLint
+## Description ✍🏻
 
-## First steps
+Website for EVeRetrofit company .
+Their project is to transform thermal vehicles into electric vehicles
 
-### Install these extensions for VSCode
+## Getting started 📌 ##
 
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [StyleLint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+1 - Fork the project
 
-### Install `husky`, which will check your code everytime you commit files
+2 - in your terminal install packages `npm install i`
 
-- `npm run prepare`
+3 - run your local server `npm start`
