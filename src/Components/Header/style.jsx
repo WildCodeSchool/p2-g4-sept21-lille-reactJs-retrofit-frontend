@@ -38,7 +38,6 @@ export const BlueUser = styled(User)`
   :hover {
     cursor: pointer;
   }
-
   @media (max-width: 768px) {
     height: 35px;
     margin-right: 10px;
