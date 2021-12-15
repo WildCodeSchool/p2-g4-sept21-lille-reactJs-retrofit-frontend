@@ -6,6 +6,7 @@ export default function App() {
   return (
     <div>
       <Header />
+      <Home />
       <Routes>
         <Route path="/home" element={<Home />}>
           Home
