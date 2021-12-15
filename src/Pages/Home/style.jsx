@@ -176,6 +176,7 @@ const RatingContainer = styled.div`
 `;
 
 const PartnerContainer = styled.div`
+  margin: 0 10% 0 10%;
   font-size: 30px;
 
   width: 100vw;
