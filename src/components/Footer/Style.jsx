@@ -7,7 +7,7 @@ import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 const SFooter = styled.footer`
   position: absolute;
   bottom: 0;
-  background-color: #011e26;
+  background-color: rgb(1, 30, 38);
   width: 100vw;
   height: 30vh;
   color: white;
@@ -117,6 +117,7 @@ const TitleMail = styled.p`
     margin-left: 0px;
     font-size: 20px;
     width: 25vw;
+    margin-top: 18px;
   }
 `;
 
@@ -169,7 +170,7 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  background-color: red;
+  background-color: rgb(1, 30, 38);
   width: 12vw;
   height: 3vh;
   color: white;
