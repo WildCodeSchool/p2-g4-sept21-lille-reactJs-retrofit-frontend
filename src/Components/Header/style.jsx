@@ -3,14 +3,14 @@ import { Home } from '@styled-icons/entypo/Home';
 import { User } from '@styled-icons/boxicons-solid/User';
 import { Bars } from '@styled-icons/fa-solid/Bars';
 
-export const SHeader = styled.div`
+const SHeader = styled.div`
   height: 75px;
   width: 100vw;
   background-color: var(--color--secondary);
   position: fixed;
 `;
 
-export const BlueHome = styled(Home)`
+const BlueHome = styled(Home)`
   color: var(--color--primary);
   height: 75px;
   width: 50px;
@@ -28,7 +28,7 @@ export const BlueHome = styled(Home)`
   }
 `;
 
-export const BlueUser = styled(User)`
+const BlueUser = styled(User)`
   color: var(--color--primary);
   min-width: 50px;
   max-height: 75px;
@@ -46,7 +46,7 @@ export const BlueUser = styled(User)`
   }
 `;
 
-export const BlueBars = styled(Bars)`
+const BlueBars = styled(Bars)`
   display: none;
   color: var(--color--primary);
   height: 45px;
@@ -63,7 +63,7 @@ export const BlueBars = styled(Bars)`
   }
 `;
 
-export const Col = styled.div`
+const Col = styled.div`
   width: 20vw;
   height: 75px;
   @media (max-width: 768px) {
@@ -71,7 +71,7 @@ export const Col = styled.div`
   }
 `;
 
-export const Col2 = styled.div`
+const Col2 = styled.div`
   width: 80vw;
   max-height: 75px;
   margin: 0;
@@ -85,7 +85,7 @@ export const Col2 = styled.div`
   }
 `;
 
-export const Col3 = styled.div`
+const Col3 = styled.div`
   display: flex;
   color: var(--color--primary);
   @media (max-width: 1400px) {
@@ -103,7 +103,7 @@ export const Col3 = styled.div`
   }
 `;
 
-export const Col4 = styled.div`
+const Col4 = styled.div`
   display: flex;
   max-height: 75px;
   width: auto;
@@ -120,7 +120,7 @@ export const Col4 = styled.div`
   }
 `;
 
-export const Ul = styled.ul`
+const Ul = styled.ul`
   color: var(--color--thirdary);
   text-decoration: none;
   margin-top: 37px;
@@ -141,11 +141,11 @@ export const Ul = styled.ul`
   }
 `;
 
-export const Li = styled.a`
+const Li = styled.a`
   margin: 0 0 30px 0;
 `;
 
-export const Row = styled.div`
+const Row = styled.div`
   display: flex;
   flex-direction: row;
   @media (max-width: 1400px) {
@@ -159,7 +159,7 @@ export const Row = styled.div`
   }
 `;
 
-export const Row2 = styled.div`
+const Row2 = styled.div`
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -170,7 +170,7 @@ export const Row2 = styled.div`
   }
 `;
 
-export const Img = styled.img`
+const Img = styled.img`
   height: 45px;
   width: 260px;
   margin: 1rem;
@@ -182,7 +182,7 @@ export const Img = styled.img`
   }
 `;
 
-export const DropLogin = styled.div`
+const DropLogin = styled.div`
   height: 50px;
   width: 145px;
   background-color: var(--color--secondary);
@@ -212,7 +212,7 @@ export const DropLogin = styled.div`
   }
 `;
 
-export const Overlay = styled.div`
+const Overlay = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: var(--color--secondary);
@@ -234,7 +234,7 @@ export const Overlay = styled.div`
   }
 `;
 
-export default {
+export {
   SHeader,
   Img,
   Col,
@@ -247,4 +247,7 @@ export default {
   DropLogin,
   BlueBars,
   Overlay,
+  BlueHome,
+  BlueUser,
+  Ul,
 };
