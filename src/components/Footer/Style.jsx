@@ -4,7 +4,7 @@ import { Instagram } from '@styled-icons/boxicons-logos/Instagram';
 import { Twitter } from '@styled-icons/entypo-social/Twitter';
 import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 
-export const SFooter = styled.footer`
+const SFooter = styled.footer`
   position: absolute;
   bottom: 0;
   background-color: #011e26;
@@ -17,7 +17,7 @@ export const SFooter = styled.footer`
   }
 `;
 
-export const FcbIcon = styled(FacebookSquare)`
+const FcbIcon = styled(FacebookSquare)`
   height: 6vh;
   padding: 4px;
   @media (max-width: 768px) {
@@ -25,22 +25,31 @@ export const FcbIcon = styled(FacebookSquare)`
   }
 `;
 
-export const LkdinIcon = styled(LinkedinSquare)`
+const LkdinIcon = styled(LinkedinSquare)`
   height: 6vh;
   padding: 4px;
+  @media (max-width: 768px) {
+    height: 4vh;
+  }
 `;
 
-export const InstaIcon = styled(Instagram)`
+const InstaIcon = styled(Instagram)`
   height: 6vh;
   padding: 4px;
+  @media (max-width: 768px) {
+    height: 4vh;
+  }
 `;
 
-export const TwitterIcon = styled(Twitter)`
+const TwitterIcon = styled(Twitter)`
   height: 5.5vh;
   padding: 4px;
+  @media (max-width: 768px) {
+    height: 3.5vh;
+  }
 `;
 
-export const Entree = styled.div`
+const Entree = styled.div`
   display: flex;
   justify-content: space-between;
   height: 13vh;
@@ -51,28 +60,29 @@ export const Entree = styled.div`
   }
 `;
 
-export const CopyRight = styled.div`
+const CopyRight = styled.div`
   width: 100vw;
   height: 3vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   font-size: 13px;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
   position: absolute;
   bottom: 0;
 `;
 
-export const CategoryContainer = styled.div`
+const CategoryContainer = styled.div`
   width: 40vw;
   display: flex;
   justify-content: space-evenly;
   @media (max-width: 768px) {
     width: 100vw;
+    justify-content: space-around;
   }
 `;
 
-export const LogoContainer = styled.div`
+const LogoContainer = styled.div`
   padding-left: 20px;
   @media (max-width: 768px) {
     display: flex;
@@ -82,76 +92,84 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const SLogo = styled.img`
+const SLogo = styled.img`
   width: 14vw;
   margin-top: 18px;
   @media (max-width: 768px) {
-    width: 25vw;
+    width: 40vw;
   }
 `;
 
-export const TitleCategory = styled.p`
+const TitleCategory = styled.p`
   font-size: 20px;
   font-weight: bold;
   margin-top: 5px;
 `;
 
-export const TitleMail = styled.p`
+const TitleMail = styled.p`
   font-size: 20px;
   font-weight: bold;
   margin-top: 22px;
   margin-left: 12px;
   width: 15vw;
   padding-bottom: 10px;
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    font-size: 20px;
+    width: 25vw;
+  }
 `;
 
-export const MentionCategory = styled.div`
+const MentionCategory = styled.div`
   margin-top: 15px;
   font-size: 23px;
   width: 16vw;
   @media (max-width: 768px) {
-    width: 50vw;
+    margin-right: 1px;
+    width: 45vw;
   }
 `;
 
-export const SavCategory = styled.div`
+const SavCategory = styled.div`
   margin-top: 15px;
   font-size: 23px;
   display: flex;
   flex-direction: column;
-`;
-
-export const CategoryContact = styled.div`
-  margin-top: 15px;
-  width: 10vw;
   @media (max-width: 768px) {
-    width: 40vw;
+    width: 45vw;
   }
 `;
 
-export const List = styled.ul`
+const CategoryContact = styled.div`
+  margin-top: 15px;
+  width: 10vw;
+  @media (max-width: 768px) {
+    width: 45vw;
+  }
+`;
+
+const List = styled.ul`
   font-size: 15px;
 `;
 
-export const ElementList = styled.li`
+const ElementList = styled.li`
   padding: 8px 0 0 0;
   font-size: 17px;
 `;
 
-export const Link = styled.a`
-  text-decoration: none;
-`;
-
-export const Form = styled.form`
+const Form = styled.form`
   border: solid 2px rgb(0, 230, 200);
   display: flex;
   justify-content: flex-end;
   padding: 2px;
   height: 3vh;
+  @media (max-width: 768px) {
+    width: 43vw;
+  }
 `;
 
-export const Input = styled.input`
-  background-color: rgb(1, 30, 38);
+const Input = styled.input`
+  background-color: red;
   width: 12vw;
   height: 3vh;
   color: white;
@@ -160,9 +178,12 @@ export const Input = styled.input`
   ::placeholder {
     color: white;
   }
+  @media (max-width: 768px) {
+    width: 35vw;
+  }
 `;
 
-export const OkButton = styled.input`
+const OkButton = styled.input`
   background-color: rgb(0, 230, 200);
   font-family: 'Josefin Sans', sans-serif;
   height: 3vh;
@@ -171,19 +192,21 @@ export const OkButton = styled.input`
   border-radius: 3px;
   color: white;
 `;
-
-export const LastCategory = styled.div`
+const LastCategory = styled.div`
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 30vw;
   height: 10vh;
   align-items: center;
   @media (max-width: 768px) {
     align-items: flex-start;
+    flex-wrap: wrap;
+    height: 20vh;
+    width: 45vw;
   }
 `;
 
-export const SocialNetwork = styled.div`
+const SocialNetwork = styled.div`
   width: 15vw;
   float: right;
   margin-right: 68.5px;
@@ -192,12 +215,15 @@ export const SocialNetwork = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   @media (max-width: 768px) {
-    border: 1px solid yellow;
-    width: 100vw;
+    width: 70vw;
+    margin: auto;
+    float: none;
+    margin-top: 1vh;
+    flex-direction: column;
   }
 `;
 
-export const Icon = styled.div`
+const Icon = styled.div`
   display: flex;
   flex-wrap: wrap;
   @media (max-width: 768px) {
@@ -205,13 +231,13 @@ export const Icon = styled.div`
   }
 `;
 
-export const P = styled.p`
+const P = styled.p`
   padding: 2vh 0 1vh 0;
   text-align: center;
   font-size: 22px;
 `;
 
-export const SLink = styled(Link)`
+const Li = styled.a`
   text-decoration: none;
   cursor: pointer;
   &:hover {
@@ -219,7 +245,7 @@ export const SLink = styled(Link)`
   }
 `;
 
-export default {
+export {
   SFooter,
   Entree,
   CopyRight,
@@ -239,7 +265,7 @@ export default {
   LastCategory,
   SocialNetwork,
   P,
-  SLink,
+  Li,
   TwitterIcon,
   LkdinIcon,
   Icon,

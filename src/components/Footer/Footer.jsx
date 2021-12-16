@@ -19,7 +19,7 @@ import {
   LastCategory,
   SocialNetwork,
   P,
-  SLink,
+  Li,
   TwitterIcon,
   LkdinIcon,
   Icon,
@@ -45,29 +45,29 @@ export default function Footer() {
           <CategoryContact>
             <TitleCategory>Contacts</TitleCategory>
             <List>
-              <SLink to="/inquiry">
+              <Li to="/inquiry">
                 <ElementList>Renseignements</ElementList>
-              </SLink>
-              <SLink to="/partnership">
+              </Li>
+              <Li to="/partnership">
                 <ElementList>Partenariats</ElementList>
-              </SLink>
-              <SLink to="/meet">
+              </Li>
+              <Li to="/meet">
                 <ElementList>Nous rencontrer</ElementList>
-              </SLink>
+              </Li>
             </List>
           </CategoryContact>
           <SavCategory>
             <TitleCategory>Service Client</TitleCategory>
             <List>
-              <SLink to="/customerService">
+              <Li to="/customerService">
                 <ElementList>Service Client</ElementList>
-              </SLink>
-              <SLink to="/technicalService">
+              </Li>
+              <Li to="/technicalService">
                 <ElementList>Conseil Technique</ElementList>
-              </SLink>
-              <SLink to="/sav">
+              </Li>
+              <Li to="/sav">
                 <ElementList>SAV</ElementList>
-              </SLink>
+              </Li>
             </List>
           </SavCategory>
         </CategoryContainer>
@@ -75,18 +75,18 @@ export default function Footer() {
           <MentionCategory>
             <TitleCategory>Mentions Légales</TitleCategory>
             <List>
-              <SLink to="/legalNotice">
+              <Li to="/legalNotice">
                 <ElementList>Mentions Légales</ElementList>
-              </SLink>
-              <SLink to="/cgv">
+              </Li>
+              <Li to="/cgv">
                 <ElementList>CGV</ElementList>
-              </SLink>
-              <SLink to="/cookies">
+              </Li>
+              <Li to="/cookies">
                 <ElementList>Politique de cookies</ElementList>
-              </SLink>
-              <SLink to="/sas">
+              </Li>
+              <Li to="/sas">
                 <ElementList>EVeRetrofit SAS</ElementList>
-              </SLink>
+              </Li>
             </List>
           </MentionCategory>
           <LastCategory>
