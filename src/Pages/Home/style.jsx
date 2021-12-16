@@ -29,63 +29,135 @@ const FullBattery = styled(BatteryFull)`
   color: var(--color--secondary);
   width: 80px;
 `;
-
+const RowLogo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 const Headline = styled.p`
-  font-size: 40px;
+  font-size: 50px;
   color: var(--color--thirdary);
+  @media only screen and (max-width: 1200px) {
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const TextColor = styled.span`
   color: var(--color--primary);
 `;
 
 const MainContainer = styled.div`
-  width: 100vw;
+  padding: 100px 0 0 0;
   background: rgb(1, 30, 38);
   background: linear-gradient(
     180deg,
-    rgba(1, 30, 38, 1) 23%,
-    rgba(50, 74, 79, 1) 43%,
-    rgba(67, 89, 94, 1) 72%,
-    rgba(189, 197, 199, 0.7349796938092521) 88%,
-    rgba(255, 255, 255, 0.6507100308879038) 93%
+    rgba(1, 30, 38, 1) 0%,
+    rgba(10, 38, 46, 0.8909512761020881) 34%,
+    rgba(54, 77, 84, 0.839907192575406) 62%,
+    rgba(255, 255, 255, 0.48259860788863107) 100%
   );
 `;
 
 const Container = styled.div`
-  margin: 100px 20% 0px 20%;
-  padding: 10px;
-  width: 60%;
+  margin: 100px 20% 50px 20%;
+  padding: 20px;
   background: var(--color--primary);
   border-radius: 20px;
-`;
-
-const Col = styled.div`
-  padding: 10px 50px 0 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-size: 18px;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 1200px) {
+    margin: 100px 15% 50px 15%;
+
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen and (max-width: 768px) {
+    margin: 100px 10% 50px 10%;
+
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
-const Row1 = styled.p`
+const Row1 = styled.div`
   padding: 10px 0 0 10px;
   margin: 0;
   font-size: 30px;
   font-weight: 1000;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 1200px) {
+    text-align: center;
+    font-size: 40px;
+  }
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    font-size: 40px;
+  }
 `;
+
 const Row2 = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const Col = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  @media only screen and (max-width: 1200px) {
+    padding: 10px 0 0 0;
+    width: 60%;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 10px 0 0 0;
+    width: 60%;
+  }
+`;
+
+const RowDescription = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0 20px 0;
 `;
 
 const RowHeadline = styled.div`
-  margin: 0 0 0 15%;
+  padding: 0 0 0 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   img {
     overflow: hidden;
     width: 80%;
+  }
+  @media only screen and (max-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -112,7 +184,7 @@ const TextArea = styled.div`
 `;
 const VoteContainer = styled.div`
   padding: 10px;
-  height: 550px;
+
   background: var(--color--secondary);
   color: var(--color--thirdary);
   text-align: center;
@@ -126,6 +198,7 @@ const VoteContainerRow1 = styled.p`
 const VoteContainerRow2 = styled.div`
   padding: 0 10% 0 10%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 `;
@@ -141,13 +214,16 @@ const VoteCard = styled.div`
 const NewsContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   margin: 0 5% 0 5%;
 `;
+
 const NewsHeader = styled.p`
   font-size: 30px;
 `;
+
 const NewsCardContainer = styled.div`
+  margin: 0 10% 0 10%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,39 +232,58 @@ const NewsCardContainer = styled.div`
 
 const NewsCard = styled.div`
   background: var(--color--primary);
-
   margin: 20px;
   width: 400px;
   height: 500px;
+  @media only screen and (max-width: 1200px) {
+    height: 350px;
+  }
+  @media only screen and (max-width: 768px) {
+    height: 350px;
+  }
 `;
 
 const HomeContainer = styled.div`
-  width: 100vw;
+  heigth: 100vh;
 `;
-const HeadlineImage = styled.div``;
+
+const HeadlineImage = styled.div`
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 
 const RatingContainer = styled.div`
+  margin: 0;
   width: 100vw;
-  height: 500px;
+  height: 600px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
 const PartnerContainer = styled.div`
-  margin: 0 10% 0 10%;
+  padding: 0 5% 0 5%;
   font-size: 30px;
-
   width: 100vw;
-  height: 200px;
+  height: 800px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+`;
 
-  .img {
-    width: 100vw;
-  }
+const PartnerLogo = styled.img`
+  margin: 100px;
+  width: 200px;
+`;
+const PartnerLogoContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 export {
@@ -220,4 +315,8 @@ export {
   HomeContainer,
   RatingContainer,
   PartnerContainer,
+  RowDescription,
+  RowLogo,
+  PartnerLogo,
+  PartnerLogoContainer,
 };

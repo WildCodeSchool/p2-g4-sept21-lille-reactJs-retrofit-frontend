@@ -1,3 +1,4 @@
+import Carousel from 'Components/Carousel';
 import {
   MainContainer,
   Cloud,
@@ -27,10 +28,23 @@ import {
   HomeContainer,
   RatingContainer,
   PartnerContainer,
+  RowDescription,
+  RowLogo,
+  PartnerLogo,
+  PartnerLogoContainer,
 } from './style';
 
 import Cars from '../../Assets/ds3.png';
-import Partners from '../../Assets/Partners.png';
+import Bge from '../../Assets/bge.png';
+import Clap from '../../Assets/Clap.png';
+import Creinov from '../../Assets/creinov.png';
+import HEV from '../../Assets/HEV.png';
+import L2EP from '../../Assets/l2ef.png';
+import MEL from '../../Assets/mel_logo.png';
+import HDF from '../../Assets/regionhdf.png';
+import Transalley from '../../Assets/transalley.png';
+import UnivLille1 from '../../Assets/univlille1.png';
+import LogoWild from '../../Assets/wildcodeschool.png';
 
 export default function Home() {
   return (
@@ -56,39 +70,57 @@ export default function Home() {
           </RowHeadline>
           <Container>
             <Row1> Le retrofit c&apos;est :</Row1>
-
             <Row2>
               <Col>
-                <Cloud />
-                <p>
+                <RowLogo>
+                  <Cloud />
+                </RowLogo>
+                <RowDescription>
                   -46% d&apos;émission de GAES* par rapport à l&apos;achat
                   d&apos;un véhicule neuf*
-                </p>
+                </RowDescription>
               </Col>
+
               <Col>
-                <Battery />
-                <p>
+                <RowLogo>
+                  <Battery />
+                </RowLogo>
+                <RowDescription>
                   Une recharge complète en 12h et 80% en 20 minutes sur borne de
                   charge rapide
-                </p>
+                </RowDescription>
               </Col>
+
               <Col>
-                <Euro />
-                <p>
+                <RowLogo>
+                  <Euro />
+                </RowLogo>
+                <RowDescription>
                   Plus économique que l&apos;achat d&apos;un véhicule électrique
-                </p>
+                </RowDescription>
               </Col>
+
               <Col>
-                <Emoji />
-                <p>Le confort de conduite d&apos;un véhicule électrique </p>
+                <RowLogo>
+                  <Emoji />
+                </RowLogo>
+                <RowDescription>
+                  Le confort de conduite d&apos;un véhicule électrique{' '}
+                </RowDescription>
               </Col>
+
               <Col>
-                <FullBattery />
-                <p>Une autonomie jusqu&apos;à 350km</p>
+                <RowLogo>
+                  <FullBattery />
+                </RowLogo>
+                <RowDescription>
+                  Une autonomie jusqu&apos;à 350km
+                </RowDescription>
               </Col>
             </Row2>
           </Container>
         </MainContainer>
+
         <TextArea>
           Autorisé en France depuis avril 2020, le rétrofit commence de plus en
           plus à trouver sa place sur le marché français.
@@ -110,6 +142,7 @@ export default function Home() {
           véhicule thermique en électrique. Ainsi, vous pouvez continuer de
           rouler avec style dans vote véhicule,mais en émettant 0g de CO2/km.
         </TextArea>
+
         <VoteContainer>
           <VoteContainerRow1>
             Votez pour le prochain véhicule à rétrofiter !
@@ -131,10 +164,23 @@ export default function Home() {
             <NewsCard />
           </NewsCardContainer>
         </NewsContainer>
-        <RatingContainer>Salut </RatingContainer>
+        <RatingContainer>
+          <Carousel />
+        </RatingContainer>
         <PartnerContainer>
           <p>Ils nous font confiance</p>
-          <img src={Partners} alt="Nos partenaires" />
+          <PartnerLogoContainer>
+            <PartnerLogo src={Bge} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={Clap} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={Creinov} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={HEV} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={L2EP} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={MEL} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={HDF} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={Transalley} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={UnivLille1} alt="Logo d'un Partenaire" />
+            <PartnerLogo src={LogoWild} alt="Logo d'un Partenaire" />
+          </PartnerLogoContainer>
         </PartnerContainer>
       </HomeContainer>
     </>
