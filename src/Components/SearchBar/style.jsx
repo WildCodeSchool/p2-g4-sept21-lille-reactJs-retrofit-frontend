@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Search } from '@styled-icons/bootstrap/Search';
 
-export const Ssearchbar = styled.div`
+const Ssearchbar = styled.div`
   padding-top: 18px;
   @media (max-width: 1400px) {
     padding-top: 0;
@@ -12,19 +12,18 @@ export const Ssearchbar = styled.div`
   }
 `;
 
-export const Form = styled.form`
+const Form = styled.form`
   border: solid 2px var(--color--primary);
   max-height: 40px;
   min-height: 40px;
   display: flex;
-  flex-direction: row;
   @media (max-width: 768px) {
     height: 35px;
     width: 65vw;
   }
 `;
 
-export const Input = styled.input`
+const Input = styled.input`
   background-color: var(--color--secondary);
   min-width: 180px;
   width: 180px;
@@ -39,7 +38,7 @@ export const Input = styled.input`
   }
 `;
 
-export const SearchBtn = styled(Search)`
+const SearchBtn = styled(Search)`
   color: var(--color--primary);
   height: 35px;
   width: 28px;
@@ -53,3 +52,5 @@ export const SearchBtn = styled(Search)`
     margin-right: 5px;
   }
 `;
+
+export { SearchBtn, Input, Form, Ssearchbar };
