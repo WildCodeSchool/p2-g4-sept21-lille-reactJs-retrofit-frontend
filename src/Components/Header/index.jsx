@@ -81,9 +81,8 @@ export default function Header() {
           <DropLogin style={style}>inscription</DropLogin>
           <DropLogin style={style}>connexion</DropLogin>
         </Row2>
-        {open ? (
+        {open && (
           <Overlay>
-            {' '}
             <Ul>
               <Li>
                 <Link to="/vehicules">Véhicules</Link>
@@ -102,8 +101,6 @@ export default function Header() {
               </Li>
             </Ul>
           </Overlay>
-        ) : (
-          ''
         )}
       </SHeader>
     </>
