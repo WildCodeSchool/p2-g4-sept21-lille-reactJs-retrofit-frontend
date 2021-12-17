@@ -1,4 +1,4 @@
-import Footer from './components/Footer/Footer';
+import Footer from './Components/Footer';
 
 function App() {
   return (

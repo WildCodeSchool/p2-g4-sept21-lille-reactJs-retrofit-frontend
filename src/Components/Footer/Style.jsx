@@ -7,6 +7,7 @@ import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 const SFooter = styled.footer`
   position: absolute;
   bottom: 0;
+  margin: auto;
   background-color: rgb(1, 30, 38);
   width: 100vw;
   height: 30vh;
@@ -68,8 +69,6 @@ const CopyRight = styled.div`
   justify-content: center;
   font-size: 13px;
   margin-bottom: 10px;
-  position: absolute;
-  bottom: 0;
 `;
 
 const CategoryContainer = styled.div`
@@ -151,6 +150,7 @@ const CategoryContact = styled.div`
 
 const List = styled.ul`
   font-size: 15px;
+  list-style-type: none;
 `;
 
 const ElementList = styled.li`
