@@ -1,4 +1,16 @@
 import Carousel from 'Components/Carousel';
+import Cars from 'Assets/ds3.png';
+import Bge from 'Assets/bge.png';
+import Clap from 'Assets/Clap.png';
+import Creinov from 'Assets/creinov.png';
+import HEV from 'Assets/HEV.png';
+import L2EP from 'Assets/l2ef.png';
+import MEL from 'Assets/mel_logo.png';
+
+import HDF from 'Assets/regionhdf.png';
+import Transalley from 'Assets/transalley.png';
+import UnivLille1 from 'Assets/univlille1.png';
+import LogoWild from 'Assets/wildcodeschool.png';
 import {
   MainContainer,
   Cloud,
@@ -7,44 +19,16 @@ import {
   Euro,
   Emoji,
   FullBattery,
-  Row1,
-  Row2,
   Col,
   Headline,
-  TextColor,
   RowHeadline,
-  ColHeadline,
-  SubHeadline,
   TextArea,
   VoteContainer,
-  VoteContainerRow1,
-  VoteContainerRow2,
-  VoteCard,
-  NewsContainer,
-  NewsHeader,
-  NewsCardContainer,
-  NewsCard,
-  HeadlineImage,
   HomeContainer,
-  RatingContainer,
+  Rating,
   PartnerContainer,
-  RowDescription,
-  RowLogo,
-  PartnerLogo,
-  PartnerLogoContainer,
+  News,
 } from './style';
-
-import Cars from '../../Assets/ds3.png';
-import Bge from '../../Assets/bge.png';
-import Clap from '../../Assets/Clap.png';
-import Creinov from '../../Assets/creinov.png';
-import HEV from '../../Assets/HEV.png';
-import L2EP from '../../Assets/l2ef.png';
-import MEL from '../../Assets/mel_logo.png';
-import HDF from '../../Assets/regionhdf.png';
-import Transalley from '../../Assets/transalley.png';
-import UnivLille1 from '../../Assets/univlille1.png';
-import LogoWild from '../../Assets/wildcodeschool.png';
 
 export default function Home() {
   return (
@@ -52,135 +36,136 @@ export default function Home() {
       <HomeContainer>
         <MainContainer>
           <RowHeadline>
-            <ColHeadline>
-              <Headline>
-                <TextColor>EverR</TextColor>etrofit, <br />
-                votre voiture, <br />
-                pour <TextColor>toujours</TextColor> <br />
-              </Headline>
-              <SubHeadline>
+            <Headline>
+              <p>
+                <span>EVeR</span>etrofit,
+              </p>
+              <p>votre voiture,</p>
+              <p>
+                pour <span>toujours</span>
+              </p>
+              <p className="subHeadline">
                 Vous êtes attaché à votre véhicule mais il est désormais trop
                 polluant ? Trop chère à entretenir ? Le prix du carburant
                 classique est trop élevé ? Nous avons la solution !
-              </SubHeadline>
-            </ColHeadline>
-            <HeadlineImage>
-              <img src={Cars} alt="Une voiture" />
-            </HeadlineImage>
+              </p>
+            </Headline>
+
+            <img src={Cars} alt="Une voiture" />
           </RowHeadline>
           <Container>
-            <Row1> Le retrofit c&apos;est :</Row1>
-            <Row2>
+            <div className="Row1"> Le retrofit c&apos;est :</div>
+            <div className="Row2">
               <Col>
-                <RowLogo>
+                <div className="ColLogo">
                   <Cloud />
-                </RowLogo>
-                <RowDescription>
+                </div>
+
+                <div className="ColText">
                   -46% d&apos;émission de GAES* par rapport à l&apos;achat
                   d&apos;un véhicule neuf*
-                </RowDescription>
+                </div>
               </Col>
 
               <Col>
-                <RowLogo>
+                <div className="ColLogo">
                   <Battery />
-                </RowLogo>
-                <RowDescription>
+                </div>
+                <div className="ColText">
                   Une recharge complète en 12h et 80% en 20 minutes sur borne de
                   charge rapide
-                </RowDescription>
+                </div>
               </Col>
 
               <Col>
-                <RowLogo>
+                <div className="ColLogo">
                   <Euro />
-                </RowLogo>
-                <RowDescription>
+                </div>
+                <div className="ColText">
                   Plus économique que l&apos;achat d&apos;un véhicule électrique
-                </RowDescription>
+                </div>
               </Col>
 
               <Col>
-                <RowLogo>
+                <div className="ColLogo">
                   <Emoji />
-                </RowLogo>
-                <RowDescription>
-                  Le confort de conduite d&apos;un véhicule électrique{' '}
-                </RowDescription>
+                </div>
+                <div className="ColText">
+                  Le confort de conduite d&apos;un véhicule électrique
+                </div>
               </Col>
 
               <Col>
-                <RowLogo>
+                <div className="ColLogo">
                   <FullBattery />
-                </RowLogo>
-                <RowDescription>
-                  Une autonomie jusqu&apos;à 350km
-                </RowDescription>
+                </div>
+                <div className="ColText">Une autonomie jusqu&apos;à 350km</div>
               </Col>
-            </Row2>
+            </div>
           </Container>
         </MainContainer>
 
         <TextArea>
-          Autorisé en France depuis avril 2020, le rétrofit commence de plus en
-          plus à trouver sa place sur le marché français.
-          <br /> <br />
-          Se ballader dans une voiture ancienne en centre ville ? <br />
-          Faire des économies continuellement dès que vous prenez la route ?
-          <br />
-          Recharger votre véhicule le soir chez vous comme vous le feriez avec
-          un téléphone ?<br />
-          Oublier le bruit des vibrations et adopter une conduite plus
-          plaisante.
-          <br />
-          Gardez votre véhicule avec qui vous avez passé tellement de bon et
-          mauvais moment ?
-          <br />
-          <br />
-          Tout cela est possible grâce au rétrofit. Mais le rétrofit c&apos;est
-          quoi ? C&apos;est tout simplement la transoformation d&apos;un
-          véhicule thermique en électrique. Ainsi, vous pouvez continuer de
-          rouler avec style dans vote véhicule,mais en émettant 0g de CO2/km.
+          <p>
+            Autorisé en France depuis avril 2020, le rétrofit commence de plus
+            en plus à trouver sa place sur le marché français.
+          </p>
+          <p>
+            Se ballader dans une voiture ancienne en centre ville ? <br />
+            Faire des économies continuellement dès que vous prenez la route ?
+            <br />
+            Recharger votre véhicule le soir chez vous comme vous le feriez avec
+            un téléphone ? <br /> Oublier le bruit des vibrations et adopter une
+            conduite plus plaisante. <br />
+            Gardez votre véhicule avec qui vous avez passé tellement de bon et
+            mauvais moment ?
+          </p>
+          <p>
+            Tout cela est possible grâce au rétrofit. Mais le rétrofit
+            c&apos;est quoi ? C&apos;est tout simplement la transoformation
+            d&apos;un véhicule thermique en électrique. Ainsi, vous pouvez
+            continuer de rouler avec style dans vote véhicule,mais en émettant
+            0g de CO2/km.
+          </p>
         </TextArea>
 
         <VoteContainer>
-          <VoteContainerRow1>
-            Votez pour le prochain véhicule à rétrofiter !
-          </VoteContainerRow1>
-          <VoteContainerRow2>
-            <VoteCard />
-            <VoteCard />
-            <VoteCard />
-          </VoteContainerRow2>
+          <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
+          <div className="VoteCardContainer">
+            <div className="VoteCard" />
+            <div className="VoteCard" />
+            <div className="VoteCard" />
+          </div>
         </VoteContainer>
-        <NewsContainer>
-          <NewsHeader>Actualités sur les véhicules électriques</NewsHeader>
-          <NewsCardContainer>
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-          </NewsCardContainer>
-        </NewsContainer>
-        <RatingContainer>
+
+        <News>
+          <h2>Actualités sur les véhicules électriques</h2>
+          <div className="NewsCardContainer">
+            <div className="NewsCard" />
+            <div className="NewsCard" />
+            <div className="NewsCard" />
+            <div className="NewsCard" />
+            <div className="NewsCard" />
+            <div className="NewsCard" />
+          </div>
+        </News>
+        <Rating>
           <Carousel />
-        </RatingContainer>
+        </Rating>
         <PartnerContainer>
           <p>Ils nous font confiance</p>
-          <PartnerLogoContainer>
-            <PartnerLogo src={Bge} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={Clap} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={Creinov} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={HEV} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={L2EP} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={MEL} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={HDF} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={Transalley} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={UnivLille1} alt="Logo d'un Partenaire" />
-            <PartnerLogo src={LogoWild} alt="Logo d'un Partenaire" />
-          </PartnerLogoContainer>
+          <div>
+            <img src={Bge} alt="Logo d'un Partenaire" />
+            <img src={Clap} alt="Logo d'un Partenaire" />
+            <img src={Creinov} alt="Logo d'un Partenaire" />
+            <img src={HEV} alt="Logo d'un Partenaire" />
+            <img src={L2EP} alt="Logo d'un Partenaire" />
+            <img src={MEL} alt="Logo d'un Partenaire" />
+            <img src={HDF} alt="Logo d'un Partenaire" />
+            <img src={Transalley} alt="Logo d'un Partenaire" />
+            <img src={UnivLille1} alt="Logo d'un Partenaire" />
+            <img src={LogoWild} alt="Logo d'un Partenaire" />
+          </div>
         </PartnerContainer>
       </HomeContainer>
     </>

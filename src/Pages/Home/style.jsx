@@ -8,46 +8,35 @@ import { BatteryFull } from '@styled-icons/bootstrap/BatteryFull';
 const Cloud = styled(CloudSlash)`
   color: var(--color--secondary);
   width: 80px;
+  margin: 10px;
 `;
 
 const Battery = styled(BatteryCharging)`
   color: var(--color--secondary);
   width: 80px;
+  margin: 10px 10px 0 10px;
 `;
 
 const Euro = styled(CurrencyEuro)`
   color: var(--color--secondary);
   width: 80px;
+  margin: 0 0 10px 0;
 `;
 
 const Emoji = styled(EmojiSunglasses)`
   color: var(--color--secondary);
   width: 80px;
+  margin: 0 0 10px 0;
 `;
 
 const FullBattery = styled(BatteryFull)`
   color: var(--color--secondary);
   width: 80px;
+  margin: 0 0 10px 0;
 `;
-const RowLogo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const Headline = styled.p`
-  font-size: 50px;
-  color: var(--color--thirdary);
-  @media only screen and (max-width: 1200px) {
-    justify-content: center;
-    align-items: center;
-  }
-  @media only screen and (max-width: 768px) {
-    justify-content: center;
-    align-items: center;
-  }
-`;
-const TextColor = styled.span`
-  color: var(--color--primary);
+
+const HomeContainer = styled.div`
+  heigth: 100%;
 `;
 
 const MainContainer = styled.div`
@@ -62,201 +51,179 @@ const MainContainer = styled.div`
   );
 `;
 
+const RowHeadline = styled.div`
+  margin: 0 20% 50px 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  img {
+    overflow: hidden;
+
+    @media only screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const Headline = styled.div`
+  font-size: 50px;
+  color: var(--color--thirdary);
+  
+  display: flex;
+  flex-direction: column;
+  width 300px;
+
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    color: var(--color--primary);
+  }
+
+  p.subHeadline {
+    margin: 2.4em 0;
+    font-size: 20px;
+    line-height: 1.6em;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 const Container = styled.div`
-  margin: 100px 20% 50px 20%;
+  margin: 100px 20% 0px 20%;
   padding: 20px;
   background: var(--color--primary);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  div.Row1 {
+    font-size: 30px;
+    font-weight: 1000;
+  }
+
+  div.Row2 {
+    display: flex;
+    align-items: center;
+    @media only screen and (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+
   @media only screen and (max-width: 1200px) {
+    text-align: center;
+    font-size: 40px;
     margin: 100px 15% 50px 15%;
-
     justify-content: center;
     align-items: center;
-  }
-  @media only screen and (max-width: 768px) {
-    margin: 100px 10% 50px 10%;
-
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-const Row1 = styled.div`
-  padding: 10px 0 0 10px;
-  margin: 0;
-  font-size: 30px;
-  font-weight: 1000;
-  flex-wrap: wrap;
-  @media only screen and (max-width: 1200px) {
-    text-align: center;
-    font-size: 40px;
-  }
-  @media only screen and (max-width: 768px) {
-    text-align: center;
-    font-size: 40px;
-  }
-`;
-
-const Row2 = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media only screen and (max-width: 1200px) {
-    flex-direction: column;
-  }
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
   }
 `;
 
 const Col = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
   font-size: 20px;
   text-align: center;
   width: 100%;
-  @media only screen and (max-width: 1200px) {
-    padding: 10px 0 0 0;
-    width: 60%;
-  }
-  @media only screen and (max-width: 768px) {
-    padding: 10px 0 0 0;
-    width: 60%;
-  }
-`;
-
-const RowDescription = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 40px 0 20px 0;
-`;
-
-const RowHeadline = styled.div`
-  padding: 0 0 0 5%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  img {
-    overflow: hidden;
-    width: 80%;
+  div.ColText {
+    padding: 20px 20px 0 20px;
   }
   @media only screen and (max-width: 1200px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    padding: 10px 0 0 0;
+    font-size: 25px;
   }
-  @media only screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-const ColHeadline = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width 300px;
-`;
-
-const SubHeadline = styled.p`
-  font-size: 30px;
-  color: var(--color--thirdary);
 `;
 
 const TextArea = styled.div`
   margin: 40px 20%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: start;
   font-size: 20px;
+  line-height: 1.4em;
+
+  p {
+    font-size: 24px;
+    margin: 10px;
+    text-align: start;
+  }
 `;
+
 const VoteContainer = styled.div`
   padding: 10px;
-
   background: var(--color--secondary);
   color: var(--color--thirdary);
   text-align: center;
-  font-size: 40px;
+
+  h1 {
+    font-size: 40px;
+    margin: 10px;
+  }
+
+  div.VoteCardContainer {
+    padding: 0 10% 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  div.VoteCard {
+    background: var(--color--thirdary);
+    border-radius: 10px;
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+  }
 `;
 
-const VoteContainerRow1 = styled.p`
-  margin: 10px;
-`;
-
-const VoteContainerRow2 = styled.div`
-  padding: 0 10% 0 10%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-`;
-
-const VoteCard = styled.div`
-  background: var(--color--thirdary);
-  border-radius: 10px;
-  margin: 20px;
-  width: 400px;
-  height: 400px;
-`;
-
-const NewsContainer = styled.div`
+const News = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 5% 0 5%;
-`;
 
-const NewsHeader = styled.p`
-  font-size: 30px;
-`;
-
-const NewsCardContainer = styled.div`
-  margin: 0 10% 0 10%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-`;
-
-const NewsCard = styled.div`
-  background: var(--color--primary);
-  margin: 20px;
-  width: 400px;
-  height: 500px;
-  @media only screen and (max-width: 1200px) {
-    height: 350px;
+  h2 {
+    font-size: 30px;
+    text-align: center;
   }
-  @media only screen and (max-width: 768px) {
-    height: 350px;
+
+  div.NewsCardContainer {
+    margin: 0 10% 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  div.NewsCard {
+    background: var(--color--primary);
+    margin: 20px;
+    width: 400px;
+    height: 500px;
+    @media only screen and (max-width: 1200px) {
+      height: 350px;
+    }
   }
 `;
 
-const HomeContainer = styled.div`
-  heigth: 100vh;
-`;
-
-const HeadlineImage = styled.div`
-  @media only screen and (max-width: 1200px) {
-    display: none;
-  }
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const RatingContainer = styled.div`
+const Rating = styled.div`
   margin: 0;
   width: 100vw;
   height: 600px;
@@ -273,17 +240,19 @@ const PartnerContainer = styled.div`
   height: 800px;
   display: flex;
   flex-direction: column;
-`;
-
-const PartnerLogo = styled.img`
-  margin: 100px;
-  width: 200px;
-`;
-const PartnerLogoContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  p {
+    text-align: center;
+  }
+  img {
+    margin: 100px 75px;
+    width: 150px;
+  }
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export {
@@ -295,28 +264,12 @@ export {
   Emoji,
   FullBattery,
   Headline,
-  Row2,
-  Row1,
   Col,
-  TextColor,
-  ColHeadline,
   RowHeadline,
-  SubHeadline,
   TextArea,
   VoteContainer,
-  VoteContainerRow1,
-  VoteContainerRow2,
-  VoteCard,
-  NewsContainer,
-  NewsHeader,
-  NewsCardContainer,
-  NewsCard,
-  HeadlineImage,
+  News,
   HomeContainer,
-  RatingContainer,
+  Rating,
   PartnerContainer,
-  RowDescription,
-  RowLogo,
-  PartnerLogo,
-  PartnerLogoContainer,
 };
