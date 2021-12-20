@@ -11,4 +11,4 @@ Their project is to transform thermal vehicles into electric vehicles
 
 2 - in your terminal install packages `npm install i`
 
-3 - run your local server `npm run start`
+3 - run your local server `npm start`
