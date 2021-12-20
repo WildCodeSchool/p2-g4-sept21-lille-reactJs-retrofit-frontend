@@ -8,6 +8,27 @@ const SHeader = styled.div`
   width: 100vw;
   background-color: var(--color--secondary);
   position: fixed;
+
+  ul {
+    color: var(--color--thirdary);
+    text-decoration: none;
+    margin-top: 37px;
+    padding-right: 20px;
+
+    @media (max-width: 1400px) {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 0;
+      padding: 70px 0 0 0;
+      font-size: 35px;
+    }
+
+    @media (max-width: 768px) {
+      margin: 0;
+      padding: 50px 0 0 0;
+    }
+  }
 `;
 
 const BlueHome = styled(Home)`
@@ -31,13 +52,14 @@ const BlueHome = styled(Home)`
 const BlueUser = styled(User)`
   color: var(--color--primary);
   min-width: 50px;
-  max-height: 75px;
-  min-height: 75px;
   max-width: 50px;
+  min-height: 75px;
+  max-height: 75px;
   margin-right: 10px;
   :hover {
     cursor: pointer;
   }
+
   @media (max-width: 768px) {
     height: 35px;
     margin-right: 10px;
@@ -63,99 +85,88 @@ const BlueBars = styled(Bars)`
   }
 `;
 
-const Col = styled.div`
-  width: 20vw;
-  height: 75px;
-  @media (max-width: 768px) {
-    width: 50vw;
-  }
-`;
-
-const Col2 = styled.div`
-  width: 80vw;
-  max-height: 75px;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: right;
-  font-size: 30px;
-  @media (max-width: 1400px) {
-    display: none;
-  }
-`;
-
-const Col3 = styled.div`
-  display: flex;
-  color: var(--color--primary);
-  @media (max-width: 1400px) {
-    align-items: center;
-    margin-left: auto;
-  }
-  @media (max-width: 768px) {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    order: 4;
-  }
-`;
-
-const Col4 = styled.div`
-  display: flex;
-  max-height: 75px;
-  width: auto;
-  flex-direction: row;
-  color: var(--color--primary);
-  @media (max-width: 1400px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    align-content: right;
-  }
-  @media (max-width: 768px) {
-    order: 2;
-  }
-`;
-
-const Ul = styled.ul`
-  color: var(--color--thirdary);
-  text-decoration: none;
-  margin-top: 37px;
-  padding-right: 20px;
-  @media (max-width: 768px) {
-    text-align: center;
-    font-size: 35px;
-    margin: 0;
-    padding: 50px 0 0 0;
-  }
-  @media (max-width: 1400px) {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 0px;
-    padding: 70px 0 0 0;
-    font-size: 35px;
-  }
-`;
-
-const Li = styled.a`
-  margin: 0 0 30px 0;
-`;
-
 const Row = styled.div`
   display: flex;
   flex-direction: row;
+
+  & > * {
+    height: 75px;
+  }
+
   @media (max-width: 1400px) {
-    display: flex;
     justify-content: space-between;
   }
+
   @media (max-width: 768px) {
-    display: flex;
     flex-wrap: wrap;
     background-color: var(--color--secondary);
+  }
+
+  .Col1 {
+    width: 20vw;
+
+    @media (max-width: 768px) {
+      width: 50vw;
+    }
+
+    img {
+      height: 45px;
+      width: 260px;
+      margin: 1rem;
+
+      @media (max-width: 768px) {
+        height: 35px;
+        width: 202px;
+        margin-top: 20px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .Col2 {
+    width: 80vw;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: 30px;
+
+    @media (max-width: 1400px) {
+      display: none;
+    }
+  }
+
+  .Col3 {
+    display: flex;
+    color: var(--color--primary);
+
+    @media (max-width: 1400px) {
+      align-items: center;
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      order: 4;
+    }
+  }
+
+  .Col4 {
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    color: var(--color--primary);
+
+    @media (max-width: 1400px) {
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      order: 2;
+    }
   }
 `;
 
@@ -165,20 +176,9 @@ const Row2 = styled.div`
   flex-direction: row;
   float: right;
   background-color: var(--color--secondary);
+
   @media (max-width: 768px) {
     display: none;
-  }
-`;
-
-const Img = styled.img`
-  height: 45px;
-  width: 260px;
-  margin: 1rem;
-  @media (max-width: 768px) {
-    height: 35px;
-    width: 202px;
-    margin-top: 20px;
-    margin-left: 0px;
   }
 `;
 
@@ -187,15 +187,20 @@ const DropLogin = styled.div`
   width: 145px;
   background-color: var(--color--secondary);
   display: flex;
-  float: right;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   color: var(--color--thirdary);
   font-size: 25px;
-  align-content: center;
-  text-align: center;
-  justify-content: center;
   padding-top: 8px;
   padding-left: 3px;
   animation: Fade 0.4s ease-in-out;
+  cursor: pointer;
+
+  :hover {
+    color: var(--color--primary);
+  }
+
   @keyframes Fade {
     0% {
       display: none;
@@ -205,10 +210,6 @@ const DropLogin = styled.div`
       display: block;
       opacity: 1;
     }
-  }
-  cursor: pointer;
-  :hover {
-    color: var(--color--primary);
   }
 `;
 
@@ -219,6 +220,7 @@ const Overlay = styled.div`
   display: flex;
   justify-content: center;
   animation: Fade 0.4s ease-in-out;
+
   @keyframes Fade {
     0% {
       display: none;
@@ -229,25 +231,10 @@ const Overlay = styled.div`
       opacity: 1;
     }
   }
+
   @media (min-width: 1400px) {
     display: none;
   }
 `;
 
-export {
-  SHeader,
-  Img,
-  Col,
-  Col2,
-  Col3,
-  Col4,
-  Li,
-  Row,
-  Row2,
-  DropLogin,
-  BlueBars,
-  Overlay,
-  BlueHome,
-  BlueUser,
-  Ul,
-};
+export { SHeader, Row, Row2, DropLogin, BlueBars, Overlay, BlueHome, BlueUser };
