@@ -36,7 +36,7 @@ const FullBattery = styled(BatteryFull)`
 `;
 
 const HomeContainer = styled.div`
-  heigth: 100%;
+  height: 100%;
   div.TextArea {
     margin: 40px 20%;
     display: flex;
