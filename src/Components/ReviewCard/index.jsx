@@ -1,15 +1,17 @@
-import { Rating } from 'semantic-ui-react';
-import Card from './style';
+import BeautyStars from 'beauty-stars';
 
-const ReviewCard = () => {
+import { Card, CardContainer } from './style';
+
+const ReviewCard = ({ ...review }) => {
   return (
     <>
-      <Rating maxRating={5} defaultRating={3} icon="star" size="huge" />
-      <Card>
-        Sylvain .D <br />
-        <br />
-        Equipe au top, toutes les explications étaient claires, encore merci !
-      </Card>
+      <CardContainer>
+        <BeautyStars maxStars={5} value={review.stars} size={34} />
+        <Card>
+          <h3>{review.name} </h3>
+          <p>{review.review}</p>
+        </Card>
+      </CardContainer>
     </>
   );
 };
