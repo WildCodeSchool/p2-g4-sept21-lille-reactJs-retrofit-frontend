@@ -37,6 +37,20 @@ const FullBattery = styled(BatteryFull)`
 
 const HomeContainer = styled.div`
   heigth: 100%;
+  div.TextArea {
+    margin: 40px 20%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    font-size: 20px;
+    line-height: 1.4em;
+
+    p {
+      font-size: 24px;
+      margin: 10px;
+      text-align: start;
+    }
+  }
 `;
 
 const MainContainer = styled.div`
@@ -93,8 +107,8 @@ const Headline = styled.div`
 
   p.subHeadline {
     margin: 2.4em 0;
-    font-size: 20px;
-    line-height: 1.6em;
+    font-size: 24px;
+    line-height: 1.4em;
   }
 
   @media only screen and (max-width: 1200px) {
@@ -149,21 +163,6 @@ const Col = styled.div`
   @media only screen and (max-width: 1200px) {
     padding: 10px 0 0 0;
     font-size: 25px;
-  }
-`;
-
-const TextArea = styled.div`
-  margin: 40px 20%;
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  font-size: 20px;
-  line-height: 1.4em;
-
-  p {
-    font-size: 24px;
-    margin: 10px;
-    text-align: start;
   }
 `;
 
@@ -240,18 +239,28 @@ const PartnerContainer = styled.div`
   height: 800px;
   display: flex;
   flex-direction: column;
-  p {
+
+  h2 {
+    margin: 0 20% 100px 20%;
+    padding: 0 0 10px 0;
+    font-size: 30px;
     text-align: center;
   }
+
   img {
-    margin: 100px 75px;
-    width: 150px;
+    margin: 20px;
+    width: 250px;
   }
   div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    @media only screen and (max-width: 800px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 `;
 
@@ -266,7 +275,6 @@ export {
   Headline,
   Col,
   RowHeadline,
-  TextArea,
   VoteContainer,
   News,
   HomeContainer,

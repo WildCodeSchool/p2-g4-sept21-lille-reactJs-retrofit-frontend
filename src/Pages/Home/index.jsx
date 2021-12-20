@@ -1,16 +1,16 @@
 import Carousel from 'Components/Carousel';
 import Cars from 'Assets/ds3.png';
 import Bge from 'Assets/bge.png';
-import Clap from 'Assets/Clap.png';
-import Creinov from 'Assets/creinov.png';
-import HEV from 'Assets/HEV.png';
-import L2EP from 'Assets/l2ef.png';
-import MEL from 'Assets/mel_logo.png';
+import Clap from 'Assets/clap.png';
+import Creinov from 'Assets/creinnov.png';
+import HEV from 'Assets/hive.png';
+import L2EP from 'Assets/l2ep.png';
+import MEL from 'Assets/MEL.png';
 
-import HDF from 'Assets/regionhdf.png';
+import HDF from 'Assets/hauts-de-france.png';
 import Transalley from 'Assets/transalley.png';
-import UnivLille1 from 'Assets/univlille1.png';
-import LogoWild from 'Assets/wildcodeschool.png';
+import UnivLille1 from 'Assets/univ.png';
+import LogoWild from 'Assets/wcs.png';
 import {
   MainContainer,
   Cloud,
@@ -22,7 +22,6 @@ import {
   Col,
   Headline,
   RowHeadline,
-  TextArea,
   VoteContainer,
   HomeContainer,
   Rating,
@@ -105,7 +104,7 @@ export default function Home() {
           </Container>
         </MainContainer>
 
-        <TextArea>
+        <div className="TextArea">
           <p>
             Autorisé en France depuis avril 2020, le rétrofit commence de plus
             en plus à trouver sa place sur le marché français.
@@ -127,7 +126,7 @@ export default function Home() {
             continuer de rouler avec style dans vote véhicule,mais en émettant
             0g de CO2/km.
           </p>
-        </TextArea>
+        </div>
 
         <VoteContainer>
           <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
@@ -153,7 +152,7 @@ export default function Home() {
           <Carousel />
         </Rating>
         <PartnerContainer>
-          <p>Ils nous font confiance</p>
+          <h2>Ils nous font confiance</h2>
           <div>
             <img src={Bge} alt="Logo d'un Partenaire" />
             <img src={Clap} alt="Logo d'un Partenaire" />
