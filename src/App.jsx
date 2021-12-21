@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './Components/Header/index';
-import Footer from './components/Footer/Footer';
+import Footer from './Components/Footer/index';
+
 import Home from './Pages/Home';
 
 export default function App() {
@@ -12,7 +13,8 @@ export default function App() {
           Home
         </Route>
       </Routes>
-<Footer />
+      <Footer />
+
     </div>
   );
 }
