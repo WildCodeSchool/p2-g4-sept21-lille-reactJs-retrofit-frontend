@@ -5,7 +5,6 @@ import { Twitter } from '@styled-icons/entypo-social/Twitter';
 import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 
 const SFooter = styled.footer`
-  position: absolute;
   bottom: 0;
   background-color: var(--color--secondary);
   width: 100vw;
@@ -14,8 +13,10 @@ const SFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 20px 20px 0 20px;
   @media (max-width: 768px) {
     height: 80vh;
+    padding: 0;
   }
 `;
 
@@ -256,7 +257,7 @@ const LastCategory = styled.section`
     border: none;
     font-size: 16px;
     @media (max-width: 768px) {
-      width: 35vw;
+      width: 33vw;
     }
     ::placeholder {
       color: var(--color--thirdary);
