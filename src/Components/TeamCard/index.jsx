@@ -7,7 +7,6 @@ export default function TeamCard({ firstName, lastName, role, img, link }) {
       <img src={img} alt="staff" />
       <h1>
         {firstName}
-        <p> </p>
         {lastName}
       </h1>
       <h2>{role}</h2>
