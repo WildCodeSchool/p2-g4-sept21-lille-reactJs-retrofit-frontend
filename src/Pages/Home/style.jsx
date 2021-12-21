@@ -233,23 +233,27 @@ const Rating = styled.div`
 `;
 
 const PartnerContainer = styled.div`
-  padding: 0 5% 0 5%;
+  padding: 0 15% 0 15%;
+  margin: 0 0 100px 0;
   font-size: 30px;
   width: 100vw;
-  height: 800px;
   display: flex;
   flex-direction: column;
 
   h2 {
+    border-top: 1px solid #bdc3c7;
     margin: 0 20% 100px 20%;
-    padding: 0 0 10px 0;
+    padding: 20px 0 10px 0;
     font-size: 30px;
     text-align: center;
+    @media only screen and (max-width: 800px) {
+      margin: 0;
+    }
   }
 
   img {
     margin: 20px;
-    width: 250px;
+    width: 200px;
   }
   div {
     display: flex;
