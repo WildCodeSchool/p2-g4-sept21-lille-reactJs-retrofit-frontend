@@ -33,7 +33,7 @@ export default function Header() {
     <SHeader>
       <Row>
         <div className="Col1">
-          <Link to="/home">
+          <Link to="/">
             <img src={Logo} alt="logo" />
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function Header() {
           <Searchbar />
         </div>
         <div className="Col4">
-          <Link to="/home">
+          <Link to="/">
             <BlueHome />
           </Link>
           <Link to="/connection">
