@@ -3,15 +3,8 @@ import { useState } from 'react';
 import Searchbar from 'Components/SearchBar';
 import {
   SHeader,
-  Img,
-  Col,
-  Col2,
-  Col3,
-  Col4,
   Row,
   Row2,
-  Ul,
-  Li,
   BlueHome,
   BlueUser,
   DropLogin,
@@ -28,7 +21,6 @@ export default function Header() {
     setOpen(!open);
   };
 
-
   const showLogin = () => {
     setStyle({ display: 'block' });
   };
@@ -41,7 +33,7 @@ export default function Header() {
     <SHeader>
       <Row>
         <div className="Col1">
-          <Link to="/home">
+          <Link to="/">
             <img src={Logo} alt="logo" />
           </Link>
         </div>
@@ -58,7 +50,7 @@ export default function Header() {
           <Searchbar />
         </div>
         <div className="Col4">
-          <Link to="/home">
+          <Link to="/">
             <BlueHome />
           </Link>
           <Link to="/connection">

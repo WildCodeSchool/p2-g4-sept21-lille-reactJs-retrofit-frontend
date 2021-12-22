@@ -5,10 +5,10 @@ import { Bars } from '@styled-icons/fa-solid/Bars';
 
 const SHeader = styled.div`
   height: 75px;
-  width: 100vw;
+  width: 100%;
   background-color: var(--color--secondary);
   position: fixed;
-
+  z-index: 1;
 
   ul {
     color: var(--color--thirdary);
@@ -30,7 +30,6 @@ const SHeader = styled.div`
       padding: 50px 0 0 0;
     }
   }
-
 `;
 
 const BlueHome = styled(Home)`
@@ -86,7 +85,6 @@ const BlueBars = styled(Bars)`
     margin-right: 20px;
   }
 `;
-
 
 const Row = styled.div`
   display: flex;
@@ -182,7 +180,6 @@ const Row2 = styled.div`
 
   @media (max-width: 768px) {
     display: none;
-
   }
 `;
 
@@ -241,6 +238,4 @@ const Overlay = styled.div`
   }
 `;
 
-
 export { SHeader, Row, Row2, DropLogin, BlueBars, Overlay, BlueHome, BlueUser };
-

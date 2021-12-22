@@ -9,12 +9,11 @@ export default function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="/home" element={<Home />}>
+        <Route path="/" element={<Home />}>
           Home
         </Route>
       </Routes>
       <Footer />
-
     </div>
   );
 }
