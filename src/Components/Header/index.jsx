@@ -3,15 +3,8 @@ import { useState } from 'react';
 import Searchbar from 'Components/SearchBar';
 import {
   SHeader,
-  Img,
-  Col,
-  Col2,
-  Col3,
-  Col4,
   Row,
   Row2,
-  Ul,
-  Li,
   BlueHome,
   BlueUser,
   DropLogin,
@@ -27,7 +20,6 @@ export default function Header() {
   const showMenu = () => {
     setOpen(!open);
   };
-
 
   const showLogin = () => {
     setStyle({ display: 'block' });

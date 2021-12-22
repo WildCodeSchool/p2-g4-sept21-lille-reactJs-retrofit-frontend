@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import Form from './Components/Form/index';
 import Header from './Components/Header/index';
 import Footer from './Components/Footer/index';
 
@@ -12,9 +13,11 @@ export default function App() {
         <Route path="/home" element={<Home />}>
           Home
         </Route>
+        <Route path="/renseignements" element={<Form />}>
+          Renseignement
+        </Route>
       </Routes>
       <Footer />
-
     </div>
   );
 }
