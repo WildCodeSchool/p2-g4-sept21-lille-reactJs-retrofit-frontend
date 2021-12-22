@@ -10,13 +10,15 @@ const CardContainer = styled.div`
   height: 400px;
   img {
     height: 150px;
+    border: 1px solid black;
   }
+
   h1 {
     margin: 20px 0 0 0;
-
     font-size: 14px;
     color: grey;
   }
+
   p.newsContent {
     font-size: 20px;
     margin: 10px 0 0 0;
@@ -29,9 +31,7 @@ const CardContainer = styled.div`
   a {
     text-decoration: none;
     color: var(--color--secondary);
-
     margin: 0;
-
     :hover {
       color: var(--color--secondary);
     }
