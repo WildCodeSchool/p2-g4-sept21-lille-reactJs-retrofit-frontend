@@ -1,5 +1,5 @@
 import TeamCard from '../../Components/TeamCard/index';
-import { STeam, TeamView } from './style';
+import { STeam, TeamView, Row, Row2 } from './style';
 
 const team = [
   {
@@ -49,11 +49,13 @@ const team = [
 export default function Team() {
   return (
     <STeam>
-      <div>
-        <h1>Everetrofit</h1>
+      <Row>
+        <h1>
+          La Team <span>EVeR</span>etrofit
+        </h1>
         <button type="button">Rejoignez la team</button>
-      </div>
-      <div>
+      </Row>
+      <Row2>
         <p>
           EVeRetrofit c’est dans un premier temps trois amis passionnés par les
           véhicules que ce soit à la fois dans le domaine de l’automobile mais
@@ -64,7 +66,7 @@ export default function Team() {
           développement des véhicules éléctriques tout en réduisant le nombre de
           voitures thermiques présent sur nos routes françaises.
         </p>
-      </div>
+      </Row2>
       <TeamView>
         {team.map((data) => {
           return (
