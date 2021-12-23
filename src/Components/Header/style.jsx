@@ -5,7 +5,7 @@ import { Bars } from '@styled-icons/fa-solid/Bars';
 
 const SHeader = styled.div`
   height: 75px;
-  width: 100vw;
+  width: 100%;
   background-color: var(--color--secondary);
   position: fixed;
   z-index: 10;
