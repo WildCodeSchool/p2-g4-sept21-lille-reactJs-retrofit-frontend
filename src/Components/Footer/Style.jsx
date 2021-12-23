@@ -5,7 +5,6 @@ import { Twitter } from '@styled-icons/entypo-social/Twitter';
 import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 
 const SFooter = styled.footer`
-  position: absolute;
   bottom: 0;
   background-color: var(--color--secondary);
   width: 100vw;
