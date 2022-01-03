@@ -28,6 +28,7 @@ const CardContainer = styled.div`
     position: relative;
     bottom: 0;
   }
+
   a {
     text-decoration: none;
     color: var(--color--secondary);
