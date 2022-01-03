@@ -78,7 +78,6 @@ const RowHeadline = styled.div`
       display: none;
     }
   }
-  }
 
   @media only screen and (max-width: 1200px) {
     display: flex;
@@ -91,11 +90,9 @@ const RowHeadline = styled.div`
 const Headline = styled.div`
   font-size: 50px;
   color: var(--color--thirdary);
-  
   display: flex;
   flex-direction: column;
-  width 300px;
-
+  width: 300px;
 
   p {
     margin: 0;
