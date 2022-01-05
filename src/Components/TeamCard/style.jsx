@@ -16,6 +16,9 @@ const Card = styled.div`
   margin-bottom: 35px;
   background: var(--color--secondary);
   border-radius: 8px;
+  :hover {
+    box-shadow: rgba(0, 0, 0, 0.582) 0px 4px 12px;
+  }
   img {
     border-radius: 130px;
   }
@@ -27,6 +30,7 @@ const Card = styled.div`
 const Icon = styled(LinkedinSquare)`
   height: 50px;
   color: white;
+  cursor: pointer;
 `;
 
 export { Icon, Card };
