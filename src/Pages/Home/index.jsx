@@ -80,6 +80,7 @@ const news = [
     source: 'https://www.autonews.fr/',
   },
 ];
+
 export default function Home() {
   return (
     <>
