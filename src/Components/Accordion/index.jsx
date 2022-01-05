@@ -1,24 +1,23 @@
 import propTypes from 'prop-types';
 import { useState } from 'react';
-import { RiArrowRightSFill, RiArrowDownSFill } from 'react-icons/ri';
 import {
   Header,
   Content,
   SAccordion,
-  Title,
-  SubTitle,
-  DivHeader,
-  ExpandBtn,
   SubHeader,
-  SubExpandBtn,
   SubContent,
   ArrowRight,
   ArrowDown,
 } from './style';
 
-export default function Accordion({ title, content, question }) {
+export default function Accordion({ title, questions }) {
   const [isActive, setIsActive] = useState(false);
   const [isSubActive, setIsSubActive] = useState(false);
+  // const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    // setToggle(!toggle);
+  };
 
   return (
     <>
@@ -28,34 +27,28 @@ export default function Accordion({ title, content, question }) {
           onClick={() => {
             setIsActive(!isActive);
             setIsSubActive(false);
+            handleClick();
           }}
         >
-          <DivHeader>
-            <ExpandBtn>{isActive ? <ArrowDown /> : <ArrowRight />}</ExpandBtn>
-            <Title>{title}</Title>
-          </DivHeader>
+          <div>{isActive ? <ArrowDown /> : <ArrowRight />}</div>
+          <h1>{title}</h1>
         </Header>
         {isActive && (
           <Content>
-            {' '}
-            <SubHeader
-              isSubActive={isSubActive}
-              onClick={() => {
-                setIsSubActive(!isSubActive);
-              }}
-            >
-              <DivHeader>
-                <SubExpandBtn>
-                  {isSubActive ? (
-                    <RiArrowDownSFill size={35} />
-                  ) : (
-                    <RiArrowRightSFill size={35} />
-                  )}
-                </SubExpandBtn>
-                <SubTitle>{question}</SubTitle>
-              </DivHeader>
-            </SubHeader>
-            {isSubActive && <SubContent>{content}</SubContent>}
+            {questions.map(({ question, content }) => (
+              <div>
+                <SubHeader
+                  isSubActive={isSubActive}
+                  onClick={() => {
+                    setIsSubActive(!isSubActive);
+                  }}
+                >
+                  <div>{isSubActive ? <ArrowDown /> : <ArrowRight />}</div>
+                  <h1>{question}</h1>
+                </SubHeader>
+                {isSubActive && <SubContent>{content}</SubContent>}
+              </div>
+            ))}
           </Content>
         )}
       </SAccordion>
@@ -65,11 +58,9 @@ export default function Accordion({ title, content, question }) {
 
 Accordion.propTypes = {
   title: propTypes.string,
-  content: propTypes.string,
-  question: propTypes.string,
+  questions: propTypes.arrayOf(propTypes.object),
 };
 Accordion.defaultProps = {
   title: '',
-  content: '',
-  question: '',
+  questions: [{}],
 };
