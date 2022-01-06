@@ -6,43 +6,43 @@ const team = [
     firstName: 'Anthony',
     lastName: 'Tartare',
     role: 'CEO',
-    img: 'https://zupimages.net/up/21/51/3a8s.png',
-    link: 'https://www.linkedin.com/',
+    profilPic: 'https://zupimages.net/up/21/51/3a8s.png',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
     firstName: 'Capendu',
     lastName: 'Kevin',
     role: 'CEO',
-    img: 'https://zupimages.net/up/21/51/36lc.png',
-    link: 'https://www.linkedin.com/',
+    profilPic: 'https://zupimages.net/up/21/51/36lc.png',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
     firstName: 'Capronnier',
     lastName: 'Eymeric',
     role: 'CEO',
-    img: 'https://zupimages.net/up/21/51/aci8.png',
-    link: 'https://www.linkedin.com/',
+    profilPic: 'https://zupimages.net/up/21/51/aci8.png',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
-    firstName: 'Turcotte',
+    firstName: 'Turcott',
     lastName: 'Alice',
     role: 'Développeur Web',
-    img: 'https://zupimages.net/up/21/51/9ke2.png',
-    link: 'https://www.linkedin.com/',
+    profilPic: 'https://zupimages.net/up/21/51/9ke2.png',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
     firstName: 'Grandville',
     lastName: 'Maheu',
     role: 'RH',
-    img: 'https://zupimages.net/up/21/51/g3i4.png',
-    link: 'https://www.linkedin.com/',
+    profilPic: 'https://zupimages.net/up/21/51/g3i4.png',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
   {
     firstName: 'Laprise',
     lastName: 'Aurélie',
     role: 'Chef de projet',
-    img: 'https://zupimages.net/up/21/51/gc4y.png',
-    link: 'https://www.linkedin.com/',
+    profilPic: 'https://zupimages.net/up/21/51/gc4y.png',
+    linkedinUrl: 'https://www.linkedin.com/',
   },
 ];
 
@@ -74,8 +74,8 @@ export default function Team() {
               firstName={data.firstName}
               lastName={data.lastName}
               role={data.role}
-              img={data.img}
-              link={data.link}
+              profilPic={data.profilPic}
+              linkedinUrl={data.linkedinUrl}
             />
           );
         })}
