@@ -1,10 +1,16 @@
 import propTypes from 'prop-types';
 import { Card, Icon } from './style';
 
-export default function TeamCard({ firstName, lastName, role, img, link }) {
+export default function TeamCard({
+  firstName,
+  lastName,
+  role,
+  profilPic,
+  link,
+}) {
   return (
     <Card>
-      <img src={img} alt="staff" />
+      <img src={profilPic} alt="staff" />
       <h1>
         {firstName}
         <span> </span> {lastName}
@@ -19,13 +25,13 @@ TeamCard.propTypes = {
   firstName: propTypes.string,
   lastName: propTypes.string,
   role: propTypes.string,
-  img: propTypes.string,
+  profilPic: propTypes.string,
   link: propTypes.string,
 };
 TeamCard.defaultProps = {
   firstName: '',
   lastName: '',
   role: '',
-  img: '',
+  profilPic: '',
   link: '',
 };
