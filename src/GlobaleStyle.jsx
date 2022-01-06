@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
       :hover {
     color: var(--color--primary);
   }
+
 }
 `;
 

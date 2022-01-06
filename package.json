@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@styled-icons/boxicons-logos": "^10.38.0",
-    "@styled-icons/entypo-social": "^10.34.0",
     "@styled-icons/bootstrap": "^10.34.0",
+    "@styled-icons/boxicons-logos": "^10.38.0",
     "@styled-icons/boxicons-solid": "^10.38.0",
     "@styled-icons/entypo": "^10.34.0",
+    "@styled-icons/entypo-social": "^10.34.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "beauty-stars": "^1.1.0",
+    "leaflet": "^1.7.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
+    "react-leaflet": "^3.2.2",
     "react-router": "^6.0.2",
     "react-router-dom": "^6.1.1",
     "react-scripts": "4.0.3",
@@ -38,18 +39,16 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "eslint": "^7.32.0",
