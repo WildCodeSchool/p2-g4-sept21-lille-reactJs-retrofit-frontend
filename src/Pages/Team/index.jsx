@@ -1,52 +1,35 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 import TeamCard from '../../Components/TeamCard/index';
 import { STeam, TeamView, Row, Row2 } from './style';
 
-const team = [
-  {
-    firstName: 'Anthony',
-    lastName: 'Tartare',
-    role: 'CEO',
-    profilPic: 'https://zupimages.net/up/21/51/3a8s.png',
-    linkedinUrl: 'https://www.linkedin.com/',
-  },
-  {
-    firstName: 'Capendu',
-    lastName: 'Kevin',
-    role: 'CEO',
-    profilPic: 'https://zupimages.net/up/21/51/36lc.png',
-    linkedinUrl: 'https://www.linkedin.com/',
-  },
-  {
-    firstName: 'Capronnier',
-    lastName: 'Eymeric',
-    role: 'CEO',
-    profilPic: 'https://zupimages.net/up/21/51/aci8.png',
-    linkedinUrl: 'https://www.linkedin.com/',
-  },
-  {
-    firstName: 'Turcott',
-    lastName: 'Alice',
-    role: 'Développeur Web',
-    profilPic: 'https://zupimages.net/up/21/51/9ke2.png',
-    linkedinUrl: 'https://www.linkedin.com/',
-  },
-  {
-    firstName: 'Grandville',
-    lastName: 'Maheu',
-    role: 'RH',
-    profilPic: 'https://zupimages.net/up/21/51/g3i4.png',
-    linkedinUrl: 'https://www.linkedin.com/',
-  },
-  {
-    firstName: 'Laprise',
-    lastName: 'Aurélie',
-    role: 'Chef de projet',
-    profilPic: 'https://zupimages.net/up/21/51/gc4y.png',
-    linkedinUrl: 'https://www.linkedin.com/',
-  },
-];
-
 export default function Team() {
+  const [team, setTeam] = useState([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    axios
+      .get(`http://localhost:3031/team`)
+      .then(({ data }) => {
+        console.log(data);
+        if (Array.isArray(data)) setTeam(data);
+        else throw new Error('Failed API call');
+      })
+      .catch(() => {
+        toast.error('No Team Members found !', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      });
+  }, []);
+
   return (
     <STeam>
       <Row>
