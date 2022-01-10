@@ -14,7 +14,7 @@ export default function App() {
           Home
         </Route>
         <Route path="/equipe" element={<Team />}>
-          Home
+          Team
         </Route>
       </Routes>
       <Footer />
