@@ -63,7 +63,7 @@ export default function Footer() {
         <MentionCategory>
           <h2>Mentions Légales</h2>
           <ul>
-            <Link to="/legalNotice">
+            <Link to="/mentionsLégales">
               <li>Mentions Légales</li>
             </Link>
             <Link to="/cgv">
