@@ -10,6 +10,7 @@ const SHeader = styled.div`
   position: fixed;
   z-index: 10;
   top: 0;
+  
   ul {
     color: var(--color--thirdary);
     text-decoration: none;
@@ -44,9 +45,7 @@ const BlueHome = styled(Home)`
     margin-right: -15px;
   }
   @media (max-width: 768px) {
-    height: 35px;
-    margin-right: -15px;
-    width: 35px;
+    display: none;
   }
 `;
 
@@ -235,6 +234,12 @@ const Overlay = styled.div`
 
   @media (min-width: 1400px) {
     display: none;
+  }
+
+  ul {
+    & > * {
+      padding: 0 0 40px 0;
+    }
   }
 `;
 
