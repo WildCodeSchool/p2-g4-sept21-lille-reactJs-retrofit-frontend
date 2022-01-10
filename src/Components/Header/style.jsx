@@ -7,9 +7,9 @@ const SHeader = styled.div`
   height: 75px;
   width: 100%;
   background-color: var(--color--secondary);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 10;
 
   ul {
     color: var(--color--thirdary);
