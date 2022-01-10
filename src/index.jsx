@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './App';
 import GlobalStyle from './GlobaleStyle';
-import modalReducer from './Reducer/modalReducer';
+import globalReducer from './Reducer/globalReducer';
 
-const store = createStore(modalReducer);
+const store = createStore(globalReducer);
 
 ReactDOM.render(
   <React.StrictMode>

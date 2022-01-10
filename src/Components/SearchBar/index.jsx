@@ -4,7 +4,7 @@ export default function Searchbar() {
   return (
     <Ssearchbar>
       <Form>
-        <Input type="search" />
+        <Input placeholder="Recherche" type="search" />
         <SearchBtn type="submit">ok</SearchBtn>
       </Form>
     </Ssearchbar>
