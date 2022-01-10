@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Searchbar from 'Components/SearchBar';
 import {
   SHeader,
@@ -16,6 +17,7 @@ import Logo from '../../Assets/Logo.png';
 export default function Header() {
   const [style, setStyle] = useState({ display: 'none' });
   const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const showMenu = () => {
     setOpen(!open);
@@ -53,15 +55,30 @@ export default function Header() {
           <Link to="/">
             <BlueHome />
           </Link>
-          <Link to="/connection">
+          <Link to="/">
             <BlueUser onMouseEnter={showLogin} onMouseLeave={hideLogin} />
           </Link>
           <BlueBars onClick={showMenu} />
         </div>
       </Row>
       <Row2 onMouseEnter={showLogin} onMouseLeave={hideLogin}>
-        <DropLogin style={style}>inscription</DropLogin>
-        <DropLogin style={style}>connexion</DropLogin>
+        <DropLogin
+          style={style}
+          onClick={() => {
+            dispatch({ type: 'OPENSIGNUP' });
+          }}
+        >
+          inscription
+        </DropLogin>
+
+        <DropLogin
+          style={style}
+          onClick={() => {
+            dispatch({ type: 'OPENSIGNIN' });
+          }}
+        >
+          connexion
+        </DropLogin>
       </Row2>
       {open && (
         <Overlay>
