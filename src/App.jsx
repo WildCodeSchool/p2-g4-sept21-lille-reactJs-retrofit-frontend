@@ -13,7 +13,7 @@ export default function App() {
       <SignInModal />
       <Header />
       <Routes>
-        <Route path="/home" element={<Home />}>
+        <Route path="/" element={<Home />}>
           Home
         </Route>
         <Route path="/faq" element={<Faq />}>
