@@ -9,6 +9,7 @@ import Signup from './Pages/Signup';
 import SignInModal from './Components/SignInModal';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
+import Team from './Pages/Team/index';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
@@ -36,7 +37,12 @@ export default function App() {
       <SignInModal />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />}>
+          Home
+        </Route>
+        <Route path="/equipe" element={<Team />}>
+          Team
+        </Route>
         <Route path="/register" element={<Signup />} />
       </Routes>
       <Footer />
