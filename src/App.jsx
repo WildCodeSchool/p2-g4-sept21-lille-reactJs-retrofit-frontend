@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
       </Routes>
       <Routes>
-        <Route path="/mentionsLégales" element={<LegalNotice />} />
+        <Route path="/mentionsLegales" element={<LegalNotice />} />
       </Routes>
       <Footer />
     </div>
