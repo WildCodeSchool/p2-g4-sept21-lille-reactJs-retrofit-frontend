@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
+import Cookies from 'universal-cookie';
+import { toast } from 'react-toastify';
 
 import {
   Overlay,
@@ -11,16 +13,17 @@ import {
 } from './style';
 
 export default function SignInModal() {
+  const modalState = useSelector((state) => state.signInModal);
+  const dispatch = useDispatch();
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [resErrorMessage, setResErrorMessage] = useState('');
-  const [resMessage, setResMessage] = useState('');
+  const [resMessage, setResMessage] = useState([]);
 
   const SignInfo = {
     password,
     mail: email.toLowerCase(),
   };
-
   const SendInfo = (evt) => {
     evt.preventDefault();
     setResErrorMessage('');
@@ -28,17 +31,24 @@ export default function SignInModal() {
     axios
       .post('http://localhost:8123/auth/login', SignInfo)
       .then((response) => {
-        setResMessage(response.data);
+        const { token, user } = response.data;
+
+        setResMessage(response.data.welcome);
+        dispatch({ type: 'LOGGEDIN', user });
+        toast(`Bonjour ${user.firstname} !`, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+        });
+
+        const cookies = new Cookies();
+        cookies.set('user_token', token);
       })
+
       .catch((error) => {
         if (error.response) {
           setResErrorMessage(error.response.data);
         }
       });
   };
-
-  const modalState = useSelector((state) => state.signInModal);
-  const dispatch = useDispatch();
 
   return (
     <>
@@ -90,7 +100,9 @@ export default function SignInModal() {
                   Se connecter
                 </button>
               </p>
-              <span className="success">{resMessage && resMessage}</span>
+              <span className="success">
+                {resMessage && resMessage.welcome}
+              </span>
               <span className="error">
                 {resErrorMessage && !resMessage && resErrorMessage}
               </span>
@@ -105,6 +117,7 @@ export default function SignInModal() {
                   Pas de compte ? Inscrivez-vous
                 </button>
               </p>
+              {resMessage}
             </MainContainer>
           </ModalContainer>
         </Overlay>
