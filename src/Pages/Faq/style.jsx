@@ -14,7 +14,7 @@ export const SendBtn = styled.button`
   background-color: rgba(255, 255, 255, 0);
   transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.2s;
   :hover {
-    background-color: rgb(0, 173, 150);
+    background-color: var(--color--hover);
     color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
