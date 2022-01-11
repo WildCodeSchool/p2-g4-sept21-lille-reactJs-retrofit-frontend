@@ -45,7 +45,6 @@ export default function Home() {
         if (Array.isArray(data)) setHome(data);
         else throw new Error('Failed API call');
       })
-
       .catch(() => {
         toast.error('No News found !', {
           position: 'top-center',
@@ -167,7 +166,6 @@ export default function Home() {
 
         <News>
           <h2>Actualités sur les véhicules électriques</h2>
-
           {home.map((data) => {
             return (
               <NewsCard

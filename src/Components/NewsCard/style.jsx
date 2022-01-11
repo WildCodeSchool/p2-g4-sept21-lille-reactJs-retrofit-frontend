@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
-const CardContainer = styled.div`
-  background: var(--color--primary);
+const Card = styled.div`
+  background: var(--color--secondary);
   padding: 1%;
   display: flex;
   flex-direction: column;
   margin: 25px;
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 480px;
+  border-radius: 10px;
+  border: solid 5px var(--color--primary);
   img {
-    height: 150px;
+    height: 200px;
     border: 1px solid black;
   }
 
@@ -19,14 +21,10 @@ const CardContainer = styled.div`
     color: grey;
   }
 
-  p.newsContent {
+  p {
     font-size: 20px;
     margin: 10px 0 0 0;
-  }
-
-  p.newsSource {
-    position: relative;
-    bottom: 0;
+    color: white;
   }
 
   a {
@@ -36,11 +34,14 @@ const CardContainer = styled.div`
     :hover {
       color: var(--color--secondary);
     }
+    p {
+      position: relative;
+      bottom: 0;
+    }
   }
-
   :hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 `;
 
-export default CardContainer;
+export default Card;
