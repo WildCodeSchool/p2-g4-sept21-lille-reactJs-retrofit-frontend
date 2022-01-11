@@ -14,7 +14,7 @@ const MainContainer = styled.div`
   }
   h2 {
     font-size: 1em;
-    font-weight: 100;
+    font-weight: 101;
   }
   button {
     width: 55%;
