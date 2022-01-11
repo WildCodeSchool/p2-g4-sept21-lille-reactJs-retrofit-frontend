@@ -18,7 +18,7 @@ export default function App() {
   useEffect(() => {
     const cookies = new Cookies();
     axios
-      .post('http://localhost:8123/auth/login', {
+      .post('http://localhost:3031/auth/login', {
         token: cookies.get('user_token'),
       })
       .then((response) => {
