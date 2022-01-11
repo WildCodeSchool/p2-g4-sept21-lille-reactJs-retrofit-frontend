@@ -9,6 +9,7 @@ import Signup from './Pages/Signup';
 import SignInModal from './Components/SignInModal';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
+import LegalNotice from './Pages/LegalNotice';
 import Team from './Pages/Team/index';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -44,6 +45,9 @@ export default function App() {
           Team
         </Route>
         <Route path="/register" element={<Signup />} />
+      </Routes>
+      <Routes>
+        <Route path="/mentionsLegales" element={<LegalNotice />} />
       </Routes>
       <Footer />
       <ToastContainer />
