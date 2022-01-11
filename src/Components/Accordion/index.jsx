@@ -1,5 +1,5 @@
 import propTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Header,
   Content,
@@ -12,12 +12,25 @@ import {
 
 export default function Accordion({ title, questions }) {
   const [isActive, setIsActive] = useState(false);
-  const [isSubActive, setIsSubActive] = useState(false);
+  const [isSubActive, _setIsSubActive] = useState([]);
   // const [toggle, setToggle] = useState(false);
 
   const handleClick = () => {
     // setToggle(!toggle);
   };
+
+  const initSubActive = questions.map(() => false);
+
+  const setIsSubActive = (index) => {
+    // const next line because have eslint warning for let //
+    const cache = [...isSubActive];
+    cache[index] = !cache[index];
+    _setIsSubActive(cache);
+  };
+
+  useEffect(() => {
+    _setIsSubActive(initSubActive);
+  }, []);
 
   return (
     <>
@@ -26,7 +39,7 @@ export default function Accordion({ title, questions }) {
           isActive={isActive}
           onClick={() => {
             setIsActive(!isActive);
-            setIsSubActive(false);
+            _setIsSubActive(initSubActive);
             handleClick();
           }}
         >
@@ -35,18 +48,20 @@ export default function Accordion({ title, questions }) {
         </Header>
         {isActive && (
           <Content>
-            {questions.map(({ question, content }) => (
+            {questions.map(({ question, content }, index) => (
               <div>
                 <SubHeader
-                  isSubActive={isSubActive}
+                  isSubActive={isSubActive[index]}
                   onClick={() => {
-                    setIsSubActive(!isSubActive);
+                    setIsSubActive(index);
                   }}
                 >
-                  <div>{isSubActive ? <ArrowDown /> : <ArrowRight />}</div>
+                  <div>
+                    {isSubActive[index] ? <ArrowDown /> : <ArrowRight />}
+                  </div>
                   <h1>{question}</h1>
                 </SubHeader>
-                {isSubActive && <SubContent>{content}</SubContent>}
+                {isSubActive[index] && <SubContent>{content}</SubContent>}
               </div>
             ))}
           </Content>
