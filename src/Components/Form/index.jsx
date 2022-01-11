@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SForm, Button } from './Style';
 
 export default function Form() {
-  const [chooseOption, setChooseOption] = useState('');
+  const [chooseOption, setChooseOption] = useState('info');
   return (
     <SForm>
       <form>

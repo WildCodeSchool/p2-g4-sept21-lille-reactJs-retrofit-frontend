@@ -35,6 +35,10 @@ export const SForm = styled.div`
     border-radius: 8px;
   }
 
+  option:hover {
+    background-color: var(--color--secondary);
+  }
+
   input:disabled {
     background-color: #dcdcdc;
     ::placeholder {

@@ -39,7 +39,7 @@ export default function Footer() {
             <Link to="/partenariats">
               <li>Partenariats</li>
             </Link>
-            <Link to="/nousrenconter">
+            <Link to="/nousrencontrer">
               <li>Nous rencontrer</li>
             </Link>
           </ul>

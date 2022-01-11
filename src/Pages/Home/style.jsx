@@ -90,7 +90,6 @@ const RowHeadline = styled.div`
 const Headline = styled.div`
   font-size: 50px;
   color: var(--color--thirdary);
-
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -165,6 +164,7 @@ const Col = styled.div`
 `;
 
 const VoteContainer = styled.div`
+  margin: 0 0 2% 0;
   padding: 10px;
   background: var(--color--secondary);
   color: var(--color--thirdary);

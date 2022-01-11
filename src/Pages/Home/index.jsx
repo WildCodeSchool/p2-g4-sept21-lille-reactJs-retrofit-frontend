@@ -6,11 +6,12 @@ import Creinov from 'Assets/creinnov.png';
 import HEV from 'Assets/hive.png';
 import L2EP from 'Assets/l2ep.png';
 import MEL from 'Assets/MEL.png';
-
 import HDF from 'Assets/hauts-de-france.png';
 import Transalley from 'Assets/transalley.png';
 import UnivLille1 from 'Assets/univ.png';
 import LogoWild from 'Assets/wcs.png';
+import NewsCard from 'Components/NewsCard';
+
 import {
   MainContainer,
   Cloud,
@@ -28,6 +29,57 @@ import {
   PartnerContainer,
   News,
 } from './style';
+
+const news = [
+  {
+    id: 1,
+    image:
+      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F2020-Chevrolet-Corvette-Stingray%2F960x0.jpg',
+    content:
+      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
+    source: 'https://www.autonews.fr/',
+  },
+  {
+    id: 2,
+    image:
+      'https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/Electric_Car_Concept_XL_721_420_80_s_c1.jpg',
+    content:
+      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
+    source: 'https://www.autonews.fr/',
+  },
+  {
+    id: 3,
+    image:
+      'https://i.guim.co.uk/img/media/cd2b6f1b13f7d2d21f4ba679a8a4db3990a54d79/0_152_4595_2758/master/4595.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=f5edbce9c3889df46aaede677657830a',
+    content:
+      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
+    source: 'https://www.autonews.fr/',
+  },
+  {
+    id: 4,
+    image:
+      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F2020-Chevrolet-Corvette-Stingray%2F960x0.jpg',
+    content:
+      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
+    source: 'https://www.autonews.fr/',
+  },
+  {
+    id: 5,
+    image:
+      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F2020-Chevrolet-Corvette-Stingray%2F960x0.jpg',
+    content:
+      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
+    source: 'https://www.autonews.fr/',
+  },
+  {
+    id: 6,
+    image:
+      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F2020-Chevrolet-Corvette-Stingray%2F960x0.jpg',
+    content:
+      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
+    source: 'https://www.autonews.fr/',
+  },
+];
 
 export default function Home() {
   return (
@@ -140,12 +192,9 @@ export default function Home() {
         <News>
           <h2>Actualités sur les véhicules électriques</h2>
           <div className="NewsCardContainer">
-            <div className="NewsCard" />
-            <div className="NewsCard" />
-            <div className="NewsCard" />
-            <div className="NewsCard" />
-            <div className="NewsCard" />
-            <div className="NewsCard" />
+            {news.map((article) => {
+              return <NewsCard {...article} />;
+            })}
           </div>
         </News>
         <Rating>
