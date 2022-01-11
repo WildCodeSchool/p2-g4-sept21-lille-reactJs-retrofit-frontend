@@ -52,7 +52,6 @@ const Input = styled.div`
   justify-content: center;
   margin: 5px 0;
   input {
-    /* margin: 5px 0 0 0; */
     width: 20vw;
     height: 40px;
     border-radius: 4px;
