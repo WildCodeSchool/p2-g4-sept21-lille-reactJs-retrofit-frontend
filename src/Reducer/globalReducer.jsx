@@ -13,20 +13,11 @@ export default function globalReducer(state = initialState, action) {
     case 'CLOSESIGNIN':
       return { ...state, signInModal: false };
     case 'OPENSIGNIN':
-      return { ...state, signInModal: true, signUpModal: false };
+      return { ...state, signInModal: true };
     case 'LOGGEDIN':
       return { ...state, signInModal: false, isLogged: true, ...action.user };
     case 'LOGGOUT':
-      return {
-        ...state,
-        signInModal: false,
-        isLogged: false,
-        token: '',
-        firstname: '',
-        lastname: '',
-        mail: '',
-        id: 0,
-      };
+      return initialState;
     default:
       return state;
   }
