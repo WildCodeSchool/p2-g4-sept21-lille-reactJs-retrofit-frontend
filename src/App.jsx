@@ -5,11 +5,13 @@ import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
-import Signup from './Pages/Signup';
 import SignInModal from './Components/SignInModal';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
+import LegalNotice from './Pages/LegalNotice';
+import Team from './Pages/Team/index';
 import Localisation from './Pages/Localisation';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -42,7 +44,13 @@ export default function App() {
         <Route path="/localisation" element={<Localisation />}>
           Localisation
         </Route>
-        <Route path="/register" element={<Signup />} />
+        <Route path="/equipe" element={<Team />}>
+          Team
+        </Route>
+        <Route path="/register" />
+      </Routes>
+      <Routes>
+        <Route path="/mentionsLegales" element={<LegalNotice />} />
       </Routes>
       <Footer />
       <ToastContainer />
