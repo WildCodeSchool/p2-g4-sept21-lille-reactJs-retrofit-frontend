@@ -1,16 +1,28 @@
-import CardContainer from './style';
+import propTypes from 'prop-types';
+import Card from './style';
 
-const NewsCard = ({ ...news }) => {
+export default function NewsCard({ image, date, description, source }) {
   return (
-    <CardContainer>
-      <img src={news.image} alt="à propos de la news" />
-      <h1>Il y a 20h :{news.id}</h1>
-      <p className="newsContent">{news.content}</p>
-      <a href={news.source} target="_blank" rel="noreferrer">
-        <p className="newsSource">Source : {news.source}</p>
+    <Card>
+      <img src={image} alt="à propos de la news" />
+      <h1>{date}</h1>
+      <p>{description}</p>
+      <a href={source} target="_blank" rel="noreferrer">
+        <p>Source : {source}</p>
       </a>
-    </CardContainer>
+    </Card>
   );
-};
+}
 
-export default NewsCard;
+NewsCard.propTypes = {
+  image: propTypes.string,
+  date: propTypes.string,
+  description: propTypes.string,
+  source: propTypes.string,
+};
+NewsCard.defaultProps = {
+  image: '',
+  date: '',
+  description: '',
+  source: '',
+};
