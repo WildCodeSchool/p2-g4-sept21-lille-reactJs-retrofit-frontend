@@ -28,18 +28,21 @@ const ArrowRight = styled(RightArrow)`
 const SliderContent = styled.div`
   div.slide-active {
     width: 100%;
-    animation: myAnim 0.5s linear 0s 1 normal none;
+    animation: myAnim 0.2s linear 0s 1 normal;
     @keyframes myAnim {
       0% {
-        opacity: 0;
+        transform: translate(2em, 0);
+        opacity: 0%;
       }
 
       50% {
-        opacity: 0.5;
+        transform: translate(1em, 0);
+        opacity: 50%;
       }
 
       100% {
-        opacity: 1;
+        transform: translate(0em, 0);
+        opacity: 100%;
       }
     }
   }

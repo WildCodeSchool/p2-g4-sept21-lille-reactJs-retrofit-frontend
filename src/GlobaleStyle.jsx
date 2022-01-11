@@ -25,6 +25,26 @@ const GlobalStyle = createGlobalStyle`
   }
 
 }
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00e6c8;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00c8aa;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #00e6c8;
+}
+::-webkit-scrollbar-track {
+  background: #001e26;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
 `;
 
 export default GlobalStyle;

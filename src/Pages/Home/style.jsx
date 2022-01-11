@@ -54,7 +54,8 @@ const HomeContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
-  padding: 100px 0 0 0;
+  margin-top: 75px;
+  padding-top: 95px;
   background: rgb(1, 30, 38);
   background: linear-gradient(
     180deg,
@@ -78,7 +79,6 @@ const RowHeadline = styled.div`
       display: none;
     }
   }
-  }
 
   @media only screen and (max-width: 1200px) {
     display: flex;
@@ -91,11 +91,9 @@ const RowHeadline = styled.div`
 const Headline = styled.div`
   font-size: 50px;
   color: var(--color--thirdary);
-  
   display: flex;
   flex-direction: column;
-  width 300px;
-
+  width: 300px;
 
   p {
     margin: 0;
@@ -167,6 +165,7 @@ const Col = styled.div`
 `;
 
 const VoteContainer = styled.div`
+  margin: 0 0 2% 0;
   padding: 10px;
   background: var(--color--secondary);
   color: var(--color--thirdary);
