@@ -1,7 +1,8 @@
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import garageIcon from 'Assets/garageBleu.svg';
+import axios from 'axios';
 import SContainerMap from './style';
 
 const garage = new L.Icon({
@@ -11,6 +12,17 @@ const garage = new L.Icon({
 function Map() {
   const defaultLat = 46.227638;
   const defaultLong = 2.213749;
+  const [results, setResults] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5080/localisation`)
+      .then(({ data }) => {
+        console.log(data);
+        setResults(data);
+        console.log(results);
+      })
+      .catch();
+  }, []);
 
   return (
     <SContainerMap>

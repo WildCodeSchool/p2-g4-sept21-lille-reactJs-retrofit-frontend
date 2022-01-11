@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const SContainer = styled.div`
-  border: solid 10px red;
   margin-top: 75px;
   padding: 20px;
   display: flex;
