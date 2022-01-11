@@ -54,7 +54,8 @@ const HomeContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
-  padding: 100px 0 0 0;
+  margin-top: 75px;
+  padding-top: 95px;
   background: rgb(1, 30, 38);
   background: linear-gradient(
     180deg,
