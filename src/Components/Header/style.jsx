@@ -10,7 +10,6 @@ const SHeader = styled.div`
   position: fixed;
   z-index: 10;
   top: 0;
-
   ul {
     color: var(--color--thirdary);
     text-decoration: none;
