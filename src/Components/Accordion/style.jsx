@@ -31,11 +31,19 @@ export const SAccordion = styled.div`
 export const ArrowRight = styled(RightArrow)`
   height: 25px;
   width: 25px;
+  @media (max-width: 768px) {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 export const ArrowDown = styled(DownArrow)`
   height: 25px;
   width: 25px;
+  @media (max-width: 768px) {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 export const Header = styled.div`
@@ -52,6 +60,10 @@ export const Header = styled.div`
     background-color: rgb(0, 173, 150);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
+  @media (max-width: 768px) {
+    width: 80vw;
+    height: 40px;
+  }
   h1 {
     display: flex;
     flex-direction: row;
@@ -61,15 +73,18 @@ export const Header = styled.div`
     margin-top: 14px;
     @media (max-width: 768px) {
       font-size: 23px;
+      margin-top: 12px;
     }
   }
   div {
-    margin-right: 10px;
     height: 50px;
-    width: 50px;
+    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+      padding-bottom: 10px;
+    }
   }
 `;
 
@@ -81,6 +96,9 @@ export const SubHeader = styled.div`
   justify-content: start;
   cursor: pointer;
   background-color: rgba(0, 230, 199, 0);
+  @media (max-width: 768px) {
+    height: 40px;
+  }
   h2 {
     border-radius: 5px;
     display: flex;
@@ -90,11 +108,15 @@ export const SubHeader = styled.div`
   }
   div {
     margin-right: 10px;
+    padding-left: 12px;
     height: 50px;
     width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+      padding-bottom: 5px;
+    }
   }
   h1 {
     display: flex;
@@ -102,9 +124,10 @@ export const SubHeader = styled.div`
     font-size: 25px;
     color: white;
     margin-right: 5px;
-    margin-top: 10px;
+    margin-top: 15px;
     @media (max-width: 768px) {
-      font-size: 18px;
+      font-size: 20px;
+      width: 80vw;
     }
   }
 `;
@@ -115,13 +138,14 @@ export const Content = styled.div`
   color: white;
   border-radius: 10px;
   max-width: 70vw;
-  padding: 1vw;
-  padding-bottom: 1px;
-  padding-top: 1px;
+  padding: 5px 0 5px 0;
   animation-duration: 1.4s;
   animation-fill-mode: forwards;
   animation-name: ${(props) => (props.toggle ? openAnimation : closeAnimation)};
   transition: 0.5s linear all;
+  @media (max-width: 768px) {
+    max-width: 80vw;
+  }
 `;
 
 export const SubContent = styled.div`
@@ -129,8 +153,5 @@ export const SubContent = styled.div`
   color: white;
   border-radius: 10px;
   font-size: 22px;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  padding: 10px 20px 10px 20px;
 `;
