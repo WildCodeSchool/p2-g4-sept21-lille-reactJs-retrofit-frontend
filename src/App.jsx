@@ -38,30 +38,16 @@ export default function App() {
       <SignInModal />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}>
-          Home
-        </Route>
-        <Route path="/renseignements" element={<Form />}>
-          Renseignement
-        </Route>
-        <Route path="/partenariats" element={<Form />}>
-          Partenariats
-        </Route>
-        <Route path="/nousrencontrer" element={<Form />}>
-          Nous rencontrer
-        </Route>
-        <Route path="/serviceclient" element={<Form />}>
-          Service Client
-        </Route>
-        <Route path="/conseiltechnique" element={<Form />}>
-          Conseil Technique
-        </Route>
-        <Route path="/sav" element={<Form />}>
-          SAV
-        </Route>
-        <Route path="/equipe" element={<Team />}>
-          Team
-        </Route>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/renseignements" element={<Form />} />
+        <Route path="/partenariats" element={<Form />} />
+        <Route path="/nousrencontrer" element={<Form />} />
+        <Route path="/serviceclient" element={<Form />} />
+        <Route path="/conseiltechnique" element={<Form />} />
+        <Route path="/sav" element={<Form />} />
+        <Route path="/equipe" element={<Team />} />
+
         {/* <Route path="/register" element={<Signup />} /> */}
       </Routes>
       <Footer />
