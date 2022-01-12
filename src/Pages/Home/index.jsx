@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import Cars from 'Assets/ds3.png';
 import Bge from 'Assets/bge.png';
-import Clap from 'Assets/Clap.png';
+import Clap from 'Assets/clap.png';
 import Creinov from 'Assets/creinnov.png';
 import HEV from 'Assets/hive.png';
 import L2EP from 'Assets/l2ep.png';
