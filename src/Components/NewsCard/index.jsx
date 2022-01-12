@@ -1,15 +1,18 @@
 import propTypes from 'prop-types';
-import Card from './style';
+import { Card, Texte } from './style';
 
 export default function NewsCard({ image, date, description, source }) {
   return (
     <Card>
       <img src={image} alt="à propos de la news" />
       <h1>{date}</h1>
-      <p>{description}</p>
-      <a href={source} target="_blank" rel="noreferrer">
-        <p>Source : {source}</p>
-      </a>
+      <Texte>
+        <p>{description}</p>
+        <a href={source} target="_blank" rel="noreferrer">
+          <p>Source :</p>
+          <p>{source}</p>
+        </a>
+      </Texte>
     </Card>
   );
 }
