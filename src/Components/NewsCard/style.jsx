@@ -6,7 +6,7 @@ const Card = styled.div`
   flex-direction: column;
   margin: 25px;
   width: 320px;
-  height: 480px;
+  height: 490px;
   border-radius: 10px;
   border: solid 3px var(--color--primary);
   img {
