@@ -35,12 +35,11 @@ import {
 
 export default function Home() {
   const [home, setHome] = useState([]);
-  const apiUrl = process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
     window.scrollTo(0, 0);
     axios
-      .get(`${apiUrl}/home`)
+      .get(`/home`)
       .then(({ data }) => {
         if (Array.isArray(data)) setHome(data);
         else throw new Error('Failed API call');
@@ -57,6 +56,7 @@ export default function Home() {
         });
       });
   }, []);
+
   return (
     <>
       <HomeContainer>
