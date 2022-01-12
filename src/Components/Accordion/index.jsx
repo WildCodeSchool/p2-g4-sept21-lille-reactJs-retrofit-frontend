@@ -17,13 +17,11 @@ export default function Accordion({ title, questions }) {
 
   const animation = () => {
     setToggle(!toggle);
-    console.log(toggle);
   };
 
   const initSubActive = questions.map(() => false);
 
   const setIsSubActive = (i) => {
-    // const next line because have eslint warning for let //
     const cache = [...isSubActive];
     cache[i] = !cache[i];
     _setIsSubActive(cache);
