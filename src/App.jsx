@@ -10,6 +10,7 @@ import SignInModal from './Components/SignInModal';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
 import LegalNotice from './Pages/LegalNotice';
+import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -40,6 +41,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />}>
           Home
+        </Route>
+        <Route path="/technologie" element={<Technologie />}>
+          zdzq
         </Route>
         <Route path="/equipe" element={<Team />}>
           Team
