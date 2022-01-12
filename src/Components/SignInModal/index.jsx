@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import Cookies from 'universal-cookie';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 import {
   Overlay,
@@ -107,15 +108,17 @@ export default function SignInModal() {
                 {resErrorMessage && !resMessage && resErrorMessage}
               </span>
               <p>
-                <button
-                  className="noAccount"
-                  type="submit"
-                  onClick={() => {
-                    dispatch({ type: 'OPENSIGNUP' });
-                  }}
-                >
-                  Pas de compte ? Inscrivez-vous
-                </button>
+                <Link to="/register">
+                  <button
+                    className="noAccount"
+                    type="submit"
+                    onClick={() => {
+                      dispatch({ type: 'CLOSESIGNIN' });
+                    }}
+                  >
+                    Pas de compte ? Inscrivez-vous
+                  </button>
+                </Link>
               </p>
               {resMessage}
             </MainContainer>

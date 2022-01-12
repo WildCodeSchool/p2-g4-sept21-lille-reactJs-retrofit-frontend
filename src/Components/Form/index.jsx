@@ -3,6 +3,7 @@ import { SForm, Button } from './Style';
 
 export default function Form() {
   const [chooseOption, setChooseOption] = useState('info');
+  window.scrollTo(0, 0);
   useEffect(() => {
     const url = window.location.href.split('/')[3];
     switch (url) {

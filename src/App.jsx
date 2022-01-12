@@ -6,10 +6,12 @@ import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
 import Form from './Components/Form';
-// import Signup from './Pages/Signup';
 import SignInModal from './Components/SignInModal';
+// import Signup from './Pages/Signup';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
+// import Faq from './Pages/Faq';
+import LegalNotice from './Pages/LegalNotice';
 import Team from './Pages/Team/index';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -49,6 +51,9 @@ export default function App() {
         <Route path="/equipe" element={<Team />} />
 
         {/* <Route path="/register" element={<Signup />} /> */}
+      </Routes>
+      <Routes>
+        <Route path="/mentionsLegales" element={<LegalNotice />} />
       </Routes>
       <Footer />
       <ToastContainer />
