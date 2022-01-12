@@ -17,6 +17,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const cookies = new Cookies();
     axios
       .post('http://localhost:8123/auth/login', {

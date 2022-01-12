@@ -37,7 +37,6 @@ export default function Home() {
   const [home, setHome] = useState([]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     axios
       .get(`/home`)
       .then(({ data }) => {
