@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
 import SignInModal from './Components/SignInModal';
+import Signup from './Pages/Signup';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
 import Faq from './Pages/Faq';
@@ -47,7 +48,7 @@ export default function App() {
         <Route path="/equipe" element={<Team />}>
           Team
         </Route>
-        <Route path="/register" />
+        <Route path="/register" element={<Signup />} />
       </Routes>
       <Routes>
         <Route path="/mentionsLegales" element={<LegalNotice />} />
