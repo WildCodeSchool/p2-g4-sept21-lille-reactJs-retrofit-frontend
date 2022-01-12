@@ -2,35 +2,53 @@ import styled from 'styled-components';
 
 const Card = styled.div`
   background: var(--color--secondary);
-  padding: 1%;
   display: flex;
   flex-direction: column;
   margin: 25px;
-  width: 350px;
+  width: 320px;
   height: 480px;
   border-radius: 10px;
-  border: solid 5px var(--color--primary);
+  border: solid 3px var(--color--primary);
   img {
-    height: 200px;
-    border: 1px solid black;
+    height: 210px;
+    padding-right: 0;
+    border-radius: 8px 8px 0 0;
   }
 
   h1 {
-    margin: 20px 0 0 0;
+    margin: 20px 0 0 10px;
     font-size: 14px;
     color: grey;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  :hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+`;
+
+const Texte = styled.div`
+  display: flex;
+  flex-direction: column;
+  p,
+  a {
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
   p {
     font-size: 20px;
-    margin: 10px 0 0 0;
+    margin: 10px;
     color: white;
   }
 
   a {
     text-decoration: none;
     color: var(--color--secondary);
-    margin: 0;
+    margin: 0 0 0 0;
+    padding: 0px;
+    justify-content: space-between;
     :hover {
       color: var(--color--secondary);
     }
@@ -39,9 +57,6 @@ const Card = styled.div`
       bottom: 0;
     }
   }
-  :hover {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
 `;
 
-export default Card;
+export { Card, Texte };
