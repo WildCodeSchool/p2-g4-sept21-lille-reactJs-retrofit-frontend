@@ -13,18 +13,19 @@ import {
 export default function Accordion({ title, questions }) {
   const [isActive, setIsActive] = useState(false);
   const [isSubActive, _setIsSubActive] = useState([]);
-  // const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
-  const handleClick = () => {
-    // setToggle(!toggle);
+  const animation = () => {
+    setToggle(!toggle);
+    console.log(toggle);
   };
 
   const initSubActive = questions.map(() => false);
 
-  const setIsSubActive = (index) => {
+  const setIsSubActive = (i) => {
     // const next line because have eslint warning for let //
     const cache = [...isSubActive];
-    cache[index] = !cache[index];
+    cache[i] = !cache[i];
     _setIsSubActive(cache);
   };
 
@@ -40,7 +41,7 @@ export default function Accordion({ title, questions }) {
           onClick={() => {
             setIsActive(!isActive);
             _setIsSubActive(initSubActive);
-            handleClick();
+            animation();
           }}
         >
           <div>{isActive ? <ArrowDown /> : <ArrowRight />}</div>
@@ -48,20 +49,19 @@ export default function Accordion({ title, questions }) {
         </Header>
         {isActive && (
           <Content>
-            {questions.map(({ question, content }, index) => (
+            {questions.map(({ question, content }, i) => (
               <div>
                 <SubHeader
-                  isSubActive={isSubActive[index]}
+                  isSubActive={isSubActive[i]}
                   onClick={() => {
-                    setIsSubActive(index);
+                    setIsSubActive(i);
+                    animation();
                   }}
                 >
-                  <div>
-                    {isSubActive[index] ? <ArrowDown /> : <ArrowRight />}
-                  </div>
+                  <div>{isSubActive[i] ? <ArrowDown /> : <ArrowRight />}</div>
                   <h1>{question}</h1>
                 </SubHeader>
-                {isSubActive[index] && <SubContent>{content}</SubContent>}
+                {isSubActive[i] && <SubContent>{content}</SubContent>}
               </div>
             ))}
           </Content>
