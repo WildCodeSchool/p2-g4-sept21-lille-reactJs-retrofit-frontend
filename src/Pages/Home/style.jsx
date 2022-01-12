@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { CloudSlash } from '@styled-icons/bootstrap/CloudSlash';
 import { BatteryCharging } from '@styled-icons/bootstrap/BatteryCharging';
 import { CurrencyEuro } from '@styled-icons/bootstrap/CurrencyEuro';
@@ -66,6 +66,30 @@ const MainContainer = styled.div`
   );
 `;
 
+const animationCars = keyframes`
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+`;
+
+const animationTexte = keyframes`
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
+
 const RowHeadline = styled.div`
   margin: 0 20% 50px 20%;
   display: flex;
@@ -73,8 +97,7 @@ const RowHeadline = styled.div`
   justify-content: space-between;
 
   img {
-    overflow: hidden;
-
+    animation: ${animationCars} 1s linear;
     @media only screen and (max-width: 1200px) {
       display: none;
     }
@@ -94,7 +117,7 @@ const Headline = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
-
+  animation: ${animationTexte} 1s linear;
   p {
     margin: 0;
   }
