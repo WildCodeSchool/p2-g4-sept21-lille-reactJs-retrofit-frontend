@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SContainerMap = styled.div`
-  border: solid 1px black;
+  border: solid 1px var(--color--secondary);
   width: 50%;
   height: 90vh;
   margin-left: 20px;
