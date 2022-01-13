@@ -11,6 +11,7 @@ import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
 import Faq from './Pages/Faq';
 import LegalNotice from './Pages/LegalNotice';
+import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -42,12 +43,11 @@ export default function App() {
         <Route path="/" element={<Home />}>
           Home
         </Route>
-        <Route path="/faq" element={<Faq />}>
-          Faq
-        </Route>
-        <Route path="/equipe" element={<Team />}>
-          Team
-        </Route>
+        <Route path="/technologie" element={<Technologie />} />
+        <Route path="/faq" element={<Faq />} />
+
+        <Route path="/equipe" element={<Team />} />
+
         <Route path="/register" element={<Signup />} />
       </Routes>
       <Routes>
