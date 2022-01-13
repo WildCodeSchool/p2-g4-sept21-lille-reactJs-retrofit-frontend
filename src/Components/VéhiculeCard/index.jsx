@@ -1,12 +1,7 @@
 import PropTypes from 'prop-types';
-// import useState from 'react';
 import { SVéhiculeCard, Btn, Title, Image } from './style';
 
 export default function VéhiculeCard({ model, image, price }) {
-  // const [toggle, setToggle] = useState(false);
-  // const handleClick = () => {
-  //   setToggle(!toggle);
-  // };
   return (
     <SVéhiculeCard>
       <Image src={image} alt="image voiture" />
