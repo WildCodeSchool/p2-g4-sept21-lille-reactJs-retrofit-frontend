@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { CloudSlash } from '@styled-icons/bootstrap/CloudSlash';
 import { BatteryCharging } from '@styled-icons/bootstrap/BatteryCharging';
 import { CurrencyEuro } from '@styled-icons/bootstrap/CurrencyEuro';
@@ -66,6 +66,30 @@ const MainContainer = styled.div`
   );
 `;
 
+const animationCars = keyframes`
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+`;
+
+const animationTexte = keyframes`
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
+
 const RowHeadline = styled.div`
   margin: 0 20% 50px 20%;
   display: flex;
@@ -73,8 +97,7 @@ const RowHeadline = styled.div`
   justify-content: space-between;
 
   img {
-    overflow: hidden;
-
+    animation: ${animationCars} 1s linear;
     @media only screen and (max-width: 1200px) {
       display: none;
     }
@@ -94,7 +117,7 @@ const Headline = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
-
+  animation: ${animationTexte} 1s linear;
   p {
     margin: 0;
   }
@@ -173,11 +196,12 @@ const VoteContainer = styled.div`
 
   h1 {
     font-size: 40px;
-    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   div.VoteCardContainer {
-    padding: 0 10% 0 10%;
+    padding: 0 10% 1% 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -187,30 +211,20 @@ const VoteContainer = styled.div`
 
 const News = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0 5% 0 5%;
-
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70vw;
+  margin-right: 15vw;
+  margin-left: 15vw;
   h2 {
-    font-size: 30px;
+    width: 100vw;
+    font-size: 35px;
     text-align: center;
-  }
-
-  div.NewsCardContainer {
-    margin: 0 10% 0 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  div.NewsCard {
-    background: var(--color--primary);
-    margin: 20px;
-    width: 400px;
-    height: 500px;
-    @media only screen and (max-width: 1200px) {
-      height: 350px;
-    }
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 `;
 
