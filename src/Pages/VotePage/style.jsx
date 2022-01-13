@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-// const VoteCardContainer = styled.div`
-//   height: 100%;
-//   width: 100%;
-//   margin-top: 75px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-
-// `;
-
 const VoteContainer = styled.div`
   margin: 5% 5%;
   height: 100%;
