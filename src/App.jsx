@@ -7,11 +7,12 @@ import { ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
 import Form from './Components/Form';
 import SignInModal from './Components/SignInModal';
-// import Signup from './Pages/Signup';
+import Signup from './Pages/Signup';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
-// import Faq from './Pages/Faq';
+import Faq from './Pages/Faq';
 import LegalNotice from './Pages/LegalNotice';
+import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -41,7 +42,6 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/renseignements" element={<Form />} />
         <Route path="/partenariats" element={<Form />} />
         <Route path="/nousrencontrer" element={<Form />} />
@@ -49,10 +49,9 @@ export default function App() {
         <Route path="/conseiltechnique" element={<Form />} />
         <Route path="/sav" element={<Form />} />
         <Route path="/equipe" element={<Team />} />
-
-        {/* <Route path="/register" element={<Signup />} /> */}
-      </Routes>
-      <Routes>
+        <Route path="/technologie" element={<Technologie />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/register" element={<Signup />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
       </Routes>
       <Footer />
