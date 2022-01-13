@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
+import Form from './Components/Form';
 import SignInModal from './Components/SignInModal';
 import Signup from './Pages/Signup';
 import Footer from './Components/Footer/index';
@@ -41,17 +42,17 @@ export default function App() {
       <SignInModal />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}>
-          Home
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/renseignements" element={<Form />} />
+        <Route path="/partenariats" element={<Form />} />
+        <Route path="/nousrencontrer" element={<Form />} />
+        <Route path="/serviceclient" element={<Form />} />
+        <Route path="/conseiltechnique" element={<Form />} />
+        <Route path="/sav" element={<Form />} />
+        <Route path="/equipe" element={<Team />} />
         <Route path="/technologie" element={<Technologie />} />
         <Route path="/faq" element={<Faq />} />
-
-        <Route path="/equipe" element={<Team />} />
-
         <Route path="/register" element={<Signup />} />
-      </Routes>
-      <Routes>
         <Route path="/mentionsLegales" element={<LegalNotice />} />
       </Routes>
       <Footer />
