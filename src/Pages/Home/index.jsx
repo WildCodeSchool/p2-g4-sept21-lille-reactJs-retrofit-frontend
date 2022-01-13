@@ -1,7 +1,7 @@
 import Carousel from 'Components/Carousel';
 import Cars from 'Assets/ds3.png';
 import Bge from 'Assets/bge.png';
-import Clap from 'Assets/Clap.png';
+import Clap from 'Assets/clap.png';
 import Creinov from 'Assets/creinnov.png';
 import HEV from 'Assets/hive.png';
 import L2EP from 'Assets/l2ep.png';
@@ -11,7 +11,8 @@ import Transalley from 'Assets/transalley.png';
 import UnivLille1 from 'Assets/univ.png';
 import LogoWild from 'Assets/wcs.png';
 import NewsCard from 'Components/NewsCard';
-
+import VoteCard from 'Components/VoteCard';
+import { Link } from 'react-router-dom';
 import {
   MainContainer,
   Cloud,
@@ -179,16 +180,16 @@ export default function Home() {
             0g de CO2/km.
           </p>
         </div>
-
-        <VoteContainer>
-          <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
-          <div className="VoteCardContainer">
-            <div className="VoteCard" />
-            <div className="VoteCard" />
-            <div className="VoteCard" />
-          </div>
-        </VoteContainer>
-
+        <Link to="/vote">
+          <VoteContainer>
+            <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
+            <div className="VoteCardContainer">
+              <VoteCard />
+              <VoteCard />
+              <VoteCard />
+            </div>
+          </VoteContainer>
+        </Link>
         <News>
           <h2>Actualités sur les véhicules électriques</h2>
           <div className="NewsCardContainer">

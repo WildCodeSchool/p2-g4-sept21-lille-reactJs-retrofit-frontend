@@ -183,13 +183,6 @@ const VoteContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  div.VoteCard {
-    background: var(--color--thirdary);
-    border-radius: 10px;
-    margin: 20px;
-    width: 400px;
-    height: 400px;
-  }
 `;
 
 const News = styled.div`
