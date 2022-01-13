@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import garageIcon from 'Assets/garageBleu.svg';
+import garageIcon from 'Assets/logo_court.png';
 import axios from 'axios';
 import SContainerMap from './style';
 
@@ -35,9 +35,7 @@ function Map() {
               position={[result.longitude, result.latitude]}
               icon={garage}
             >
-              <Popup>
-                Vous etets ici <br /> Bienvenue a {result.city}
-              </Popup>
+              <Popup>{[result.name]}</Popup>
             </Marker>
           );
         })}
