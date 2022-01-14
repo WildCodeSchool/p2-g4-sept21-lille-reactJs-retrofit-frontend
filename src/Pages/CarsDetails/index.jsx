@@ -128,21 +128,6 @@ export default function Configuration() {
         <div>
           <h2>Configuration du véhicule</h2>
         </div>
-        {/* <div>
-          <p>GPS</p>
-          <input type="checkbox" name="GPS" />
-          <label htmlFor="OUI">OUI</label>
-          <input type="checkbox" name="GPS" />
-          <label htmlFor="NON">NON</label>
-        </div>
-
-        <div>
-          <p>VEHICULE</p>
-          <input type="checkbox" name="Vehicule" />
-          <label htmlFor="Véhicule">OUI,j&apos;ai le véhicule</label>
-          <input type="checkbox" name="Vehicule" />
-          <label htmlFor="Véhicule">NON,je n&apos;ai pas le véhicule</label>
-        </div> */}
       </ConfigurationOfCars>
 
       <Warranty>

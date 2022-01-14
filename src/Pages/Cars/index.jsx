@@ -10,7 +10,6 @@ function Véhicules() {
   useEffect(() => {
     axios.get('http://localhost:3031/cars').then(({ data }) => {
       setCars(data);
-      console.log(data);
     });
   }, []);
   return (

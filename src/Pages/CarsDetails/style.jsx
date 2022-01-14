@@ -87,10 +87,6 @@ const Container = styled.div`
   margin: auto;
   background: #00e6c8;
   border-radius: 20px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap; */
 `;
 
 const ConfigurationOfCars = styled.div`
