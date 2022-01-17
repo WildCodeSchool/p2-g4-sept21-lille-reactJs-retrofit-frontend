@@ -1,14 +1,21 @@
 import { React, useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import garageIcon from 'Assets/logo_court.png';
+import GarageIcon from 'Assets/pinV.png';
+import HomeIcon from 'Assets/pinH.png';
+
 import axios from 'axios';
 import SContainerMap from './style';
 
-const garage = new L.Icon({
-  iconUrl: garageIcon,
+const Garage = new L.Icon({
+  iconUrl: GarageIcon,
   iconSize: [25, 25],
 });
+const Home = new L.Icon({
+  iconUrl: HomeIcon,
+  iconSize: [25, 25],
+});
+
 function Map() {
   const defaultLat = 47.227638;
   const defaultLong = 2.213749;
@@ -33,7 +40,7 @@ function Map() {
           return (
             <Marker
               position={[result.longitude, result.latitude]}
-              icon={garage}
+              icon={result.type === 'port' ? Garage : Home}
             >
               <Popup>{[result.name]}</Popup>
             </Marker>
