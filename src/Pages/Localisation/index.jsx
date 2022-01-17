@@ -1,7 +1,14 @@
 import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 import Map from '../../Components/Map/index';
-import { SContainer, SListAdress, SAdress } from './style';
+
+import {
+  SContainer,
+  SListAdress,
+  SAdress,
+  PhoneWhite,
+  AdressWhite,
+} from './style';
 
 function Localisation() {
   const [adressResults, setAdressResults] = useState([]);
@@ -23,12 +30,16 @@ function Localisation() {
               <SAdress>
                 <h3>{[result.name]}</h3>
                 <p>
-                  Adresse: {[result.streetNumber]} {[result.street]}
+                  <AdressWhite />
+                  {[result.streetNumber]} {[result.street]}
                 </p>
                 <p>
                   {[result.postalCode]} {[result.city]}
                 </p>
-                <p>Téléphone: {[result.phone]}</p>
+                <p>
+                  <PhoneWhite />
+                  {[result.phone]}
+                </p>
               </SAdress>
             );
           })}
