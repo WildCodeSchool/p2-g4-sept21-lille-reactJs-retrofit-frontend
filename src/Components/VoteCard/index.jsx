@@ -46,7 +46,7 @@ const VoteCard = ({ ...car }) => {
           <img src={car.image} alt="VW Golf 1 GTI" />
         </div>
         <h1 className="titleArea">{car.model}</h1>
-        <p className="PriceArea">A partir de {car.price}€</p>
+        <p className="priceArea">A partir de {car.price}€</p>
 
         {voteStorage < 2 && userStorage ? (
           <button type="button" onClick={upVote}>
