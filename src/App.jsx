@@ -14,6 +14,7 @@ import Faq from './Pages/Faq';
 import LegalNotice from './Pages/LegalNotice';
 import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
+import Cars from './Pages/Cars/index';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
+        <Route path="/Vehicules" element={<Cars />} />
       </Routes>
       <Footer />
       <ToastContainer />
