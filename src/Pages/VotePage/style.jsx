@@ -22,8 +22,7 @@ const VoteContainer = styled.div`
 
   div.TopVoteCardWrapper {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
   }
 
