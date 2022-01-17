@@ -11,19 +11,23 @@ const VoteContainer = styled.div`
   padding: 5px;
   width: 310px;
   height: 360px;
+  
   img {
     margin: 5px;
     width: 85%;
   }
+  
   h1.titleArea {
     color: black;
     font-size: 30px;
   }
+  
   p.PriceArea {
     font-size: 20px;
     margin: 0 0 10px 0;
     color: var(--color--primary);
   }
+  
   button {
     cursor: pointer;
     width: 90%;
@@ -35,6 +39,7 @@ const VoteContainer = styled.div`
     background-color: var(--color--primary);
   }
 `;
+
 const ProgressContainer = styled.div`
   padding: 0 0 20px 0;
   width: 90%;
@@ -46,7 +51,7 @@ const ProgressContainer = styled.div`
     font-size: 20px;
     margin-bottom: 10px;
   }
-
+  
   progress {
     background-color: var(--color--primary);
     border: 0;
@@ -55,6 +60,7 @@ const ProgressContainer = styled.div`
     border-radius: 10px;
     border: none;
   }
+  
   progress::-webkit-progress-bar {
     background-color: var(--color--secondary);
     width: 100%;
@@ -63,6 +69,7 @@ const ProgressContainer = styled.div`
     overflow: hidden;
     border: none;
   }
+  
   progress::-webkit-progress-value {
     background-color: var(--color--primary);
     width: 100%;
@@ -71,6 +78,7 @@ const ProgressContainer = styled.div`
     overflow: hidden;
     border: none;
   }
+  
   progress::-moz-progress-bar {
     background-color: var(--color--primary);
     width: 100%;
