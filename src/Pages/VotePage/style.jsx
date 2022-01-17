@@ -4,10 +4,8 @@ const VoteContainer = styled.div`
   margin: 5% 5%;
   height: 100%;
   padding: 15px;
-
   display: flex;
   flex-direction: column;
-
   text-align: center;
 
   h1 {
