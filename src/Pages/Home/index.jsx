@@ -13,6 +13,9 @@ import LogoWild from 'Assets/wcs.png';
 import NewsCard from 'Components/NewsCard';
 import VoteCard from 'Components/VoteCard';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import {
   MainContainer,
   Cloud,
@@ -83,6 +86,19 @@ const news = [
 ];
 
 export default function Home() {
+  const [topCars, setTopCars] = useState([]);
+
+  useEffect(async () => {
+    axios
+      .get(`http://localhost:3031/cars`)
+      .then(({ data }) => {
+        setTopCars(data.slice(0, 3));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <HomeContainer>
@@ -184,9 +200,9 @@ export default function Home() {
           <VoteContainer>
             <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
             <div className="VoteCardContainer">
-              <VoteCard />
-              <VoteCard />
-              <VoteCard />
+              {topCars.map((car) => {
+                return <VoteCard {...car} />;
+              })}
             </div>
           </VoteContainer>
         </Link>
