@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 import { MainContainer, Input } from './style';
 
@@ -13,7 +13,7 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [resErrorMessage, setResErrorMessage] = useState('');
   const [resMessage, setResMessage] = useState('');
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const SignInfo = {
     firstname: firstname.toLowerCase(),
@@ -37,7 +37,7 @@ export default function Signup() {
         setRepeatPass('');
         setEmail('');
         setResMessage('');
-        dispatch({ type: 'CLOSESIGNUP' });
+        navigate('/');
         toast.success(
           `Inscription réussie, vous allez recevoir un mail pour valider votre compte`,
           {
