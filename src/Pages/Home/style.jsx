@@ -130,7 +130,7 @@ const Headline = styled.div`
 
   p.subHeadline {
     margin: 2.4em 0;
-    font-size: 24px;
+    font-size: 23px;
     line-height: 1.4em;
   }
 
