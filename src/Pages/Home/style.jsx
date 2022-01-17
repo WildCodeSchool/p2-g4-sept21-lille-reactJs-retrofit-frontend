@@ -174,6 +174,9 @@ const VoteContainer = styled.div`
   h1 {
     font-size: 40px;
     margin: 10px;
+    &:hover {
+      color: var(--color--primary);
+    }
   }
 
   div.VoteCardContainer {
@@ -247,6 +250,7 @@ const PartnerContainer = styled.div`
     margin: 20px;
     width: 200px;
   }
+
   div {
     display: flex;
     flex-wrap: wrap;

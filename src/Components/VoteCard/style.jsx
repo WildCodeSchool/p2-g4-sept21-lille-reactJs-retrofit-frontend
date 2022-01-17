@@ -11,28 +11,37 @@ const VoteContainer = styled.div`
   padding: 5px;
   width: 310px;
   height: 360px;
+
   img {
-    margin: 5px;
-    width: 85%;
+    width: 250px;
+    height: 150px;
   }
+
   h1.titleArea {
     color: black;
     font-size: 30px;
   }
+
   p.PriceArea {
     font-size: 20px;
     margin: 0 0 10px 0;
     color: var(--color--primary);
   }
+
   button {
     cursor: pointer;
     width: 90%;
+    height: 40px;
     padding: 10px;
     margin: 10px;
     font-size: 20px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: var(--color--primary);
+
+    &.disabledBtn {
+      font-size: 14px;
+    }
   }
 `;
 const ProgressContainer = styled.div`
@@ -40,6 +49,7 @@ const ProgressContainer = styled.div`
   width: 90%;
 
   p.progressLabel {
+    bottom: 0;
     margin: 0;
     position: relative;
     top: -30px;
