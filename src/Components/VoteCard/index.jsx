@@ -29,7 +29,7 @@ const VoteCard = ({ ...car }) => {
       })
       .catch((error) => {
         if (error.response) {
-          // console.log(error);
+          console.log(error);
         }
       });
   }
