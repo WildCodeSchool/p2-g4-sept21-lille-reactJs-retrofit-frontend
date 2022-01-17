@@ -32,7 +32,7 @@ export default function VotePage() {
 
       <div className="h3Container">
         <h3>
-          Votez pour le véhicule que vous souhaitez rétrofité. Une fois le
+          Votez pour le véhicule que vous souhaitez rétrofiter. Une fois le
           nombre de votes atteint, le rétrofit de ce véhicule démarrera pour
           repondre aux demandes le plus rapidement possible.
         </h3>

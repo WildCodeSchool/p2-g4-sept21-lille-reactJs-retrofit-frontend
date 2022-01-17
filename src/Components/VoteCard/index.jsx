@@ -12,6 +12,7 @@ const VoteCard = ({ ...car }) => {
   const voteStorage = useSelector((state) => state.vote);
   const userStorage = useSelector((state) => state.id);
 
+
   function upvote() {
     dispatch({ type: 'UPVOTE' });
     if (voteValue >= 30) {
@@ -47,7 +48,6 @@ const VoteCard = ({ ...car }) => {
         </div>
         <h1 className="titleArea">{car.model}</h1>
         <p className="PriceArea">A partir de {car.price}€</p>
-
         {voteStorage < 2 && userStorage ? (
           <button type="button" onClick={upvote}>
             {location === '/' ? 'ACCEDEZ AUX VOTES' : 'VOTEZ'}
@@ -64,7 +64,12 @@ const VoteCard = ({ ...car }) => {
               : `MERCI D'AVOIR PARTICIPÉ`}
           </button>
         )}
-
+        <img src="https://i.imgur.com/XW6WVVR.png" alt="VW Golf 1 GTI" />
+        <h1 className="titleArea">VW Golf 1 GTI</h1>
+        <p className="PriceArea">A partir de 30 000€</p>
+        <button type="button" onClick={upVote}>
+          VOTEZ
+        </button>
         <ProgressContainer>
           <progress max="30" value={voteValue} />
           {voteValue >= 30 ? (
