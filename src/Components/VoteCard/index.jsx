@@ -4,7 +4,7 @@ import { VoteContainer, ProgressContainer } from './style';
 const VoteCard = () => {
   const [voteValue, setVoteValue] = useState(0);
 
-  function upvote() {
+  function upVote() {
     if (voteValue >= 30) {
       setVoteValue(30);
     } else setVoteValue(voteValue + 1);
@@ -16,7 +16,7 @@ const VoteCard = () => {
         <img src="https://i.imgur.com/XW6WVVR.png" alt="VW Golf 1 GTI" />
         <h1 className="titleArea">VW Golf 1 GTI</h1>
         <p className="PriceArea">A partir de 30 000€</p>
-        <button type="button" onClick={upvote}>
+        <button type="button" onClick={upVote}>
           VOTEZ
         </button>
 
