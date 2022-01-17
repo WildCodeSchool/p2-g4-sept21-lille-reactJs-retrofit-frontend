@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     --color--primary: rgb(0, 230, 200);
     --color--secondary: rgb(1, 30, 38);
     --color--thirdary: #ffffff;
+    --color--hover: rgb(0, 173, 150);
   }
   *{
     box-sizing: border-box;

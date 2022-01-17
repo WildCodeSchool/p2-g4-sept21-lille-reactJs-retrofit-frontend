@@ -4,6 +4,7 @@ import { User } from '@styled-icons/boxicons-solid/User';
 import { Bars } from '@styled-icons/fa-solid/Bars';
 
 const SHeader = styled.div`
+  top: 0;
   height: 75px;
   width: 100%;
   background-color: var(--color--secondary);
