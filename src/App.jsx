@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
+import VotePage from 'Pages/VotePage';
 import Form from './Components/Form';
 import SignInModal from './Components/SignInModal';
 import Signup from './Pages/Signup';
@@ -24,7 +25,7 @@ export default function App() {
     window.scrollTo(0, 0);
     const cookies = new Cookies();
     axios
-      .post('http://localhost:8123/auth/login', {
+      .post('http://localhost:3031/auth/login', {
         token: cookies.get('user_token'),
       })
       .then((response) => {
@@ -55,7 +56,8 @@ export default function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
-        <Route path="/Vehicules" element={<Cars />} />
+        <Route path="/vote" element={<VotePage />} />
+        <Route path="/vehicules" element={<Cars />} />
       </Routes>
       <Footer />
       <ToastContainer />
