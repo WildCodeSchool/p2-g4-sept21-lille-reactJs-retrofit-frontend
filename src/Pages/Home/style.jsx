@@ -6,31 +6,31 @@ import { EmojiSunglasses } from '@styled-icons/bootstrap/EmojiSunglasses';
 import { BatteryFull } from '@styled-icons/bootstrap/BatteryFull';
 
 const Cloud = styled(CloudSlash)`
-  color: var(--color--secondary);
+  color: var(--color--primary);
   width: 80px;
   margin: 10px;
 `;
 
 const Battery = styled(BatteryCharging)`
-  color: var(--color--secondary);
+  color: var(--color--primary);
   width: 80px;
   margin: 10px 10px 0 10px;
 `;
 
 const Euro = styled(CurrencyEuro)`
-  color: var(--color--secondary);
+  color: var(--color--primary);
   width: 80px;
   margin: 0 0 10px 0;
 `;
 
 const Emoji = styled(EmojiSunglasses)`
-  color: var(--color--secondary);
+  color: var(--color--primary);
   width: 80px;
   margin: 0 0 10px 0;
 `;
 
 const FullBattery = styled(BatteryFull)`
-  color: var(--color--secondary);
+  color: var(--color--primary);
   width: 80px;
   margin: 0 0 10px 0;
 `;
@@ -80,7 +80,7 @@ const animationCars = keyframes`
 
 const animationTexte = keyframes`
   from {
-    transform: translateY(30px);
+    transform: translateY(20px);
     opacity: 0;
   }
 
@@ -91,12 +91,13 @@ const animationTexte = keyframes`
 `;
 
 const RowHeadline = styled.div`
-  margin: 0 20% 50px 20%;
+  margin: 3% 20% 50px 20%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  height: 80vh;
   img {
+    height: 600px;
     animation: ${animationCars} 1s linear;
     @media only screen and (max-width: 1200px) {
       display: none;
@@ -112,6 +113,7 @@ const RowHeadline = styled.div`
 `;
 
 const Headline = styled.div`
+  height: 500px;
   font-size: 50px;
   color: var(--color--thirdary);
   display: flex;
@@ -146,12 +148,13 @@ const Headline = styled.div`
 const Container = styled.div`
   margin: 100px 20% 0px 20%;
   padding: 20px;
-  background: var(--color--primary);
+  background: var(--color--secondary);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
+  border: solid 2px var(--color--primary);
+  color: white;
   div.Row1 {
     font-size: 30px;
     font-weight: 1000;
@@ -188,7 +191,7 @@ const Col = styled.div`
 `;
 
 const VoteContainer = styled.div`
-  margin: 0 0 2% 0;
+  margin: 100px 0 2% 0;
   padding: 10px;
   background: var(--color--secondary);
   color: var(--color--thirdary);
@@ -206,13 +209,6 @@ const VoteContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-  }
-  div.VoteCard {
-    background: var(--color--thirdary);
-    border-radius: 10px;
-    margin: 20px;
-    width: 400px;
-    height: 400px;
   }
 `;
 

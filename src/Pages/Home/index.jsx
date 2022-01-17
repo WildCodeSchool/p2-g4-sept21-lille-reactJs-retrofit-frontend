@@ -2,7 +2,7 @@ import Carousel from 'Components/Carousel';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import Cars from 'Assets/ds3.png';
+import Yatch from 'Assets/yatch.png';
 import Bge from 'Assets/bge.png';
 import Clap from 'Assets/clap.png';
 import Creinov from 'Assets/creinnov.png';
@@ -14,7 +14,7 @@ import Transalley from 'Assets/transalley.png';
 import UnivLille1 from 'Assets/univ.png';
 import LogoWild from 'Assets/wcs.png';
 import NewsCard from 'Components/NewsCard';
-
+import { Link } from 'react-router-dom';
 import {
   MainContainer,
   Cloud,
@@ -65,18 +65,18 @@ export default function Home() {
               <p>
                 <span>EVeR</span>etrofit,
               </p>
-              <p>votre voiture,</p>
+              <p>votre bateau,</p>
               <p>
                 pour <span>toujours</span>
               </p>
               <p className="subHeadline">
-                Vous êtes attaché à votre véhicule mais il est désormais trop
+                Vous êtes attaché à votre bateau mais il est désormais trop
                 polluant ? Trop chère à entretenir ? Le prix du carburant
                 classique est trop élevé ? Nous avons la solution !
               </p>
             </Headline>
 
-            <img src={Cars} alt="Une voiture" />
+            <img src={Yatch} alt="Une voiture" />
           </RowHeadline>
           <Container>
             <div className="Row1"> Le retrofit c&apos;est :</div>
@@ -85,13 +85,11 @@ export default function Home() {
                 <div className="ColLogo">
                   <Cloud />
                 </div>
-
                 <div className="ColText">
                   -46% d&apos;émission de GAES* par rapport à l&apos;achat
                   d&apos;un véhicule neuf*
                 </div>
               </Col>
-
               <Col>
                 <div className="ColLogo">
                   <Battery />
@@ -101,7 +99,6 @@ export default function Home() {
                   charge rapide
                 </div>
               </Col>
-
               <Col>
                 <div className="ColLogo">
                   <Euro />
@@ -110,7 +107,6 @@ export default function Home() {
                   Plus économique que l&apos;achat d&apos;un véhicule électrique
                 </div>
               </Col>
-
               <Col>
                 <div className="ColLogo">
                   <Emoji />
@@ -119,7 +115,6 @@ export default function Home() {
                   Le confort de conduite d&apos;un véhicule électrique
                 </div>
               </Col>
-
               <Col>
                 <div className="ColLogo">
                   <FullBattery />
@@ -153,16 +148,11 @@ export default function Home() {
             0g de CO2/km.
           </p>
         </div>
-
-        <VoteContainer>
-          <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
-          <div className="VoteCardContainer">
-            <div className="VoteCard" />
-            <div className="VoteCard" />
-            <div className="VoteCard" />
-          </div>
-        </VoteContainer>
-
+        <Link to="/vote">
+          <VoteContainer>
+            <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
+          </VoteContainer>
+        </Link>
         <News>
           <h2>Actualités sur les véhicules électriques</h2>
           {home.map((data) => {
