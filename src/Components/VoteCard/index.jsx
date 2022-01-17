@@ -1,4 +1,3 @@
-// import LinearProgress from '@mui/material/LinearProgress';
 import { useState } from 'react';
 import { VoteContainer, ProgressContainer } from './style';
 
