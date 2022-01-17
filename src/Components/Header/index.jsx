@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Cookies from 'universal-cookie';
 import Searchbar from 'Components/SearchBar';
 import {
   SHeader,
@@ -31,6 +32,11 @@ export default function Header() {
 
   const hideLogin = () => {
     setStyle({ display: 'none' });
+  };
+  const Loggout = () => {
+    const cookies = new Cookies();
+    cookies.remove('user_token');
+    dispatch({ type: 'LOGGOUT' });
   };
 
   return (
@@ -74,12 +80,7 @@ export default function Header() {
             >
               {firstname}
             </DropLogin>
-            <DropLogin
-              style={style}
-              onClick={() => {
-                dispatch({ type: 'LOGGOUT' });
-              }}
-            >
+            <DropLogin style={style} onClick={Loggout}>
               deconnexion
             </DropLogin>
           </>
