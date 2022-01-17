@@ -22,7 +22,7 @@ const VoteContainer = styled.div`
     font-size: 30px;
   }
 
-  p.PriceArea {
+  p.priceArea {
     font-size: 20px;
     margin: 0 0 10px 0;
     color: var(--color--primary);
