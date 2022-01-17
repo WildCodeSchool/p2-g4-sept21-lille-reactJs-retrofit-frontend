@@ -29,8 +29,7 @@ const VoteContainer = styled.div`
   div.VoteCardContainer {
     margin: 0% 5%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     color: var(--color--thirdary);
   }
