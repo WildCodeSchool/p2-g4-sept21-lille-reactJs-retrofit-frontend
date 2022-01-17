@@ -11,6 +11,15 @@ const SContainerMap = styled.div`
     width: 100%;
     height: 100%;
   }
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: 70vh;
+    margin: 0;
+  }
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export default SContainerMap;
