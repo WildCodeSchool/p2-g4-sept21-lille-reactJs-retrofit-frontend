@@ -43,7 +43,9 @@ export default function Header() {
         </div>
         <div className="Col2">
           <ul>
-            <Link to="/vehicules">Véhicules</Link>
+            <Link onCLick={showMenu} to="/vehicules">
+              Véhicules
+            </Link>
             <Link to="/technologie">Technologie</Link>
             <Link to="/equipe">L&apos;équipe</Link>
             <Link to="/localisation">Localisation</Link>
@@ -101,7 +103,11 @@ export default function Header() {
         )}
       </Row2>
       {open && (
-        <Overlay>
+        <Overlay
+          onClick={() => {
+            showMenu();
+          }}
+        >
           <ul>
             <Link to="/vehicules">Véhicules</Link>
             <Link to="/technologie">Technologie</Link>
