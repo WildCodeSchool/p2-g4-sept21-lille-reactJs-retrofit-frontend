@@ -1,32 +1,76 @@
-// import LinearProgress from '@mui/material/LinearProgress';
-import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
 import { VoteContainer, ProgressContainer } from './style';
 
-const VoteCard = () => {
-  const [voteValue, setVoteValue] = useState(0);
+const VoteCard = ({ ...car }) => {
+  const location = useLocation().pathname;
+  const dispatch = useDispatch();
+  const votes = car.VoteNbr;
+  const [voteValue, setVoteValue] = useState(votes);
+  const voteStorage = useSelector((state) => state.vote);
+  const userStorage = useSelector((state) => state.id);
 
   function upvote() {
+    dispatch({ type: 'UPVOTE' });
     if (voteValue >= 30) {
       setVoteValue(30);
-    } else setVoteValue(voteValue + 1);
+    } else {
+      setVoteValue(voteValue + 1);
+    }
+    axios
+      .put('http://localhost:3031/cars', {
+        carId: car.id,
+        userId: userStorage,
+      })
+      .then((response) => {
+        setVoteValue(response.data);
+      })
+      .catch((error) => {
+        if (error.response) {
+          // console.log(error);
+        }
+      });
   }
+  useEffect(async () => {
+    if ((await !userStorage) && location === '/vote') {
+      dispatch({ type: 'OPENSIGNIN' });
+    }
+  }, []);
 
   return (
     <>
       <VoteContainer>
-        <img src="https://i.imgur.com/XW6WVVR.png" alt="VW Golf 1 GTI" />
-        <h1 className="titleArea">VW Golf 1 GTI</h1>
-        <p className="PriceArea">A partir de 30 000€</p>
-        <button type="button" onClick={upvote}>
-          VOTEZ
-        </button>
+        <div className="imageContainer">
+          <img src={car.image} alt="VW Golf 1 GTI" />
+        </div>
+        <h1 className="titleArea">{car.model}</h1>
+        <p className="PriceArea">A partir de {car.price}€</p>
+
+        {voteStorage < 2 && userStorage ? (
+          <button type="button" onClick={upvote}>
+            {location === '/' ? 'ACCEDEZ AUX VOTES' : 'VOTEZ'}
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={upvote}
+            disabled
+            className="disabledBtn"
+          >
+            {!userStorage
+              ? 'CONNECTEZ-VOUS POUR VOTER'
+              : `MERCI D'AVOIR PARTICIPÉ`}
+          </button>
+        )}
 
         <ProgressContainer>
           <progress max="30" value={voteValue} />
-          {voteValue === 30 ? (
+          {voteValue >= 30 ? (
             <p className="progressLabel">Vote Terminé !</p>
           ) : (
-            <p className="progressLabel">{voteValue} Votes / 30 </p>
+            <p className="progressLabel">{voteValue || 0} Votes / 30 </p>
           )}
         </ProgressContainer>
       </VoteContainer>
