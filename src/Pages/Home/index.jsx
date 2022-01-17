@@ -2,6 +2,7 @@ import Carousel from 'Components/Carousel';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import Yatch from 'Assets/yatch.png';
 import Bge from 'Assets/bge.png';
 import Clap from 'Assets/clap.png';
@@ -15,10 +16,6 @@ import UnivLille1 from 'Assets/univ.png';
 import LogoWild from 'Assets/wcs.png';
 import NewsCard from 'Components/NewsCard';
 import VoteCard from 'Components/VoteCard';
-
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import {
   MainContainer,
@@ -39,10 +36,10 @@ import {
 } from './style';
 
 export default function Home() {
- const [topCars, setTopCars] = useState([]);
   const [home, setHome] = useState([]);
+  const [topCars, setTopCars] = useState([]);
 
-  useEffect(async () => {
+  useEffect(() => {
     axios
       .get(`http://localhost:3031/cars`)
       .then(({ data }) => {
@@ -51,26 +48,28 @@ export default function Home() {
       .catch((err) => {
         console.log(err);
       });
+  }, []);
 
-    useEffect(() => {
-      axios
-        .get(`/home`)
-        .then(({ data }) => {
-          if (Array.isArray(data)) setHome(data);
-          else throw new Error('Failed API call');
-        })
-        .catch(() => {
-          toast.error('No News found !', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
+  console.log(topCars);
+  useEffect(() => {
+    axios
+      .get(`/home`)
+      .then(({ data }) => {
+        if (Array.isArray(data)) setHome(data);
+        else throw new Error('Failed API call');
+      })
+      .catch(() => {
+        toast.error('No News found !', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
         });
-    }, []);
+      });
+  }, []);
 
   return (
     <>
@@ -173,7 +172,6 @@ export default function Home() {
                 return <VoteCard {...car} />;
               })}
             </div>
-
           </VoteContainer>
         </Link>
         <News>
