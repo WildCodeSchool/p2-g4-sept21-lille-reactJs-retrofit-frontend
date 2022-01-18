@@ -60,16 +60,6 @@ export default function Signup() {
           Inscrivez-vous gratuitement en 2 secondes ! On ne postera rien sans
           votre accord.
         </h2>
-
-        <button type="submit" className="fbButton">
-          Inscription avec Facebook
-        </button>
-        <button type="submit" className="googleButton">
-          Inscription avec Google
-        </button>
-
-        <h3>- ou -</h3>
-
         <Input>
           <p>Nom</p>
           <input
