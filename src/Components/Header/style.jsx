@@ -12,13 +12,11 @@ const SHeader = styled.div`
   position: fixed;
   z-index: 10;
   top: 0;
-
   ul {
     color: var(--color--thirdary);
     text-decoration: none;
     margin-top: 37px;
     padding-right: 20px;
-
     @media (max-width: 1400px) {
       display: flex;
       flex-direction: column;
@@ -27,7 +25,6 @@ const SHeader = styled.div`
       padding: 70px 0 0 0;
       font-size: 35px;
     }
-
     @media (max-width: 768px) {
       margin: 0;
       padding: 50px 0 0 0;
@@ -77,7 +74,6 @@ const BlueUser = styled(User)`
   :hover {
     cursor: pointer;
   }
-
   @media (max-width: 768px) {
     height: 35px;
     margin-left: 0;
@@ -104,32 +100,25 @@ const BlueBars = styled(Bars)`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-
   & > * {
     height: 75px;
   }
-
   @media (max-width: 1400px) {
     justify-content: space-between;
   }
-
   @media (max-width: 768px) {
     flex-wrap: wrap;
     background-color: var(--color--secondary);
   }
-
   .Col1 {
     width: 20vw;
-
     @media (max-width: 768px) {
       width: 50vw;
     }
-
     img {
       height: 45px;
       width: 260px;
       margin: 1rem;
-
       @media (max-width: 768px) {
         height: 35px;
         width: 202px;
@@ -146,21 +135,17 @@ const Row = styled.div`
     align-items: center;
     justify-content: right;
     font-size: 30px;
-
     @media (max-width: 1400px) {
       display: none;
     }
   }
-
   .Col3 {
     display: flex;
     color: var(--color--primary);
-
     @media (max-width: 1400px) {
       align-items: center;
       margin-left: auto;
     }
-
     @media (max-width: 768px) {
       display: flex;
       justify-content: center;
@@ -168,7 +153,6 @@ const Row = styled.div`
       order: 4;
     }
   }
-
   .Col4 {
     display: flex;
     width: auto;
@@ -195,7 +179,6 @@ const Row2 = styled.div`
   flex-direction: row;
   float: right;
   background-color: var(--color--secondary);
-
   @media (max-width: 768px) {
     display: none;
   }
@@ -215,11 +198,9 @@ const DropLogin = styled.div`
   padding-left: 3px;
   animation: Fade 0.4s ease-in-out;
   cursor: pointer;
-
   :hover {
     color: var(--color--primary);
   }
-
   @keyframes Fade {
     0% {
       display: none;
@@ -239,7 +220,6 @@ const Overlay = styled.div`
   display: flex;
   justify-content: center;
   animation: Fade 0.4s ease-in-out;
-
   @keyframes Fade {
     0% {
       display: none;
