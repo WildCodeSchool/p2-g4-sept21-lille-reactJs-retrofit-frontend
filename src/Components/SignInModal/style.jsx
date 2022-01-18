@@ -38,6 +38,9 @@ const MainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h1 {
+    text-align: center;
+  }
   span.error {
     color: red;
     font-size: 20px;

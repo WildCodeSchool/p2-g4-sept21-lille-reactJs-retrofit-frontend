@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Home } from '@styled-icons/entypo/Home';
 import { User } from '@styled-icons/boxicons-solid/User';
 import { Bars } from '@styled-icons/fa-solid/Bars';
+import { Gear } from '@styled-icons/octicons/Gear';
 
 const SHeader = styled.div`
   top: 0;
@@ -31,6 +32,24 @@ const SHeader = styled.div`
   }
 `;
 
+const Gears = styled(Gear)`
+  color: var(--color--primary);
+  height: 75px;
+  width: 45px;
+  margin-right: 0px;
+  display: none; //* remove if isAdmin *//
+  :hover {
+    cursor: pointer;
+  }
+  @media (max-width: 1400px) {
+    margin-right: -15px;
+  }
+  @media (max-width: 768px) {
+    height: 30px;
+    width: 30px;
+  }
+`;
+
 const BlueHome = styled(Home)`
   color: var(--color--primary);
   height: 75px;
@@ -49,10 +68,8 @@ const BlueHome = styled(Home)`
 
 const BlueUser = styled(User)`
   color: var(--color--primary);
-  min-width: 50px;
-  max-width: 50px;
-  min-height: 75px;
-  max-height: 75px;
+  height: 75px;
+  width: 50px;
   margin-right: 10px;
   :hover {
     cursor: pointer;
@@ -62,6 +79,8 @@ const BlueUser = styled(User)`
     margin-right: 10px;
     min-height: 0px;
     max-height: 35px;
+    margin-left: 0;
+
   }
 `;
 
@@ -124,7 +143,6 @@ const Row = styled.div`
       display: none;
     }
   }
-
   .Col3 {
     display: flex;
     color: var(--color--primary);
@@ -137,10 +155,10 @@ const Row = styled.div`
       justify-content: center;
       margin: auto;
       order: 4;
+
       height: 55px;
     }
   }
-
   .Col4 {
     display: flex;
     width: auto;
@@ -216,6 +234,7 @@ const Overlay = styled.div`
   @media (min-width: 1400px) {
     display: none;
   }
+
   ul {
     & > * {
       padding: 0 0 40px 0;
@@ -223,4 +242,15 @@ const Overlay = styled.div`
   }
 `;
 
-export { SHeader, Row, Row2, DropLogin, BlueBars, Overlay, BlueHome, BlueUser };
+export {
+  SHeader,
+  Row,
+  Row2,
+  DropLogin,
+  BlueBars,
+  Overlay,
+  BlueHome,
+  BlueUser,
+  Gears,
+};
+

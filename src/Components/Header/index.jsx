@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Cookies from 'universal-cookie';
 import Searchbar from 'Components/SearchBar';
 import {
   SHeader,
@@ -11,6 +12,7 @@ import {
   DropLogin,
   BlueBars,
   Overlay,
+  Gears,
 } from './style';
 import Logo from '../../Assets/Logo.png';
 
@@ -31,6 +33,11 @@ export default function Header() {
 
   const hideLogin = () => {
     setStyle({ display: 'none' });
+  };
+  const Loggout = () => {
+    const cookies = new Cookies();
+    cookies.remove('user_token');
+    dispatch({ type: 'LOGGOUT' });
   };
 
   return (
@@ -56,6 +63,11 @@ export default function Header() {
           <Searchbar />
         </div>
         <div className="Col4">
+          {/* Showing if isAdmin display none in css */}
+          <Link to="/">
+            <Gears />
+          </Link>
+          {/* Showing if isAdmin display none in css */}
           <Link to="/">
             <BlueHome />
           </Link>
@@ -76,12 +88,7 @@ export default function Header() {
             >
               {firstname}
             </DropLogin>
-            <DropLogin
-              style={style}
-              onClick={() => {
-                dispatch({ type: 'LOGGOUT' });
-              }}
-            >
+            <DropLogin style={style} onClick={Loggout}>
               deconnexion
             </DropLogin>
           </>
