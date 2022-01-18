@@ -159,7 +159,6 @@ export default function Home() {
               <VoteCard />
               <VoteCard />
             </div>
-
           </VoteContainer>
         </Link>
         <News>
