@@ -28,6 +28,9 @@ const MainContainer = styled.div`
       margin-bottom: 10px;
     }
   }
+  span {
+    color: var(--color--primary);
+  }
   button {
     width: 230px;
     height: 65px;
