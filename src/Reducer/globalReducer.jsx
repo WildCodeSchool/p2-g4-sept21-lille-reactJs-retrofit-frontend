@@ -5,6 +5,7 @@ const initialState = {
   firstname: '',
   lastname: '',
   mail: '',
+  vote: 0,
   id: 0,
 };
 
@@ -16,6 +17,8 @@ export default function globalReducer(state = initialState, action) {
       return { ...state, signInModal: true };
     case 'LOGGEDIN':
       return { ...state, signInModal: false, isLogged: true, ...action.user };
+    case 'UPVOTE':
+      return { ...state, vote: state.vote + 1 };
     case 'LOGGOUT':
       return initialState;
     default:

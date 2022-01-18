@@ -130,7 +130,7 @@ const Headline = styled.div`
 
   p.subHeadline {
     margin: 2.4em 0;
-    font-size: 24px;
+    font-size: 23px;
     line-height: 1.4em;
   }
 
@@ -201,6 +201,9 @@ const VoteContainer = styled.div`
     font-size: 40px;
     margin-top: 20px;
     margin-bottom: 10px;
+    &:hover {
+      color: var(--color--primary);
+    }
   }
 
   div.VoteCardContainer {
@@ -264,6 +267,7 @@ const PartnerContainer = styled.div`
     margin: 20px;
     width: 200px;
   }
+
   div {
     display: flex;
     flex-wrap: wrap;
