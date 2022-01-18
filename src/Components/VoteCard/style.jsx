@@ -22,7 +22,7 @@ const VoteContainer = styled.div`
     font-size: 30px;
   }
 
-  p.priceArea {
+  p.PriceArea {
     font-size: 20px;
     margin: 0 0 10px 0;
     color: var(--color--primary);
@@ -57,7 +57,7 @@ const ProgressContainer = styled.div`
     font-size: 20px;
     margin-bottom: 10px;
   }
-  
+
   progress {
     background-color: var(--color--primary);
     border: 0;
@@ -66,7 +66,7 @@ const ProgressContainer = styled.div`
     border-radius: 10px;
     border: none;
   }
-  
+
   progress::-webkit-progress-bar {
     background-color: var(--color--secondary);
     width: 100%;
@@ -75,7 +75,7 @@ const ProgressContainer = styled.div`
     overflow: hidden;
     border: none;
   }
-  
+
   progress::-webkit-progress-value {
     background-color: var(--color--primary);
     width: 100%;
@@ -84,7 +84,7 @@ const ProgressContainer = styled.div`
     overflow: hidden;
     border: none;
   }
-  
+
   progress::-moz-progress-bar {
     background-color: var(--color--primary);
     width: 100%;

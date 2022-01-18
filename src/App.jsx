@@ -15,6 +15,7 @@ import Faq from './Pages/Faq';
 import LegalNotice from './Pages/LegalNotice';
 import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
+import Localisation from './Pages/Localisation';
 import Cars from './Pages/Cars/index';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -43,6 +44,18 @@ export default function App() {
     <>
       <SignInModal />
       <Header />
+      <Routes>
+        <Route path="/" element={<Home />}>
+          Home
+        </Route>
+        <Route path="/localisation" element={<Localisation />}>
+          Localisation
+        </Route>
+        <Route path="/equipe" element={<Team />}>
+          Team
+        </Route>
+        <Route path="/register" />
+      </Routes>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/renseignements" element={<Form />} />
