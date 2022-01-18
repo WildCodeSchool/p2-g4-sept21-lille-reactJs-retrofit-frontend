@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import axios from 'axios';
 import App from './App';
 import GlobalStyle from './GlobaleStyle';
-import modalReducer from './Reducer/modalReducer';
+import globalReducer from './Reducer/globalReducer';
 
-const store = createStore(modalReducer);
+const store = createStore(globalReducer);
+
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 
 ReactDOM.render(
   <React.StrictMode>

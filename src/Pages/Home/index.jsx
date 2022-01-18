@@ -1,5 +1,8 @@
 import Carousel from 'Components/Carousel';
-import Cars from 'Assets/ds3.png';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import Yatch from 'Assets/yatch.png';
 import Bge from 'Assets/bge.png';
 import Clap from 'Assets/clap.png';
 import Creinov from 'Assets/creinnov.png';
@@ -11,7 +14,9 @@ import Transalley from 'Assets/transalley.png';
 import UnivLille1 from 'Assets/univ.png';
 import LogoWild from 'Assets/wcs.png';
 import NewsCard from 'Components/NewsCard';
+import VoteCard from 'Components/VoteCard';
 
+import { Link } from 'react-router-dom';
 import {
   MainContainer,
   Cloud,
@@ -30,58 +35,29 @@ import {
   News,
 } from './style';
 
-const news = [
-  {
-    id: 1,
-    image:
-      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F2020-Chevrolet-Corvette-Stingray%2F960x0.jpg',
-    content:
-      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
-    source: 'https://www.autonews.fr/',
-  },
-  {
-    id: 2,
-    image:
-      'https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/Electric_Car_Concept_XL_721_420_80_s_c1.jpg',
-    content:
-      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
-    source: 'https://www.autonews.fr/',
-  },
-  {
-    id: 3,
-    image:
-      'https://i.guim.co.uk/img/media/cd2b6f1b13f7d2d21f4ba679a8a4db3990a54d79/0_152_4595_2758/master/4595.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=f5edbce9c3889df46aaede677657830a',
-    content:
-      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
-    source: 'https://www.autonews.fr/',
-  },
-  {
-    id: 4,
-    image:
-      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F2020-Chevrolet-Corvette-Stingray%2F960x0.jpg',
-    content:
-      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
-    source: 'https://www.autonews.fr/',
-  },
-  {
-    id: 5,
-    image:
-      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F2020-Chevrolet-Corvette-Stingray%2F960x0.jpg',
-    content:
-      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
-    source: 'https://www.autonews.fr/',
-  },
-  {
-    id: 6,
-    image:
-      'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5d35eacaf1176b0008974b54%2F2020-Chevrolet-Corvette-Stingray%2F960x0.jpg',
-    content:
-      'Avec le développement de la voiture électrique, c’est tout un écosystème qui se met en place dans notre société ...',
-    source: 'https://www.autonews.fr/',
-  },
-];
-
 export default function Home() {
+  const [home, setHome] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`/home`)
+      .then(({ data }) => {
+        if (Array.isArray(data)) setHome(data);
+        else throw new Error('Failed API call');
+      })
+      .catch(() => {
+        toast.error('No News found !', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      });
+  }, []);
+
   return (
     <>
       <HomeContainer>
@@ -91,18 +67,18 @@ export default function Home() {
               <p>
                 <span>EVeR</span>etrofit,
               </p>
-              <p>votre voiture,</p>
+              <p>votre bateau,</p>
               <p>
                 pour <span>toujours</span>
               </p>
               <p className="subHeadline">
-                Vous êtes attaché à votre véhicule mais il est désormais trop
+                Vous êtes attaché à votre bateau mais il est désormais trop
                 polluant ? Trop chère à entretenir ? Le prix du carburant
                 classique est trop élevé ? Nous avons la solution !
               </p>
             </Headline>
 
-            <img src={Cars} alt="Une voiture" />
+            <img src={Yatch} alt="Une voiture" />
           </RowHeadline>
           <Container>
             <div className="Row1"> Le retrofit c&apos;est :</div>
@@ -111,13 +87,11 @@ export default function Home() {
                 <div className="ColLogo">
                   <Cloud />
                 </div>
-
                 <div className="ColText">
                   -46% d&apos;émission de GAES* par rapport à l&apos;achat
                   d&apos;un véhicule neuf*
                 </div>
               </Col>
-
               <Col>
                 <div className="ColLogo">
                   <Battery />
@@ -127,7 +101,6 @@ export default function Home() {
                   charge rapide
                 </div>
               </Col>
-
               <Col>
                 <div className="ColLogo">
                   <Euro />
@@ -136,7 +109,6 @@ export default function Home() {
                   Plus économique que l&apos;achat d&apos;un véhicule électrique
                 </div>
               </Col>
-
               <Col>
                 <div className="ColLogo">
                   <Emoji />
@@ -145,7 +117,6 @@ export default function Home() {
                   Le confort de conduite d&apos;un véhicule électrique
                 </div>
               </Col>
-
               <Col>
                 <div className="ColLogo">
                   <FullBattery />
@@ -179,23 +150,29 @@ export default function Home() {
             0g de CO2/km.
           </p>
         </div>
+        <Link to="/vote">
+          <VoteContainer>
+            <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
 
-        <VoteContainer>
-          <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
-          <div className="VoteCardContainer">
-            <div className="VoteCard" />
-            <div className="VoteCard" />
-            <div className="VoteCard" />
-          </div>
-        </VoteContainer>
-
+            <div className="VoteCardContainer">
+              <VoteCard />
+              <VoteCard />
+              <VoteCard />
+            </div>
+          </VoteContainer>
+        </Link>
         <News>
           <h2>Actualités sur les véhicules électriques</h2>
-          <div className="NewsCardContainer">
-            {news.map((article) => {
-              return <NewsCard {...article} />;
-            })}
-          </div>
+          {home.map((data) => {
+            return (
+              <NewsCard
+                image={data.image}
+                description={data.description}
+                source={data.source}
+                date={data.date}
+              />
+            );
+          })}
         </News>
         <Rating>
           <Carousel />

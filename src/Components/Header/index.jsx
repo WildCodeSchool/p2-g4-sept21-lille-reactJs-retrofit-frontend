@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Searchbar from 'Components/SearchBar';
 import {
   SHeader,
@@ -18,6 +18,8 @@ export default function Header() {
   const [style, setStyle] = useState({ display: 'none' });
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
+  const firstname = useSelector((state) => state.firstname);
+  const isLogged = useSelector((state) => state.isLogged);
 
   const showMenu = () => {
     setOpen(!open);
@@ -41,7 +43,9 @@ export default function Header() {
         </div>
         <div className="Col2">
           <ul>
-            <Link to="/vehicules">Véhicules</Link>
+            <Link onCLick={showMenu} to="/vehicules">
+              Véhicules
+            </Link>
             <Link to="/technologie">Technologie</Link>
             <Link to="/equipe">L&apos;équipe</Link>
             <Link to="/localisation">Localisation</Link>
@@ -62,26 +66,48 @@ export default function Header() {
         </div>
       </Row>
       <Row2 onMouseEnter={showLogin} onMouseLeave={hideLogin}>
-        <DropLogin
-          style={style}
-          onClick={() => {
-            dispatch({ type: 'OPENSIGNUP' });
-          }}
-        >
-          inscription
-        </DropLogin>
+        {isLogged ? (
+          <>
+            <DropLogin
+              style={style}
+              onClick={() => {
+                dispatch({ type: 'OPENSIGNUP' });
+              }}
+            >
+              {firstname}
+            </DropLogin>
+            <DropLogin
+              style={style}
+              onClick={() => {
+                dispatch({ type: 'LOGGOUT' });
+              }}
+            >
+              deconnexion
+            </DropLogin>
+          </>
+        ) : (
+          <>
+            <DropLogin style={style}>
+              <Link to="/register">inscription</Link>
+            </DropLogin>
 
-        <DropLogin
-          style={style}
-          onClick={() => {
-            dispatch({ type: 'OPENSIGNIN' });
-          }}
-        >
-          connexion
-        </DropLogin>
+            <DropLogin
+              style={style}
+              onClick={() => {
+                dispatch({ type: 'OPENSIGNIN' });
+              }}
+            >
+              connexion
+            </DropLogin>
+          </>
+        )}
       </Row2>
       {open && (
-        <Overlay>
+        <Overlay
+          onClick={() => {
+            showMenu();
+          }}
+        >
           <ul>
             <Link to="/vehicules">Véhicules</Link>
             <Link to="/technologie">Technologie</Link>

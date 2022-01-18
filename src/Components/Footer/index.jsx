@@ -33,13 +33,13 @@ export default function Footer() {
         <CategoryContact>
           <h2>Contacts</h2>
           <ul>
-            <Link to="/inquiry">
+            <Link to="/renseignements">
               <li>Renseignements</li>
             </Link>
-            <Link to="/partnership">
+            <Link to="/partenariats">
               <li>Partenariats</li>
             </Link>
-            <Link to="/meet">
+            <Link to="/nousrencontrer">
               <li>Nous rencontrer</li>
             </Link>
           </ul>
@@ -48,10 +48,10 @@ export default function Footer() {
         <SavCategory>
           <h2>Service Client</h2>
           <ul>
-            <Link to="/customerService">
+            <Link to="/serviceclient">
               <li>Service Client</li>
             </Link>
-            <Link to="/technicalService">
+            <Link to="/conseiltechnique">
               <li>Conseil Technique</li>
             </Link>
             <Link to="/sav">
@@ -63,7 +63,7 @@ export default function Footer() {
         <MentionCategory>
           <h2>Mentions Légales</h2>
           <ul>
-            <Link to="/legalNotice">
+            <Link to="/mentionslegales">
               <li>Mentions Légales</li>
             </Link>
             <Link to="/cgv">
