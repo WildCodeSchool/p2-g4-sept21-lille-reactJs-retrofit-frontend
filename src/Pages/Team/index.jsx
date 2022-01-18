@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import TeamCard from '../../Components/TeamCard/index';
 import { STeam, TeamView, Col, Row } from './style';
@@ -35,7 +36,9 @@ export default function Team() {
         <h1>
           La Team <span>EVeR</span>etrofit
         </h1>
-        <button type="button">Rejoignez la team</button>
+        <Link to="/renseignements">
+          <button type="button">Rejoignez la team</button>
+        </Link>
       </Col>
       <Row>
         <p>
