@@ -14,6 +14,8 @@ import Transalley from 'Assets/transalley.png';
 import UnivLille1 from 'Assets/univ.png';
 import LogoWild from 'Assets/wcs.png';
 import NewsCard from 'Components/NewsCard';
+import VoteCard from 'Components/VoteCard';
+
 import { Link } from 'react-router-dom';
 import {
   MainContainer,
@@ -151,6 +153,12 @@ export default function Home() {
         <Link to="/vote">
           <VoteContainer>
             <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
+
+            <div className="VoteCardContainer">
+              <VoteCard />
+              <VoteCard />
+              <VoteCard />
+            </div>
           </VoteContainer>
         </Link>
         <News>

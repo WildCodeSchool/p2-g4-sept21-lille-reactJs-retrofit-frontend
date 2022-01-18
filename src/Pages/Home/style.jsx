@@ -191,7 +191,7 @@ const Col = styled.div`
 `;
 
 const VoteContainer = styled.div`
-  margin: 0 0 2% 0;
+  margin: 100px 0 2% 0;
   padding: 10px;
   background: var(--color--secondary);
   color: var(--color--thirdary);
