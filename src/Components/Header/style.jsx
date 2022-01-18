@@ -150,6 +150,7 @@ const Row = styled.div`
       justify-content: center;
       margin: auto;
       order: 4;
+      height: 55px;
     }
   }
 
