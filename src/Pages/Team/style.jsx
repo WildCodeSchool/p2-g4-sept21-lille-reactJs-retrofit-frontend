@@ -7,6 +7,9 @@ const STeam = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  @media (max-width: 768px) {
+    padding-top: 150px;
+  }
 `;
 
 const TeamView = styled.div`
@@ -17,27 +20,28 @@ const TeamView = styled.div`
   flex-wrap: wrap;
 `;
 
-const Row = styled.div`
-  height: 100px;
+const Col = styled.div`
+  height: 180px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 35px;
+  @media (max-width: 768px) {
+    height: 100px;
+  }
   h1 {
     font-size: 45px;
-    margin-left: 320px;
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
   }
   span {
     color: var(--color--primary);
   }
   button {
-    height: 40px;
     width: 240px;
+    min-height: 40px;
     font-size: 25px;
-    margin-left: 90px;
-    margin-bottom: 10px;
-    padding: 5px;
     border: solid 2px var(--color--primary);
     border-radius: 5px;
     background: none;
@@ -48,14 +52,21 @@ const Row = styled.div`
   }
 `;
 
-const Row2 = styled.div`
+const Row = styled.div`
   width: 80vw;
   display: flex;
   flex-direction: row;
   align-self: center;
+  @media (max-width: 768px) {
+    margin-top: 15px;
+    width: 90vw;
+  }
   p {
     font-size: 30px;
+    @media (max-width: 768px) {
+      font-size: 23px;
+    }
   }
 `;
 
-export { TeamView, STeam, Row, Row2 };
+export { TeamView, STeam, Col, Row };

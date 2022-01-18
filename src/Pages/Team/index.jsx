@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import TeamCard from '../../Components/TeamCard/index';
-import { STeam, TeamView, Row, Row2 } from './style';
+import { STeam, TeamView, Col, Row } from './style';
 
 export default function Team() {
   const [team, setTeam] = useState([]);
@@ -31,13 +31,13 @@ export default function Team() {
 
   return (
     <STeam>
-      <Row>
+      <Col>
         <h1>
           La Team <span>EVeR</span>etrofit
         </h1>
         <button type="button">Rejoignez la team</button>
-      </Row>
-      <Row2>
+      </Col>
+      <Row>
         <p>
           EVeRetrofit c’est dans un premier temps trois amis passionnés par les
           véhicules que ce soit à la fois dans le domaine de l’automobile mais
@@ -48,7 +48,7 @@ export default function Team() {
           développement des véhicules éléctriques tout en réduisant le nombre de
           voitures thermiques présent sur nos routes françaises.
         </p>
-      </Row2>
+      </Row>
       <TeamView>
         {team.map((data) => {
           return (
