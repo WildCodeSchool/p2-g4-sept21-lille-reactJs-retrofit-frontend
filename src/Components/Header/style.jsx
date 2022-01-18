@@ -76,7 +76,11 @@ const BlueUser = styled(User)`
   }
   @media (max-width: 768px) {
     height: 35px;
+    margin-right: 10px;
+    min-height: 0px;
+    max-height: 35px;
     margin-left: 0;
+
   }
 `;
 
@@ -151,6 +155,8 @@ const Row = styled.div`
       justify-content: center;
       margin: auto;
       order: 4;
+
+      height: 55px;
     }
   }
   .Col4 {
@@ -158,17 +164,12 @@ const Row = styled.div`
     width: auto;
     flex-direction: row;
     color: var(--color--primary);
-
     @media (max-width: 1400px) {
       justify-content: flex-end;
       align-items: center;
     }
-
     @media (max-width: 768px) {
       order: 2;
-      a {
-        margin-left: 10px;
-      }
     }
   }
 `;
@@ -230,7 +231,6 @@ const Overlay = styled.div`
       opacity: 1;
     }
   }
-
   @media (min-width: 1400px) {
     display: none;
   }
@@ -253,3 +253,4 @@ export {
   BlueUser,
   Gears,
 };
+
