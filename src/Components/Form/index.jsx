@@ -77,7 +77,6 @@ export default function Form() {
             chooseOption === 'client'
           }
         />
-
         <input
           className="tallInput"
           type="search"
@@ -90,7 +89,6 @@ export default function Form() {
             chooseOption === 'client'
           }
         />
-
         <input
           className="tallInput"
           type="search"
@@ -101,11 +99,10 @@ export default function Form() {
             chooseOption === 'advice'
           }
         />
-
         <input className="comments" type="search" placeholder="Commentaire" />
       </form>
       <Button>
-        <input type="submit" value="Envoyer" />
+        <p>Envoyer</p>
       </Button>
     </SForm>
   );
