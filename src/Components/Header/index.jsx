@@ -11,6 +11,7 @@ import {
   DropLogin,
   BlueBars,
   Overlay,
+  Gears,
 } from './style';
 import Logo from '../../Assets/Logo.png';
 
@@ -56,6 +57,11 @@ export default function Header() {
           <Searchbar />
         </div>
         <div className="Col4">
+          {/* Showing if isAdmin display none in css */}
+          <Link to="/">
+            <Gears />
+          </Link>
+          {/* Showing if isAdmin display none in css */}
           <Link to="/">
             <BlueHome />
           </Link>
