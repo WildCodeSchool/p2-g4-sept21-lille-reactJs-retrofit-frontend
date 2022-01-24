@@ -1,22 +1,31 @@
-import AccordionUsers from 'Components/AccordionUsers';
+import BaseAccordion from 'Components/AccordionUser/BaseAccordion';
+import Information from 'Components/AccordionUser/Information';
+import Connexion from 'Components/AccordionUser/Connexion';
+import Ordered from 'Components/AccordionUser/Ordered';
 import Question from 'Components/AccordionUser/Question';
+import Coment from 'Components/AccordionUser/Coment';
 import { Container, Button } from './style';
 
 export default function Profile() {
   const data = [
-    { key: 1, title: 'Test', component: [Question] },
-    { key: 2, title: 'Test2', component: Question },
-    { key: 3, title: 'Test3', component: Question },
-    { key: 4, title: 'Test4', component: Question },
-    { key: 5, title: 'Test5', component: Question },
-    { key: 6, title: 'Test6', component: Question },
+    {
+      title: 'modifier vos infromations personelles',
+      components: <Information />,
+    },
+    {
+      title: 'modifier vos identifiants de connexion',
+      components: <Connexion />,
+    },
+    { title: 'Vos commandes', components: <Ordered /> },
+    { title: 'Vos questions', components: <Question /> },
+    { title: 'Envoyer un avis suite à une commande', components: <Coment /> },
   ];
   return (
     <div>
       <Container>
         <h1>Bienvenue Jean-philipe</h1>
-        {data.map(({ title, component }) => {
-          return <AccordionUsers title={title} component={component} />;
+        {data.map(({ title, components }) => {
+          return <BaseAccordion title={title} components={components} />;
         })}
         <Button>Déconexion</Button>
       </Container>

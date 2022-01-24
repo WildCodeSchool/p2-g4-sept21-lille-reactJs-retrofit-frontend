@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import propTypes from 'prop-types';
+import { Header, SAccordion, ArrowRight, ArrowDown } from './style';
 
-import { Header, Content, SAccordion, ArrowRight, ArrowDown } from './style';
-
-export default function AComent({ title }) {
+export default function AccordionUsers({ title, components }) {
   const [isActive, setIsActive] = useState(false);
   const [toggle, setToggle] = useState(false);
 
@@ -24,15 +23,17 @@ export default function AComent({ title }) {
           <div>{isActive ? <ArrowDown /> : <ArrowRight />}</div>
           <h1>{title}</h1>
         </Header>
-        {isActive && <Content>Commentaire</Content>}
+        {isActive && components}
       </SAccordion>
     </>
   );
 }
 
-AComent.propTypes = {
+AccordionUsers.propTypes = {
   title: propTypes.string,
+  components: propTypes.elementType,
 };
-AComent.defaultProps = {
+AccordionUsers.defaultProps = {
   title: '',
+  components: [],
 };
