@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import Cookies from 'universal-cookie';
 import BaseAccordion from 'Components/AccordionUser/BaseAccordion';
 import Information from 'Components/AccordionUser/Information';
 import Connexion from 'Components/AccordionUser/Connexion';
@@ -7,6 +9,7 @@ import Coment from 'Components/AccordionUser/Coment';
 import { Container, Button } from './style';
 
 export default function Profile() {
+  const dispatch = useDispatch();
   const data = [
     {
       title: 'Modifier vos infromations personelles',
@@ -20,6 +23,13 @@ export default function Profile() {
     { title: 'Vos questions', components: <Question /> },
     { title: 'Envoyer un avis suite à une commande', components: <Coment /> },
   ];
+
+  const Loggout = () => {
+    const cookies = new Cookies();
+    cookies.remove('user_token');
+    dispatch({ type: 'LOGGOUT' });
+  };
+
   return (
     <div>
       <Container>
@@ -27,7 +37,13 @@ export default function Profile() {
         {data.map(({ title, components }) => {
           return <BaseAccordion title={title} components={components} />;
         })}
-        <Button>Déconexion</Button>
+        <Button
+          onClick={() => {
+            Loggout();
+          }}
+        >
+          Déconexion
+        </Button>
       </Container>
     </div>
   );

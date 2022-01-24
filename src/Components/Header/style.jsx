@@ -80,7 +80,6 @@ const BlueUser = styled(User)`
     min-height: 0px;
     max-height: 35px;
     margin-left: 0;
-
   }
 `;
 
@@ -253,4 +252,3 @@ export {
   BlueUser,
   Gears,
 };
-
