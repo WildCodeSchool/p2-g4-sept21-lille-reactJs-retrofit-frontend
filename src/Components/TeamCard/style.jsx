@@ -16,11 +16,16 @@ const Card = styled.div`
   margin-bottom: 35px;
   background: var(--color--secondary);
   border-radius: 8px;
+  @media (max-width: 768px) {
+    min-width: 80vw;
+  }
   :hover {
     box-shadow: rgba(0, 0, 0, 0.582) 0px 4px 12px;
   }
   img {
-    border-radius: 130px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
   }
   h1 {
     margin-bottom: 0px;

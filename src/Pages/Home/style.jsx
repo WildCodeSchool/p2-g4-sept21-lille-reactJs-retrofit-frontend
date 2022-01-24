@@ -201,6 +201,9 @@ const VoteContainer = styled.div`
     font-size: 40px;
     margin-top: 20px;
     margin-bottom: 10px;
+    &:hover {
+      color: var(--color--primary);
+    }
   }
 
   div.VoteCardContainer {
