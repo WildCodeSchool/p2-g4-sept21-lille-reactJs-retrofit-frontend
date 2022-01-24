@@ -22,8 +22,9 @@ const ModalContainer = styled.div`
   font-size: 20px;
   padding: 20px;
   border-radius: 20px;
-  min-width: 32%;
-  min-height: 72%;
+  width: 32vw;
+  height: 68vh;
+  max-height: 650px;
   border: 3px solid var(--color--primary);
 `;
 
@@ -42,26 +43,48 @@ const MainContainer = styled.div`
     text-align: center;
     width: 27vw;
     margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  p {
+    font-size: 30px;
+    margin: 20px;
   }
   span.error {
+    padding-top: 15px;
     color: red;
     font-size: 20px;
   }
   span.success {
     color: green;
     font-size: 20px;
+    padding-top: 0px;
+  }
+  button:nth-child(1) {
+    margin-top: 20px;
+    height: 35px;
+    width: 185px;
+    border: none;
+    background-color: none;
+    color: white;
+    :hover {
+      color: var(--color--primary);
+      background-color: var(--color--secondary);
+    }
   }
   button {
     all: unset;
     cursor: pointer;
-  }
-
-  button:hover {
-    color: #00e6c8;
-  }
-  p {
     font-size: 30px;
-    margin: 20px;
+    margin-top: 35px;
+    padding: 5px 3px 0 3px;
+    height: 40px;
+    width: 220px;
+    text-align: center;
+    border: solid 2px var(--color--primary);
+    border-radius: 8px;
+  }
+  button:hover {
+    background-color: var(--color--primary);
   }
 `;
 const Input = styled.div`
@@ -73,8 +96,12 @@ const Input = styled.div`
   margin: 30px 0 0 0;
   input {
     margin: 10px 0 0 0;
-    width: 150px;
+    width: 350px;
     height: 35px;
+  }
+  input:focus {
+    outline: 2px solid var(--color--primary);
+    border: 1px solid var(--color--primary);
   }
 `;
 
