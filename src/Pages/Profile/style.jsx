@@ -16,14 +16,21 @@ export const Container = styled.div`
 export const Button = styled.button`
   display: flex;
   justify-content: center;
-  background-color: var(--color--primary);
-  border: solid 2px var(--color--secondary);
+  background-color: var(--color--thirdary);
+  border: solid 1px var(--color--secondary);
   border-radius: 8px;
   width: 150px;
-  padding: 10px;
+  height: 40px;
   margin: 15px 0 20px 0;
-  color: white;
+  padding-top: 10px;
+  color: #000000;
   font-size: 22px;
+  :hover {
+    border: none;
+    background-color: var(--color--primary);
+    color: var(--color--thirdary);
+    cursor: pointer;
+  }
   @media (max-width: 768px) {
     margin-bottom: 20px;
     font-size: 18px;
