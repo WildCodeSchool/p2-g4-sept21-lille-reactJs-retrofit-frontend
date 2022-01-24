@@ -9,11 +9,11 @@ import { Container, Button } from './style';
 export default function Profile() {
   const data = [
     {
-      title: 'modifier vos infromations personelles',
+      title: 'Modifier vos infromations personelles',
       components: <Information />,
     },
     {
-      title: 'modifier vos identifiants de connexion',
+      title: 'Modifier vos identifiants de connexion',
       components: <Connexion />,
     },
     { title: 'Vos commandes', components: <Ordered /> },
