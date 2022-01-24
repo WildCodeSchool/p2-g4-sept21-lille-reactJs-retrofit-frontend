@@ -30,7 +30,7 @@ export default function SignInModal() {
     setResErrorMessage('');
     setResMessage('');
     axios
-      .post('http://localhost:8123/auth/login', SignInfo)
+      .post('http://localhost:3031/auth/login', SignInfo)
       .then((response) => {
         const { token, user } = response.data;
 
@@ -79,7 +79,7 @@ export default function SignInModal() {
               </svg>
             </ClosureContainer>
             <MainContainer>
-              <h1>Login</h1>
+              <h1>Accédez aux fonctionnalités en vous connectant</h1>
               <Input>
                 Adresse e-mail
                 <input
@@ -120,7 +120,6 @@ export default function SignInModal() {
                   </button>
                 </Link>
               </p>
-              {resMessage}
             </MainContainer>
           </ModalContainer>
         </Overlay>

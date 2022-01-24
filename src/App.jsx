@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
+import VotePage from 'Pages/VotePage';
 import Form from './Components/Form';
 import SignInModal from './Components/SignInModal';
 import Signup from './Pages/Signup';
@@ -15,6 +16,7 @@ import Profile from './Pages/Profile';
 import LegalNotice from './Pages/LegalNotice';
 import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
+import Localisation from './Pages/Localisation';
 import Cars from './Pages/Cars/index';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,7 +27,7 @@ export default function App() {
     window.scrollTo(0, 0);
     const cookies = new Cookies();
     axios
-      .post('http://localhost:8123/auth/login', {
+      .post('http://localhost:3031/auth/login', {
         token: cookies.get('user_token'),
       })
       .then((response) => {
@@ -44,6 +46,18 @@ export default function App() {
       <SignInModal />
       <Header />
       <Routes>
+        <Route path="/" element={<Home />}>
+          Home
+        </Route>
+        <Route path="/localisation" element={<Localisation />}>
+          Localisation
+        </Route>
+        <Route path="/equipe" element={<Team />}>
+          Team
+        </Route>
+        <Route path="/register" />
+      </Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/renseignements" element={<Form />} />
         <Route path="/partenariats" element={<Form />} />
@@ -57,7 +71,8 @@ export default function App() {
         <Route path="/register" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
-        <Route path="/Vehicules" element={<Cars />} />
+        <Route path="/vote" element={<VotePage />} />
+        <Route path="/vehicules" element={<Cars />} />
       </Routes>
       <Footer />
       <ToastContainer />
