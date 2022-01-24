@@ -70,7 +70,7 @@ export const SForm = styled.div`
     border-radius: 5px;
     margin: 6px;
     @media (max-width: 768px) {
-      width: 38vw;
+      width: 38.5vw;
       height: 40px;
     }
   }
@@ -108,12 +108,7 @@ export const Button = styled.button`
   :hover {
     background-color: var(--color--primary);
     cursor: pointer;
-    p {
-      color: #ffffff;
-    }
-  }
-  p {
-    margin: auto;
+    color: #ffffff;
   }
   @media (max-width: 768px) {
     width: 35vw;
