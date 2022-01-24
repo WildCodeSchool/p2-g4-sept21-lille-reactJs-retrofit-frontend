@@ -101,9 +101,7 @@ export default function Form() {
         />
         <input className="comments" type="search" placeholder="Commentaire" />
       </form>
-      <Button>
-        <p>Envoyer</p>
-      </Button>
+      <Button>Envoyer</Button>
     </SForm>
   );
 }
