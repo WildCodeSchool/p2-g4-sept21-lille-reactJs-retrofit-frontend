@@ -110,11 +110,9 @@ export default function SignInModal() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Input>
-              <p>
-                <button className="submitBtn" type="submit" onClick={SendInfo}>
-                  Se connecter
-                </button>
-              </p>
+              <button className="submitBtn" type="submit" onClick={SendInfo}>
+                Connexion
+              </button>
               <span className="success">
                 {resMessage && resMessage.welcome}
               </span>
