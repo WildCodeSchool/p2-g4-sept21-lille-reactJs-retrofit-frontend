@@ -46,24 +46,13 @@ export default function App() {
       <SignInModal />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}>
-          Home
-        </Route>
-        <Route path="/localisation" element={<Localisation />}>
-          Localisation
-        </Route>
-        <Route path="/equipe" element={<Team />}>
-          Team
-        </Route>
-        <Route path="/register" />
-      </Routes>
-      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/renseignements" element={<Form />} />
         <Route path="/partenariats" element={<Form />} />
         <Route path="/nousrencontrer" element={<Form />} />
         <Route path="/serviceclient" element={<Form />} />
         <Route path="/conseiltechnique" element={<Form />} />
+        <Route path="/localisation" element={<Localisation />} />
         <Route path="/sav" element={<Form />} />
         <Route path="/equipe" element={<Team />} />
         <Route path="/technologie" element={<Technologie />} />
