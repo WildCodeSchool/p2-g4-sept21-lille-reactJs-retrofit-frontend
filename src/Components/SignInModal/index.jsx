@@ -80,6 +80,20 @@ export default function SignInModal() {
             </ClosureContainer>
             <MainContainer>
               <h1>Accédez aux fonctionnalités en vous connectant</h1>
+              <p>
+                Pas de compte ?
+                <Link to="/register">
+                  <button
+                    className="noAccount"
+                    type="submit"
+                    onClick={() => {
+                      dispatch({ type: 'CLOSESIGNIN' });
+                    }}
+                  >
+                    Inscrivez-vous
+                  </button>
+                </Link>
+              </p>
               <Input>
                 Adresse e-mail
                 <input
@@ -107,19 +121,6 @@ export default function SignInModal() {
               <span className="error">
                 {resErrorMessage && !resMessage && resErrorMessage}
               </span>
-              <p>
-                <Link to="/register">
-                  <button
-                    className="noAccount"
-                    type="submit"
-                    onClick={() => {
-                      dispatch({ type: 'CLOSESIGNIN' });
-                    }}
-                  >
-                    Pas de compte ? Inscrivez-vous
-                  </button>
-                </Link>
-              </p>
             </MainContainer>
           </ModalContainer>
         </Overlay>

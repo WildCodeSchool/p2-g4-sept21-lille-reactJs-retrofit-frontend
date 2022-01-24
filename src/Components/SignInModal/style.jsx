@@ -9,7 +9,7 @@ const Overlay = styled.div`
   height: 100vh;
   overflow: auto;
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
 `;
 
 const ModalContainer = styled.div`
@@ -22,9 +22,9 @@ const ModalContainer = styled.div`
   font-size: 20px;
   padding: 20px;
   border-radius: 20px;
-  width: 40%;
-  height: 70%;
-  border: 4px solid #00e6c8;
+  min-width: 32%;
+  min-height: 72%;
+  border: 3px solid var(--color--primary);
 `;
 
 const ClosureContainer = styled.div`
@@ -40,6 +40,8 @@ const MainContainer = styled.div`
   align-items: center;
   h1 {
     text-align: center;
+    width: 27vw;
+    margin-top: 10px;
   }
   span.error {
     color: red;
@@ -59,21 +61,20 @@ const MainContainer = styled.div`
   }
   p {
     font-size: 30px;
-
     margin: 20px;
   }
 `;
 const Input = styled.div`
-  font-size: 20px;
+  font-size: 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px 0 30px 0;
+  margin: 30px 0 0 0;
   input {
-    margin: 30px 0 0 0;
-    width: 25vw;
-    height: 30px;
+    margin: 10px 0 0 0;
+    width: 150px;
+    height: 35px;
   }
 `;
 
