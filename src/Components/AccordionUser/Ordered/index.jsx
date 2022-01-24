@@ -1,6 +1,6 @@
 import { Content } from './style';
 
-export default function Question() {
+export default function Ordered() {
   return (
     <>
       <Content>{`<3`}</Content>
