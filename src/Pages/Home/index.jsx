@@ -2,6 +2,7 @@ import Carousel from 'Components/Carousel';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import Yatch from 'Assets/yatch.png';
 import Bge from 'Assets/bge.png';
 import Clap from 'Assets/clap.png';
@@ -16,7 +17,6 @@ import LogoWild from 'Assets/wcs.png';
 import NewsCard from 'Components/NewsCard';
 import VoteCard from 'Components/VoteCard';
 
-import { Link } from 'react-router-dom';
 import {
   MainContainer,
   Cloud,
@@ -37,6 +37,18 @@ import {
 
 export default function Home() {
   const [home, setHome] = useState([]);
+  const [topCars, setTopCars] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3031/cars`)
+      .then(({ data }) => {
+        setTopCars(data.slice(0, 3));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   useEffect(() => {
     axios
@@ -155,9 +167,9 @@ export default function Home() {
             <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
 
             <div className="VoteCardContainer">
-              <VoteCard />
-              <VoteCard />
-              <VoteCard />
+              {topCars.map((car) => {
+                return <VoteCard {...car} />;
+              })}
             </div>
           </VoteContainer>
         </Link>

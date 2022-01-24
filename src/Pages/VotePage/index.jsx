@@ -1,15 +1,32 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import VoteCard from '../../Components/VoteCard';
 import VoteContainer from './style';
 
 export default function VotePage() {
+  const [carsList, setCarsList] = useState([]);
+  const [topCars, setTopCars] = useState([]);
+
+  useEffect(async () => {
+    axios
+      .get(`http://localhost:3031/cars`)
+      .then(({ data }) => {
+        setCarsList(data);
+        setTopCars(data.slice(0, 3));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <VoteContainer>
       <div className="voteContainer">
         <h1>TOP VOTE</h1>
         <div className="TopVoteCardWrapper">
-          <VoteCard />
-          <VoteCard />
-          <VoteCard />
+          {topCars.map((car) => {
+            return <VoteCard {...car} />;
+          })}
         </div>
       </div>
 
@@ -21,12 +38,9 @@ export default function VotePage() {
         </h3>
       </div>
       <div className="VoteCardContainer">
-        <VoteCard />
-        <VoteCard />
-        <VoteCard />
-        <VoteCard />
-        <VoteCard />
-        <VoteCard />
+        {carsList.map((car) => {
+          return <VoteCard {...car} />;
+        })}
       </div>
     </VoteContainer>
   );
