@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MainContainer = styled.div`
   width: 100vw;
-  padding-top: 81px;
+  padding-top: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@ const MainContainer = styled.div`
     @media (max-width: 768px) {
       width: 80vw;
       font-size: 35px;
-      padding-top: 50px;
+      padding-top: 30px;
       text-align: center;
     }
   }
@@ -59,12 +59,12 @@ const Input = styled.div`
   justify-content: center;
   margin: 5px 0;
   input {
-    width: 20vw;
+    width: 370px;
     height: 40px;
     border-radius: 4px;
     border: solid 2px var(--color--primary);
     @media (max-width: 768px) {
-      width: 70vw;
+      width: 80vw;
     }
   }
   input[type='text'] {
@@ -82,7 +82,7 @@ const Input = styled.div`
     font-size: 20px;
   }
   @media (max-width: 768px) {
-    width: 70vw;
+    width: 80vw;
   }
 `;
 
