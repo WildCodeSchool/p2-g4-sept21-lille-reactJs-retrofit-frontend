@@ -13,6 +13,7 @@ import Faq from './Pages/Faq';
 import LegalNotice from './Pages/LegalNotice';
 import Team from './Pages/Team/index';
 import Cars from './Pages/Cars/index';
+import CarsDetails from './Pages/CarsDetails/index';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
@@ -51,7 +52,9 @@ export default function App() {
         </Route>
         <Route path="/register" element={<Signup />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
-        <Route path="/Vehicules" element={<Cars />} />
+
+        <Route path="Vehicules/:name" element={<CarsDetails />} />
+        <Route path="Vehicules/" element={<Cars />} />
       </Routes>
       <Footer />
       <ToastContainer />
