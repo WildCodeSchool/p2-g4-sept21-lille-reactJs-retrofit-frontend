@@ -1,13 +1,18 @@
 import PropTypes from 'prop-types';
-import { SVéhiculeCard, Btn, Title, Image } from './style';
+import { Link } from 'react-router-dom';
+import { SVéhiculeCard, Btn, Image, Text } from './style';
 
 export default function VéhiculeCard({ model, image, price }) {
   return (
     <SVéhiculeCard>
-      <Image src={image} alt="image voiture" />
-      <Title>{model}</Title>
-      <p>A partir de {price} €</p>
-      <Btn>Plus dinfos</Btn>
+      <Link to={`/vehicules/${model}`}>
+        <Image src={image} alt="image voiture" />
+        <Text>
+          <h2>{model}</h2>
+          <p>A partir de {price} €</p>
+        </Text>
+        <Btn>Configurer</Btn>
+      </Link>
     </SVéhiculeCard>
   );
 }
