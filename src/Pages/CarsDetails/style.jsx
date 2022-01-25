@@ -9,25 +9,30 @@ const SConfiguration = styled.div`
   background-color: #011e26;
   height: 467px;
   width: 1334;
-  margin: 50px 60px;
+  margin: 90px 90px;
   div.Row1 {
     padding-top: 40px;
     text-align: center;
     color: white;
     font-size: 30px;
   }
-  .BatteryLogo {
-    margin: 10px;
-  }
-  .EuroLogo {
-    margin: 60px;
+  div.Row2 {
+    display: flex;
+    justify-content: space-around;
   }
   img {
     width: 40em;
     height: 20em;
-    display: flex;
-    justify-content: center;
   }
+  div.BatteryText {
+    color: #00e6c8;
+    margin-top: 190px;
+    margin-right: 200px;
+  }
+`;
+
+const Page = styled.div`
+  height: 100%;
 `;
 
 const Story = styled.div`
@@ -74,10 +79,14 @@ const FullBattery = styled(BatteryFull)`
   width: 80px;
 `;
 
-const Contour = styled.div`
+const Col = styled.div`
   font-size: 20px;
   text-align: center;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   margin: 30px;
 `;
 
@@ -91,9 +100,6 @@ const Container = styled.div`
 
 const ConfigurationOfCars = styled.div`
   text-align: center;
-  input[type='checkbox'] {
-    outline: 1px solid #00e6c8;
-  }
 `;
 
 const Warranty = styled.div`
@@ -101,6 +107,7 @@ const Warranty = styled.div`
 `;
 
 export {
+  Page,
   Story,
   Advantage,
   BatteryHeader,
@@ -110,7 +117,7 @@ export {
   Euro,
   Emoji,
   FullBattery,
-  Contour,
+  Col,
   Container,
   ConfigurationOfCars,
   Warranty,
