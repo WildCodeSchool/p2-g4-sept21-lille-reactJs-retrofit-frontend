@@ -10,13 +10,13 @@ const SConfiguration = styled.div`
   height: 467px;
   width: 1334;
   margin: 90px 90px;
-  div.Row1 {
+  div.row1 {
     padding-top: 40px;
     text-align: center;
     color: white;
     font-size: 30px;
   }
-  div.Row2 {
+  div.row2 {
     display: flex;
     justify-content: space-around;
   }
