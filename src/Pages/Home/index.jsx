@@ -52,7 +52,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(`/home`)
+      .get(`http://localhost:3031/news`)
       .then(({ data }) => {
         if (Array.isArray(data)) setHome(data);
         else throw new Error('Failed API call');

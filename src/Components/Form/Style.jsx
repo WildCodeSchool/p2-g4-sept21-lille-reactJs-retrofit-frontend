@@ -4,11 +4,11 @@ export const SForm = styled.div`
   margin-top: 12vh;
   width: 100vw;
   height: 90vh;
+  padding-top: 13vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  padding-top: 13vh;
   @media (max-width: 768px) {
     height: 100vh;
     padding-top: 37vh;
@@ -30,6 +30,7 @@ export const SForm = styled.div`
     border: 0px;
     outline: 0px;
   }
+  
   select {
     appearance: none;
     cursor: pointer;
@@ -56,23 +57,19 @@ export const SForm = styled.div`
       background-color: var(--color--primary);
     }
   }
-
   option {
     color: var(--color--thirdary);
     background-color: var(--color--secondary);
   }
-
   option:hover {
     background-color: var(--color--secondary);
   }
-
   input:disabled {
     background-color: #dcdcdc;
     ::placeholder {
       color: transparent;
     }
   }
-
   input {
     width: 25vw;
     height: 5vh;
@@ -93,6 +90,7 @@ export const SForm = styled.div`
     }
   }
 
+
   .message {
     width: 50.8vw;
     margin: 6px;
@@ -103,9 +101,15 @@ export const SForm = styled.div`
     @media (max-width: 768px) {
       height: 23.5vh;
       width: 80vw;
+    @media (max-width: 768px) {
+      height: 23.5vh;
+      width: 80vw;
+      height: 150px;
+
     }
   }
 `;
+
 
 export const ParentButton = styled.div`
   width: 100vw;
@@ -123,6 +127,7 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 2vh auto 0 auto;
   padding-top: 5px;
   :hover {
