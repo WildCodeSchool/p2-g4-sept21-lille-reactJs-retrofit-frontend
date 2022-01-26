@@ -29,9 +29,7 @@ export default function Configuration() {
         <div className="Row1">LE DETAIL DE VOTRE FUTUR VEHICULE</div>
         <div className="Row2">
           <BatteryHeader />
-
           <img src={Clio} alt="clio" />
-
           <EuroHeader />
         </div>
       </SConfiguration>
@@ -41,7 +39,6 @@ export default function Configuration() {
             La Citadine à l&apos;épreuve du
             <p>temps</p>
           </h2>
-
           <p>Cette citadine présente depuis les</p>
           <p>années 2006. Elle a su faire sa</p>
           <p> place dans le marché français.</p>
@@ -51,7 +48,6 @@ export default function Configuration() {
           <p>rétrofit.</p>
         </div>
       </Story>
-
       <Advantage>
         <h2>Caractéristique du véhicule</h2>
       </Advantage>
@@ -61,13 +57,11 @@ export default function Configuration() {
             <div className="ColLogo">
               <Cloud />
             </div>
-
             <div className="ColText">
               -46% d&apos;émission de GAES* par rapport à l&apos;achat d&apos;un
               véhicule neuf*
             </div>
           </Col>
-
           <Col>
             <div className="ColLogo">
               <Battery />
@@ -77,7 +71,6 @@ export default function Configuration() {
               charge rapide
             </div>
           </Col>
-
           <Col>
             <div className="ColLogo">
               <Euro />
@@ -86,7 +79,6 @@ export default function Configuration() {
               Plus économique que l&apos;achat d&apos;un véhicule électrique
             </div>
           </Col>
-
           <Col>
             <div className="ColLogo">
               <Emoji />
@@ -95,7 +87,6 @@ export default function Configuration() {
               Le confort de conduite d&apos;un véhicule électrique
             </div>
           </Col>
-
           <Col>
             <div className="ColLogo">
               <FullBattery />
@@ -109,7 +100,6 @@ export default function Configuration() {
           <h2>Configuration du véhicule</h2>
         </div>
       </ConfigurationOfCars>
-
       <Warranty>
         <h2>Nos Garanties</h2>
         <p>Avant toute désinstallation de le partie thermique</p>
