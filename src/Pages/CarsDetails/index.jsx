@@ -1,6 +1,7 @@
+import { useParams } from 'react-router-dom';
 import Clio from '../../Assets/clio.png';
-// import Clio2 from '../../Assets/clio2.png';
 import {
+  Page,
   SConfiguration,
   Story,
   Advantage,
@@ -9,7 +10,7 @@ import {
   Euro,
   Emoji,
   FullBattery,
-  Contour,
+  Col,
   Container,
   BatteryHeader,
   EuroHeader,
@@ -18,25 +19,18 @@ import {
 } from './style';
 
 export default function Configuration() {
-  return (
-    <div>
-      <SConfiguration>
-        <div className="Row1">LE DETAIL DE VOTRE FUTUR VEHICULE</div>
+  const { name } = useParams();
 
-        <div className="Row2">
-          <div className="BatteryLogo">
-            <BatteryHeader />
-          </div>
-          <div className="BatteryText">
-            Une autonomie
-            <br /> jusqu&apos;a 150 Km
-          </div>
-          <div className="Picture">
-            <img src={Clio} alt="clio" />
-          </div>
-          <div className="EuroLogo">
-            <EuroHeader />
-          </div>
+  return (
+    <Page>
+      {name}
+      <SConfiguration>
+        {name}
+        <div className="row1">LE DETAIL DE VOTRE FUTUR VEHICULE</div>
+        <div className="row2">
+          <BatteryHeader />
+          <img src={Clio} alt="clio" />
+          <EuroHeader />
         </div>
       </SConfiguration>
       <Story>
@@ -45,7 +39,6 @@ export default function Configuration() {
             La Citadine à l&apos;épreuve du
             <p>temps</p>
           </h2>
-
           <p>Cette citadine présente depuis les</p>
           <p>années 2006. Elle a su faire sa</p>
           <p> place dans le marché français.</p>
@@ -53,75 +46,53 @@ export default function Configuration() {
           <p>maintenant être accessible en</p>
           <p> voiture éléctrique grâce à notre</p>
           <p>rétrofit.</p>
-          {/* <div className='Picture2'>
-            <img src={Clio2} alt='clio' />
-          </div> */}
         </div>
       </Story>
-
       <Advantage>
         <h2>Caractéristique du véhicule</h2>
       </Advantage>
       <Container>
         <div className="Container">
-          <Contour>
-            <div className="CloudLogo">
+          <Col>
+            <div className="colLogo">
               <Cloud />
             </div>
-
-            <div className="CloudText">
-              61% d&apos;émission de GAES* <br />
-              par rapport à l&apos;achat d&apos;un
-              <br /> véhicule neuf*
+            <div className="colText">
+              -46% d&apos;émission de GAES* par rapport à l&apos;achat d&apos;un
+              véhicule neuf*
             </div>
-          </Contour>
-          <Contour>
-            <div className="FullBattery">
+          </Col>
+          <Col>
+            <div className="colLogo">
               <Battery />
             </div>
-            <div className="Text">
-              <p>
-                Une recharge complète en
-                <br />
-                12h et 80% en 20 minutes
-                <br />
-                sur borne de charge rapide
-              </p>
+            <div className="colText">
+              Une recharge complète en 12h et 80% en 20 minutes sur borne de
+              charge rapide
             </div>
-          </Contour>
-          <Contour>
-            <div className="Logo">
+          </Col>
+          <Col>
+            <div className="colLogo">
               <Euro />
             </div>
-            <div className="Text">
-              Plus économique que
-              <br />
-              l&apos;achat d&apos;un véhicule
-              <br />
-              neuf
+            <div className="colText">
+              Plus économique que l&apos;achat d&apos;un véhicule électrique
             </div>
-          </Contour>
-          <Contour>
-            <div className="Logo">
+          </Col>
+          <Col>
+            <div className="colLogo">
               <Emoji />
             </div>
-            <div className="Text">
-              Le confor de conduite d&apos;un
-              <br />
-              véhicule électrique
+            <div className="ColText">
+              Le confort de conduite d&apos;un véhicule électrique
             </div>
-          </Contour>
-
-          <Contour>
-            <div className="Logo">
+          </Col>
+          <Col>
+            <div className="colLogo">
               <FullBattery />
             </div>
-            <div className="Text">
-              Une autonomie jusqu&apos;à
-              <br />
-              350km
-            </div>
-          </Contour>
+            <div className="colText">Une autonomie jusqu&apos;à 350km</div>
+          </Col>
         </div>
       </Container>
       <ConfigurationOfCars>
@@ -129,7 +100,6 @@ export default function Configuration() {
           <h2>Configuration du véhicule</h2>
         </div>
       </ConfigurationOfCars>
-
       <Warranty>
         <h2>Nos Garanties</h2>
         <p>Avant toute désinstallation de le partie thermique</p>
@@ -141,6 +111,6 @@ export default function Configuration() {
           PRE-COMMANDE
         </button>
       </Warranty>
-    </div>
+    </Page>
   );
 }

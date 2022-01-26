@@ -37,7 +37,6 @@ const Gears = styled(Gear)`
   height: 75px;
   width: 45px;
   margin-right: 0px;
-  display: none; //* remove if isAdmin *//
   :hover {
     cursor: pointer;
   }

@@ -1,35 +1,27 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const enter = keyframes`
-    from {width: 14em;}
-    to {width: 18em;
-      column-width: 6rem;
-      }
-   
-  `;
-
-const update = keyframes`
-  from {width: 14em;}
-  to {width: 80vw;
-    }
-`;
-
-export const SVéhiculeCard = styled.div`
+export const SVehiculeCard = styled.div`
   border: 2px solid black;
-  border-radius: 5px;
-  width: 14em;
-  height: 18em;
+  border-radius: 7px;
+  width: 250px;
+  height: 320px;
   text-align: center;
-  margin: 20px 50px;
+  margin: 0 3vw 3vh 3vw;
   display: flex;
   flex-direction: column;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
-  animation-name: ${(props) => (props.toggle ? update : enter)};
+  background-color: var(--color--secondary);
+  a {
+    margin: 0;
+    color: white;
+    :hover {
+      color: white;
+    }
+  }
 `;
 
 export const Btn = styled.button`
   background-color: var(--color--primary);
+  color: white;
   margin-bottom: 5px;
   padding: 10px;
   margin: 5px;
@@ -37,14 +29,15 @@ export const Btn = styled.button`
   justify-content: center;
 `;
 
-export const Title = styled.h2`
+export const Text = styled.div`
   justify-content: center;
+  color: var(--secondary--color);
 `;
 
 export const Image = styled.img`
-  height: 14em;
-  width: 12em;
-  margin: auto;
+  height: 150px;
+  width: 220px;
+  margin-top: 10px;
   justify-content: center;
-  overflow: hidden;
+  border-radius: 5px;
 `;

@@ -22,6 +22,7 @@ export default function Header() {
   const dispatch = useDispatch();
   const firstname = useSelector((state) => state.firstname);
   const isLogged = useSelector((state) => state.isLogged);
+  const isAdmin = useSelector((state) => state.isAdmin);
 
   const showMenu = () => {
     setOpen(!open);
@@ -63,11 +64,11 @@ export default function Header() {
           <Searchbar />
         </div>
         <div className="Col4">
-          {/* Showing if isAdmin display none in css */}
-          <Link to="/">
-            <Gears />
-          </Link>
-          {/* Showing if isAdmin display none in css */}
+          {isAdmin && (
+            <a href="http://localhost:3010/#/">
+              <Gears />
+            </a>
+          )}
           <Link to="/">
             <BlueHome />
           </Link>

@@ -11,23 +11,19 @@ const VoteContainer = styled.div`
   padding: 5px;
   width: 310px;
   height: 360px;
-
   img {
     width: 250px;
     height: 150px;
   }
-
   h1.titleArea {
     color: black;
     font-size: 30px;
   }
-
-  p.PriceArea {
+  p.priceArea {
     font-size: 20px;
     margin: 0 0 10px 0;
     color: var(--color--primary);
   }
-
   button {
     cursor: pointer;
     width: 90%;

@@ -18,6 +18,7 @@ import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
 import Localisation from './Pages/Localisation';
 import Cars from './Pages/Cars/index';
+import CarsDetails from './Pages/CarsDetails/index';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
@@ -57,11 +58,13 @@ export default function App() {
         <Route path="/equipe" element={<Team />} />
         <Route path="/technologie" element={<Technologie />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/localisation" element={<Localisation />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
+        <Route path="Vehicules/:name" element={<CarsDetails />} />
+        <Route path="Vehicules/" element={<Cars />} />
         <Route path="/vote" element={<VotePage />} />
-        <Route path="/vehicules" element={<Cars />} />
       </Routes>
       <Footer />
       <ToastContainer />
