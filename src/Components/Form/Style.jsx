@@ -66,19 +66,36 @@ export const SForm = styled.div`
     width: 50.8vw;
   }
 
-  .comments {
-    width: 50.8vw;
+  .textarea {
+    width: 51vw;
     height: 30vh;
+    border: solid 2px var(--color--primary);
+    border-radius: 5px;
   }
 `;
 
-export const Button = styled.form`
-  input {
+export const Button = styled.button`
+  background-color: white;
+  border: solid 2px var(--color--primary);
+  width: 150px;
+  height: 5vh;
+  color: black;
+  font-size: 25px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2vh auto 0 auto;
+  padding-top: 5px;
+  :hover {
     background-color: var(--color--primary);
-    border: solid 2px var(--color--secondary);
-    width: 10vw;
-    height: 5vh;
-    margin-bottom: 7vh;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  @media (max-width: 768px) {
+    width: 35vw;
+    height: 40px;
+    font-size: 20px;
   }
 `;
 

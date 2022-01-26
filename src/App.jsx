@@ -51,13 +51,8 @@ export default function App() {
         <Route path="/localisation" element={<Localisation />}>
           Localisation
         </Route>
-        <Route path="/equipe" element={<Team />}>
-          Team
-        </Route>
-        <Route path="/register" />
       </Routes>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/renseignements" element={<Form />} />
         <Route path="/partenariats" element={<Form />} />
         <Route path="/nousrencontrer" element={<Form />} />
