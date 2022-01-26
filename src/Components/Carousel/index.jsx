@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import ReviewCard from 'Components/ReviewCard';
+import ReviewCard from '../ReviewCard/index';
 import { Slider, SliderContent, ArrowLeft, ArrowRight } from './style';
 
 const reviews = [

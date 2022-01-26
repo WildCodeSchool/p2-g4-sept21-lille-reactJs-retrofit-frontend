@@ -5,13 +5,17 @@ import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
+import VotePage from 'Pages/VotePage';
+import Form from './Components/Form';
 import SignInModal from './Components/SignInModal';
 import Signup from './Pages/Signup';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
 import Faq from './Pages/Faq';
 import LegalNotice from './Pages/LegalNotice';
+import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
+import Localisation from './Pages/Localisation';
 import Cars from './Pages/Cars/index';
 import CarsDetails from './Pages/CarsDetails/index';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,9 +24,10 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const cookies = new Cookies();
     axios
-      .post('http://localhost:8123/auth/login', {
+      .post('http://localhost:3031/auth/login', {
         token: cookies.get('user_token'),
       })
       .then((response) => {
@@ -41,20 +46,23 @@ export default function App() {
       <SignInModal />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}>
-          Home
-        </Route>
-        <Route path="/faq" element={<Faq />}>
-          Faq
-        </Route>
-        <Route path="/equipe" element={<Team />}>
-          Team
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/renseignements" element={<Form />} />
+        <Route path="/partenariats" element={<Form />} />
+        <Route path="/nousrencontrer" element={<Form />} />
+        <Route path="/serviceclient" element={<Form />} />
+        <Route path="/conseiltechnique" element={<Form />} />
+        <Route path="/sav" element={<Form />} />
+        <Route path="/equipe" element={<Team />} />
+        <Route path="/technologie" element={<Technologie />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/localisation" element={<Localisation />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
-
         <Route path="Vehicules/:name" element={<CarsDetails />} />
         <Route path="Vehicules/" element={<Cars />} />
+        <Route path="/vote" element={<VotePage />} />
+
       </Routes>
       <Footer />
       <ToastContainer />

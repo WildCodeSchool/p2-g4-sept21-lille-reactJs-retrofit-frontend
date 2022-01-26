@@ -98,13 +98,7 @@ export const SubHeader = styled.div`
   background-color: rgba(0, 230, 199, 0);
   @media (max-width: 768px) {
     height: 40px;
-  }
-  h2 {
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    font-size: 25px;
-    color: white;
+    margin-bottom: 5px;
   }
   div {
     margin-right: 10px;
@@ -115,7 +109,7 @@ export const SubHeader = styled.div`
     justify-content: center;
     align-items: center;
     @media (max-width: 768px) {
-      padding-bottom: 5px;
+      padding-bottom: 3px;
     }
   }
   h1 {
@@ -124,10 +118,11 @@ export const SubHeader = styled.div`
     font-size: 25px;
     color: white;
     margin-right: 5px;
-    margin-top: 15px;
     @media (max-width: 768px) {
-      font-size: 20px;
-      width: 80vw;
+      justify-content: center;
+      font-size: 18px;
+      width: 100vw;
+      padding-top: 3px;
     }
   }
 `;
