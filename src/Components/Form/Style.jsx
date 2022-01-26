@@ -2,37 +2,64 @@ import styled from 'styled-components';
 
 export const SForm = styled.div`
   margin-top: 12vh;
-
-  p {
-    width: 100vw;
-    font-size: 20px;
-    color: black;
-    text-align: center;
-    font-weight: bold;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 13vh;
+  @media (max-width: 768px) {
+    height: 100vh;
+    padding-top: 37vh;
+    padding-bottom: 12vh;
   }
 
+  form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70vw;
+    margin: auto;
+    @media (max-width: 768px) {
+      width: 90vw;
+    }
+  }
+
+  select:focus {
+    border: 0px;
+    outline: 0px;
+  }
   select {
     appearance: none;
     cursor: pointer;
     width: 50.8vw;
-    padding-left: 9px;
     height: 5vh;
-    margin: 7px;
+    color: white !important;
+    font-size: 25px !important;
+    padding-left: 9px;
+    margin-bottom: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: var(--color--primary);
     color: var(--color--secondary);
-    font-size: 16px;
+    @media (max-width: 768px) {
+      width: 80vw;
+      height: 40px;
+      text-overflow: ellipsis;
+      font-size: 20px !important;
+    }
   }
-
   select:hover {
-    background-color: rgb(0, 173, 150);
+    background-color: var(--color--hover);
+    @media (max-width: 768px) {
+      background-color: var(--color--primary);
+    }
   }
 
   option {
     color: var(--color--thirdary);
     background-color: var(--color--secondary);
-    border-radius: 8px;
   }
 
   option:hover {
@@ -52,26 +79,37 @@ export const SForm = styled.div`
     border: solid 2px var(--color--primary);
     border-radius: 5px;
     margin: 6px;
-  }
-
-  form {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 70vw;
-    margin: auto;
+    @media (max-width: 768px) {
+      width: 38.5vw;
+      height: 40px;
+    }
   }
 
   .tallInput {
     width: 50.8vw;
+    @media (max-width: 768px) {
+      width: 80vw;
+      height: 40px;
+    }
   }
 
-  .textarea {
-    width: 51vw;
+  .message {
+    width: 50.8vw;
+    margin: 6px;
     height: 30vh;
     border: solid 2px var(--color--primary);
     border-radius: 5px;
+    padding: 5px 0 0 5px;
+    @media (max-width: 768px) {
+      height: 23.5vh;
+      width: 80vw;
+    }
   }
+`;
+
+export const ParentButton = styled.div`
+  width: 100vw;
+  height: 100px;
 `;
 
 export const Button = styled.button`
@@ -84,7 +122,7 @@ export const Button = styled.button`
   border-radius: 10px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
   margin: 2vh auto 0 auto;
   padding-top: 5px;
   :hover {
@@ -99,4 +137,4 @@ export const Button = styled.button`
   }
 `;
 
-export default { SForm, Button };
+export default { SForm, Button, ParentButton };

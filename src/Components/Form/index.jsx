@@ -1,7 +1,10 @@
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
-import { SForm, Button } from './Style';
+import dotenv from 'dotenv';
+import { SForm, Button, ParentButton } from './Style';
+
+dotenv.config();
 
 export default function Form() {
   const [chooseOption, setChooseOption] = useState('info');
@@ -27,12 +30,14 @@ export default function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:3031/contact`, informations)
+      .post(`/contact`, informations)
       .then(() => {
-        console.log(informations);
+        toast(
+          'Message envoyé ! Nous vous répondrons dans les plus brefs délais.'
+        );
       })
       .catch(() => {
-        toast('Adresse email non trouvée !');
+        toast('Saisie incorrecte');
       });
   };
 
@@ -165,16 +170,17 @@ export default function Form() {
           }
         />
 
-        <input
-          className="textarea"
-          type="search"
+        <textarea
+          className="message"
           name="message"
           value={informations.message}
           onChange={handleChange}
           placeholder="Tapez votre message ici..."
         />
 
-        <Button type="submit">Envoyer</Button>
+        <ParentButton className="parentButton">
+          <Button type="submit">Envoyer</Button>
+        </ParentButton>
         <ToastContainer />
       </form>
     </SForm>
