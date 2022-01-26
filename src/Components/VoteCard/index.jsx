@@ -48,7 +48,7 @@ const VoteCard = ({ ...car }) => {
         <h1 className="titleArea">
           {car.brand} {car.model}
         </h1>
-        <p className="PriceArea">A partir de {car.price}€</p>
+        <p className="priceArea">A partir de {car.price}€</p>
 
         {voteStorage < 2 && userStorage ? (
           <button type="button" onClick={upVote}>
