@@ -62,7 +62,6 @@ export default function App() {
         <Route path="Vehicules/:name" element={<CarsDetails />} />
         <Route path="Vehicules/" element={<Cars />} />
         <Route path="/vote" element={<VotePage />} />
-
       </Routes>
       <Footer />
       <ToastContainer />
