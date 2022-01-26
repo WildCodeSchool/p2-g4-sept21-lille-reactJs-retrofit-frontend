@@ -12,7 +12,7 @@ export default function Profile() {
   const dispatch = useDispatch();
   const data = [
     {
-      title: 'Modifier vos infromations personelles',
+      title: 'Modifier vos informations personelles',
       components: <Information />,
     },
     {
