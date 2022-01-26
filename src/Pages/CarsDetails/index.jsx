@@ -52,7 +52,7 @@ export default function Configuration() {
         <h2>Caractéristique du véhicule</h2>
       </Advantage>
       <Container>
-        <div className="container">
+        <div className="Container">
           <Col>
             <div className="colLogo">
               <Cloud />
