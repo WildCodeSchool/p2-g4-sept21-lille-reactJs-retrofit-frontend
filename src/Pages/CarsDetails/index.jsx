@@ -26,8 +26,8 @@ export default function Configuration() {
       {name}
       <SConfiguration>
         {name}
-        <div className="Row1">LE DETAIL DE VOTRE FUTUR VEHICULE</div>
-        <div className="Row2">
+        <div className="row1">LE DETAIL DE VOTRE FUTUR VEHICULE</div>
+        <div className="row2">
           <BatteryHeader />
           <img src={Clio} alt="clio" />
           <EuroHeader />
@@ -52,35 +52,35 @@ export default function Configuration() {
         <h2>Caractéristique du véhicule</h2>
       </Advantage>
       <Container>
-        <div className="Container">
+        <div className="container">
           <Col>
-            <div className="ColLogo">
+            <div className="colLogo">
               <Cloud />
             </div>
-            <div className="ColText">
+            <div className="colText">
               -46% d&apos;émission de GAES* par rapport à l&apos;achat d&apos;un
               véhicule neuf*
             </div>
           </Col>
           <Col>
-            <div className="ColLogo">
+            <div className="colLogo">
               <Battery />
             </div>
-            <div className="ColText">
+            <div className="colText">
               Une recharge complète en 12h et 80% en 20 minutes sur borne de
               charge rapide
             </div>
           </Col>
           <Col>
-            <div className="ColLogo">
+            <div className="colLogo">
               <Euro />
             </div>
-            <div className="ColText">
+            <div className="colText">
               Plus économique que l&apos;achat d&apos;un véhicule électrique
             </div>
           </Col>
           <Col>
-            <div className="ColLogo">
+            <div className="colLogo">
               <Emoji />
             </div>
             <div className="ColText">
@@ -88,10 +88,10 @@ export default function Configuration() {
             </div>
           </Col>
           <Col>
-            <div className="ColLogo">
+            <div className="colLogo">
               <FullBattery />
             </div>
-            <div className="ColText">Une autonomie jusqu&apos;à 350km</div>
+            <div className="colText">Une autonomie jusqu&apos;à 350km</div>
           </Col>
         </div>
       </Container>
