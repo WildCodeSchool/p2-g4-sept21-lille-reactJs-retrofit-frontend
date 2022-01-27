@@ -30,7 +30,7 @@ export default function SignInModal() {
     setResErrorMessage('');
     setResMessage('');
     axios
-      .post('http://localhost:3031/auth/login', SignInfo)
+      .post('/auth/login', SignInfo)
       .then((response) => {
         const { token, user } = response.data;
 

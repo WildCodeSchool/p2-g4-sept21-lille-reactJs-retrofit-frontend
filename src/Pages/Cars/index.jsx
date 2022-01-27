@@ -8,7 +8,7 @@ function Vehicules() {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3031/cars').then(({ data }) => {
+    axios.get(`/cars`).then(({ data }) => {
       setCars(data);
     });
   }, []);
