@@ -28,7 +28,7 @@ export default function Signup() {
     setResErrorMessage('');
     setResMessage('');
     axios
-      .post('http://localhost:3031/auth/signup', SignInfo)
+      .post('/auth/signup', SignInfo)
       .then((response) => {
         setResMessage(response.data);
         setFirstname('');
