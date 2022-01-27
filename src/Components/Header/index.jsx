@@ -81,13 +81,8 @@ export default function Header() {
       <Row2 onMouseEnter={showLogin} onMouseLeave={hideLogin}>
         {isLogged ? (
           <>
-            <DropLogin
-              style={style}
-              onClick={() => {
-                dispatch({ type: 'OPENSIGNUP' });
-              }}
-            >
-              {firstname}
+            <DropLogin style={style}>
+              <Link to="/profile">{firstname}</Link>
             </DropLogin>
             <DropLogin style={style} onClick={Loggout}>
               deconnexion
