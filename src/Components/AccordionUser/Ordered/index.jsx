@@ -19,7 +19,7 @@ export default function Ordered() {
   const [items, setItems] = useState([]);
   useEffect(async () => {
     await axios
-      .get(`http://localhost:3031/order`)
+      .get(`/order`)
       .then(({ data }) => {
         const res = data.map((i) => {
           return {

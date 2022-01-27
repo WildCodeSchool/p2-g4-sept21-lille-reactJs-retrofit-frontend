@@ -41,7 +41,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3031/cars`)
+      .get(`/cars`)
       .then(({ data }) => {
         setTopCars(data.slice(0, 3));
       })
