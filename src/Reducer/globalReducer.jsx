@@ -5,6 +5,7 @@ const initialState = {
   firstname: '',
   lastname: '',
   mail: '',
+  isAdmin: false,
   vote: 0,
   id: 0,
 };
