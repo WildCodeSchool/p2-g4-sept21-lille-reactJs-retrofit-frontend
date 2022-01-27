@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react';
 import dotenv from 'dotenv';
 import { SForm, Button, ParentButton } from './Style';
 
-dotenv.config();
-
 export default function Form() {
   const [chooseOption, setChooseOption] = useState('info');
   const [informations, setInformations] = useState({
@@ -18,8 +16,6 @@ export default function Form() {
     subject: '',
     message: '',
   });
-
-  console.log(informations);
 
   const handleChange = (evt) => {
     const newInformations = { ...informations };
@@ -169,7 +165,6 @@ export default function Form() {
             chooseOption === 'advice'
           }
         />
-
         <textarea
           className="message"
           name="message"
@@ -177,7 +172,6 @@ export default function Form() {
           onChange={handleChange}
           placeholder="Tapez votre message ici..."
         />
-
         <ParentButton className="parentButton">
           <Button type="submit">Envoyer</Button>
         </ParentButton>
