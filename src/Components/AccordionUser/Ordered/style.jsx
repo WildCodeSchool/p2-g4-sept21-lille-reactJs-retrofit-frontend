@@ -23,10 +23,13 @@ const closeAnimation = keyframes`
 `;
 
 const Content = styled.div`
+  display: flex;
+  justify-content: center;
   background-color: rgb(1, 30, 38);
   padding-bottom: 0.6rem;
   color: white;
   border-radius: 10px;
+  height: 650px;
   max-width: 70vw;
   padding: 5px 0 5px 0;
   animation-duration: 0.55s;
@@ -79,6 +82,7 @@ const Col2 = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
   @media (max-width: 1400px) {
     min-width: 60vw;
   }
@@ -99,12 +103,6 @@ const Col2 = styled.div`
   }
 `;
 
-const Row2 = styled.div`
-  height: 55px;
-
-  }
-`;
-
 const Units = styled.div`
   display: flex;
   flex-direction: row;
@@ -115,23 +113,6 @@ const Units = styled.div`
   border-radius: 8px;
   @media (max-width: 768px) {
     height: 21vw;
-    width: 45%;
-    margin: 8px 0 0 11px;
-    border: none;
-    flex-direction: column;
-  }
-`;
-
-const Numbers = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 40%;
-  border: 2px solid var(--color--primary);
-  margin: 8px 12px 0 5px;
-  border-radius: 8px;
-  @media (max-width: 768px) {
-    height: 30vw;
     width: 45%;
     margin: 8px 0 0 11px;
     border: none;
@@ -197,16 +178,4 @@ const Col4 = styled.div`
   }
 `;
 
-export {
-  Content,
-  Row,
-  Row2,
-  Units,
-  Numbers,
-  Col,
-  Col2,
-  Col3,
-  Col4,
-  Button,
-  Btncontainer,
-};
+export { Content, Row, Units, Col, Col2, Col3, Col4, Button, Btncontainer };

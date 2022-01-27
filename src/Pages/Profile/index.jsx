@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Cookies from 'universal-cookie';
 import BaseAccordion from 'Components/AccordionUser/BaseAccordion';
 import Information from 'Components/AccordionUser/Information';
@@ -10,6 +10,8 @@ import { Container, Button } from './style';
 
 export default function Profile() {
   const dispatch = useDispatch();
+  const firstname = useSelector((state) => state.firstname);
+
   const data = [
     {
       title: 'Modifier vos informations personelles',
@@ -33,7 +35,7 @@ export default function Profile() {
   return (
     <div>
       <Container>
-        <h1>Bienvenue Jean-philipe</h1>
+        <h1>Bienvenue {firstname}</h1>
         {data.map(({ title, components }) => {
           return <BaseAccordion title={title} components={components} />;
         })}

@@ -1,5 +1,7 @@
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import axios from 'axios';
 import {
@@ -23,12 +25,27 @@ import {
 export default function Configuration() {
   const { id } = useParams();
   const [cars, setCars] = useState([]);
+  const userId = useSelector((state) => state.id);
 
   useEffect(async () => {
     axios.get(`/cars/${id}`).then(({ data }) => {
       setCars(data[0]);
     });
   }, []);
+
+  const SendPreorder = (evt) => {
+    evt.preventDefault();
+    const orderInfo = {
+      id: userId,
+      cars: cars.id,
+      state: 1,
+    };
+    axios.post('/order', orderInfo).catch((error) => {
+      if (error.response) {
+        toast.error('error');
+      }
+    });
+  };
 
   return (
     <Page>
@@ -168,7 +185,7 @@ export default function Configuration() {
         <p>fournir un devis si des composants sont obsolètes.</p>
         <p>Notre système est garantie 2 ans.</p>
         <p>Premier contrôle à 5000 km gratuit.</p>
-        <button className="pre-order" type="button">
+        <button className="pre-order" type="button" onClick={SendPreorder}>
           PRE-COMMANDE
         </button>
       </Warranty>

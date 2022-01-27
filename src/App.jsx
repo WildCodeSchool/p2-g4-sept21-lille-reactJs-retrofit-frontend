@@ -17,7 +17,7 @@ import LegalNotice from './Pages/LegalNotice';
 import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
 import Localisation from './Pages/Localisation';
-import Cars from './Pages/Cars/index';
+import Cars from './Pages/Cars';
 import CarsDetails from './Pages/CarsDetails/index';
 import 'react-toastify/dist/ReactToastify.css';
 
