@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 export const SForm = styled.div`
-  padding-top: 12vh;
+  margin-top: 12vh;
+  width: 100vw;
+  height: 90vh;
+  padding-top: 13vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  margin-bottom: 2vh;
   @media (max-width: 768px) {
-    margin-top: 6vh;
+    height: 100vh;
+    padding-top: 37vh;
+    padding-bottom: 12vh;
   }
   form {
     display: flex;
@@ -81,15 +85,28 @@ export const SForm = styled.div`
       height: 40px;
     }
   }
-  .comments {
+  .message {
     width: 50.8vw;
+    margin: 6px;
     height: 30vh;
+    border: solid 2px var(--color--primary);
+    border-radius: 5px;
+    padding: 5px 0 0 5px;
+    @media (max-width: 768px) {
+      height: 23.5vh;
+      width: 80vw;
     @media (max-width: 768px) {
       height: 23.5vh;
       width: 80vw;
       height: 150px;
+
     }
   }
+`;
+
+export const ParentButton = styled.div`
+  width: 100vw;
+  height: 100px;
 `;
 
 export const Button = styled.button`
@@ -102,6 +119,7 @@ export const Button = styled.button`
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   margin: 2vh auto 0 auto;
   padding-top: 5px;
@@ -117,4 +135,4 @@ export const Button = styled.button`
   }
 `;
 
-export default { SForm, Button };
+export default { SForm, Button, ParentButton };
