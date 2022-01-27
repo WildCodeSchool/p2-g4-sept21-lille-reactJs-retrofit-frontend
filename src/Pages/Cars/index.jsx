@@ -12,7 +12,6 @@ function Véhicules() {
       setCars(data);
     });
   }, []);
-  console.log(cars);
   return (
     <SCarsView>
       {cars.map((data) => {

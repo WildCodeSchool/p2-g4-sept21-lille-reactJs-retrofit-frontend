@@ -12,6 +12,7 @@ import Signup from './Pages/Signup';
 import Footer from './Components/Footer/index';
 import Home from './Pages/Home';
 import Faq from './Pages/Faq';
+import Profile from './Pages/Profile';
 import LegalNotice from './Pages/LegalNotice';
 import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
@@ -52,12 +53,14 @@ export default function App() {
         <Route path="/nousrencontrer" element={<Form />} />
         <Route path="/serviceclient" element={<Form />} />
         <Route path="/conseiltechnique" element={<Form />} />
+        <Route path="/localisation" element={<Localisation />} />
         <Route path="/sav" element={<Form />} />
         <Route path="/equipe" element={<Team />} />
         <Route path="/technologie" element={<Technologie />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/localisation" element={<Localisation />} />
         <Route path="/register" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
         <Route path="Vehicules/:id" element={<CarsDetails />} />
         <Route path="/vote" element={<VotePage />} />

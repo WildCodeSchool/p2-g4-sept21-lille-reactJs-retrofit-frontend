@@ -49,7 +49,6 @@ const VoteCard = ({ ...car }) => {
           {car.brand} {car.model}
         </h1>
         <p className="priceArea">A partir de {car.price}€</p>
-
         {voteStorage < 2 && userStorage ? (
           <button type="button" onClick={upVote}>
             {location === '/' ? 'ACCEDEZ AUX VOTES' : 'VOTEZ'}
@@ -66,7 +65,6 @@ const VoteCard = ({ ...car }) => {
               : `MERCI D'AVOIR PARTICIPÉ`}
           </button>
         )}
-
         <ProgressContainer>
           <progress max="30" value={voteValue} />
           {voteValue >= 30 ? (
