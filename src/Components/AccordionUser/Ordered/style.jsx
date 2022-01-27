@@ -101,7 +101,6 @@ const Col2 = styled.div`
 
 const Row2 = styled.div`
   height: 55px;
-
   }
 `;
 
