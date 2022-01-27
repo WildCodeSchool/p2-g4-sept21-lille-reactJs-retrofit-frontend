@@ -14,7 +14,6 @@ export const SForm = styled.div`
     padding-top: 37vh;
     padding-bottom: 12vh;
   }
-
   form {
     display: flex;
     justify-content: center;
@@ -25,12 +24,10 @@ export const SForm = styled.div`
       width: 90vw;
     }
   }
-
   select:focus {
     border: 0px;
     outline: 0px;
   }
-  
   select {
     appearance: none;
     cursor: pointer;
@@ -81,7 +78,6 @@ export const SForm = styled.div`
       height: 40px;
     }
   }
-
   .tallInput {
     width: 50.8vw;
     @media (max-width: 768px) {
@@ -89,8 +85,6 @@ export const SForm = styled.div`
       height: 40px;
     }
   }
-
-
   .message {
     width: 50.8vw;
     margin: 6px;
@@ -109,7 +103,6 @@ export const SForm = styled.div`
     }
   }
 `;
-
 
 export const ParentButton = styled.div`
   width: 100vw;
