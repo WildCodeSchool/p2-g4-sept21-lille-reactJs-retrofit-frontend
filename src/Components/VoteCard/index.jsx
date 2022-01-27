@@ -20,7 +20,7 @@ const VoteCard = ({ ...car }) => {
       setVoteValue(voteValue + 1);
     }
     axios
-      .put('http://localhost:3031/cars', {
+      .put('/cars', {
         carId: car.id,
         userId: userStorage,
       })

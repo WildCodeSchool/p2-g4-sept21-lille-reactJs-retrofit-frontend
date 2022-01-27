@@ -12,7 +12,7 @@ export default function Team() {
     window.scrollTo(0, 0);
 
     axios
-      .get(`http://localhost:3031/team`)
+      .get(`/team`)
       .then(({ data }) => {
         if (Array.isArray(data)) setTeam(data);
         else throw new Error('Failed API call');
