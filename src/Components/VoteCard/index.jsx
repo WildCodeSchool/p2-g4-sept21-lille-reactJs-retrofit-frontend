@@ -20,7 +20,7 @@ const VoteCard = ({ ...car }) => {
       setVoteValue(voteValue + 1);
     }
     axios
-      .put('http://localhost:3031/cars', {
+      .put('/cars', {
         carId: car.id,
         userId: userStorage,
       })
@@ -66,7 +66,7 @@ const VoteCard = ({ ...car }) => {
               : `MERCI D'AVOIR PARTICIPÉ`}
           </button>
         )}
-        
+
         <ProgressContainer>
           <progress max="30" value={voteValue} />
           {voteValue >= 30 ? (

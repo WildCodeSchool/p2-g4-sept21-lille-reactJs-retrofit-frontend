@@ -22,7 +22,7 @@ function Map() {
   const [mapResults, setMapResults] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3031/localisation`)
+      .get(`/localisation`)
       .then(({ data }) => {
         setMapResults(data);
       })
