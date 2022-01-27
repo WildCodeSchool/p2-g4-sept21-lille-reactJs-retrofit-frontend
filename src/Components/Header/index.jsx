@@ -87,7 +87,7 @@ export default function Header() {
                 dispatch({ type: 'OPENSIGNUP' });
               }}
             >
-              {firstname}
+              <Link to="/profile">{firstname}</Link>
             </DropLogin>
             <DropLogin style={style} onClick={Loggout}>
               deconnexion
