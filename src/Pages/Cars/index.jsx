@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import VehiculeCard from '../../Components/VehiculeCard';
 import SCarsView from './style';
 
-function Véhicules() {
+function Vehicules() {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
@@ -22,4 +22,4 @@ function Véhicules() {
   );
 }
 
-export default Véhicules;
+export default Vehicules;
