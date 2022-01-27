@@ -14,24 +14,8 @@ import {
   Button,
   Btncontainer,
 } from './style';
-// import titanic from '../../../Assets/titanic.jpg';
 
 export default function Ordered() {
-  // const data = [
-  //   { statue: 1, pourcent: 12.5, title: 'Précommande' },
-  //   { statue: 2, pourcent: 25, title: 'Kit en création' },
-  //   { statue: 3, pourcent: 37.5, title: 'Kit homologué' },
-  //   {
-  //     statue: 4,
-  //     pourcent: 50,
-  //     title: 'Modele du véhicule en cours de création',
-  //   },
-  //   { statue: 5, pourcent: 62.5, title: 'Homologation' },
-  //   { statue: 6, pourcent: 75, title: 'Transformation véhicule' },
-  //   { statue: 7, pourcent: 87.5, title: 'Condition générale modifier' },
-  //   { statue: 8, pourcent: 100, title: 'Véhicule prêt' },
-  // ];enfi
-  // const [res, setRes] = useSate();
   const [items, setItems] = useState([]);
   useEffect(async () => {
     await axios
@@ -59,20 +43,6 @@ export default function Ordered() {
         });
       });
   }, []);
-
-  // function message(items) {
-  //   let test = items.map((data) => {
-  //     return data.progress;
-  //   });
-  //   let result = '';
-  //   if (test === 12.5) {
-  //     return (result = 'true');
-  //   } else if (items.progress === 25) {
-  //     return (result = 'false');
-  //   }
-  //   setRes.push(result);
-  // }
-  // message();
 
   return (
     <>
@@ -144,11 +114,6 @@ export default function Ordered() {
             })}
             data-text="coucou"
           />
-          {items.progress >= 1 ? (
-            <p className="progressLabel">Vote Terminé !</p>
-          ) : (
-            <p className="progressLabel">{items.progress || 0} Votes / 30 </p>
-          )}
         </Row2>
       </Content>
     </>
