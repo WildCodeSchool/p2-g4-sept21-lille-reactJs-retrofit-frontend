@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import {
   Content,
@@ -13,7 +14,7 @@ import {
   Button,
   Btncontainer,
 } from './style';
-import titanic from '../../../Assets/titanic.jpg';
+// import titanic from '../../../Assets/titanic.jpg';
 
 export default function Ordered() {
   // const data = [
@@ -29,47 +30,61 @@ export default function Ordered() {
   //   { statue: 6, pourcent: 75, title: 'Transformation véhicule' },
   //   { statue: 7, pourcent: 87.5, title: 'Condition générale modifier' },
   //   { statue: 8, pourcent: 100, title: 'Véhicule prêt' },
-  // ];
-
+  // ];enfi
+  // const [res, setRes] = useSate();
   const [items, setItems] = useState([]);
-  const [progress, setProgress] = useState([]);
   useEffect(async () => {
     await axios
-      .get(`http://localhost:3031/cars/0`)
+      .get(`http://localhost:3031/order`)
       .then(({ data }) => {
         const res = data.map((i) => {
           return {
             ...i,
-            progress: (i.availibleStatue / 8) * 100,
+            progress: (i.state / 8) * 100,
+            finalprice: i.price * i.quantities,
           };
         });
         setItems(res);
+        console.log(items);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        toast.error('Pas de commandes en cours !', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
   }, []);
 
-  useEffect(() => {
-    const testprogress = () => {
-      const res = items.map((i) => {
-        return i.progress;
-      });
-      setProgress(res);
-      console.log(res);
-    };
-
-    testprogress();
-  }, []);
-
-  console.log(progress);
+  // function message(items) {
+  //   let test = items.map((data) => {
+  //     return data.progress;
+  //   });
+  //   let result = '';
+  //   if (test === 12.5) {
+  //     return (result = 'true');
+  //   } else if (items.progress === 25) {
+  //     return (result = 'false');
+  //   }
+  //   setRes.push(result);
+  // }
+  // message();
 
   return (
     <>
       <Content>
         <Row>
           <Col>
-            <img src={titanic} alt="bateau" />
+            <img
+              src={items.map((data) => {
+                return data.image;
+              })}
+              alt="bateau"
+            />
           </Col>
           <Col2>
             <Units>
@@ -88,16 +103,32 @@ export default function Ordered() {
             </Units>
             <Numbers>
               <Col4>
-                <p>Paquebot</p>
+                <p>
+                  {items.map((data) => {
+                    return data.brand;
+                  })}
+                </p>
               </Col4>
               <Col4>
-                <p>{items.model}</p>
+                <p>
+                  {items.map((data) => {
+                    return data.model;
+                  })}
+                </p>
               </Col4>
               <Col4>
-                <p>1</p>
+                <p>
+                  {items.map((data) => {
+                    return data.quantities;
+                  })}
+                </p>
               </Col4>
               <Col4>
-                <p>7,5 M €</p>
+                <p>
+                  {items.map((data) => {
+                    return data.finalprice;
+                  })}
+                </p>
               </Col4>
             </Numbers>
             <Btncontainer>
@@ -106,8 +137,18 @@ export default function Ordered() {
           </Col2>
         </Row>
         <Row2>
-          <progress max="100" value={progress} data-text="coucou" />
-          <p className="progressLabel">Vote Terminé !</p>
+          <progress
+            max="100"
+            value={items.map((data) => {
+              return data.progress;
+            })}
+            data-text="coucou"
+          />
+          {items.progress >= 1 ? (
+            <p className="progressLabel">Vote Terminé !</p>
+          ) : (
+            <p className="progressLabel">{items.progress || 0} Votes / 30 </p>
+          )}
         </Row2>
       </Content>
     </>
