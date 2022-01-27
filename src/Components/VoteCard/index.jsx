@@ -66,7 +66,6 @@ const VoteCard = ({ ...car }) => {
               : `MERCI D'AVOIR PARTICIPÉ`}
           </button>
         )}
-
         <ProgressContainer>
           <progress max="30" value={voteValue} />
           {voteValue >= 30 ? (
