@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import { SForm, Button, ParentButton } from './Style';
 
 export default function Form() {
