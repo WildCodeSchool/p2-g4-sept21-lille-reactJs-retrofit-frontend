@@ -8,7 +8,6 @@ import { Content, Units, Col2, Col3, Button, Btncontainer } from './style';
 export default function Ordered() {
   const [items, setItems] = useState([]);
   const userStorage = { id: useSelector((state) => state.id) };
-  console.log(items);
 
   useEffect(async () => {
     await axios
