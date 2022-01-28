@@ -49,7 +49,6 @@ const VoteCard = ({ ...car }) => {
           {car.brand} {car.model}
         </h1>
         <p className="priceArea">A partir de {car.price}€</p>
-
         {voteStorage < 2 && userStorage ? (
           <button type="button" onClick={upVote}>
             {location === '/' ? 'ACCEDEZ AUX VOTES' : 'VOTEZ'}

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
 import VehiculeCard from '../../Components/VehiculeCard';
+
 import SCarsView from './style';
 
 function Vehicules() {
