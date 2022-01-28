@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
 import {
   SFooter,
   Entree,
@@ -17,6 +20,30 @@ import {
 import Logo from './logo.png';
 
 export default function Footer() {
+  const [mail, setMail] = useState({
+    email: '',
+  });
+
+  const handleChangeMail = (e) => {
+    const newMail = { ...mail };
+    newMail[e.target.name] = e.target.value;
+    setMail(newMail);
+  };
+
+  const handleSubmitMail = (evt) => {
+    evt.preventDefault();
+    axios
+      .post(`/mail`, mail)
+      .then(() => {
+        toast(
+          `Demande d'informations prise en compte, nous vous répondrons dans les plus brefs délais`
+        );
+      })
+      .catch(() => {
+        toast('Saisie incorrecte');
+      });
+  };
+
   return (
     <SFooter>
       <LogoContainer>
@@ -80,10 +107,18 @@ export default function Footer() {
 
         <LastCategory>
           <p>Venez tester nos modèles:</p>
-          <form>
-            <input className="Search" type="search" placeholder="E-mail" />
+          <form onSubmit={handleSubmitMail}>
+            <input
+              name="email"
+              value={mail.email}
+              className="Search"
+              type="search"
+              placeholder="E-mail"
+              onChange={handleChangeMail}
+            />
             <input className="OkButton" type="submit" value="Ok" />
           </form>
+          <ToastContainer />
           <SocialNetwork>
             <p>SUIVEZ-NOUS</p>
             <div>

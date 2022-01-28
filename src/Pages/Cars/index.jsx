@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import VéhiculeCard from '../../Components/VéhiculeCard';
+import VehiculeCard from '../../Components/VehiculeCard';
 import SCarsView from './style';
 
-function Véhicules() {
+function Vehicules() {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3031/cars').then(({ data }) => {
+    axios.get(`/cars`).then(({ data }) => {
       setCars(data);
     });
   }, []);
@@ -16,7 +16,7 @@ function Véhicules() {
     <SCarsView>
       {cars.map((data) => {
         return (
-          <VéhiculeCard
+          <VehiculeCard
             model={data.model}
             image={data.image}
             price={data.price}
@@ -27,4 +27,4 @@ function Véhicules() {
   );
 }
 
-export default Véhicules;
+export default Vehicules;

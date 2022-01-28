@@ -9,7 +9,7 @@ export default function VotePage() {
 
   useEffect(async () => {
     axios
-      .get(`http://localhost:3031/cars`)
+      .get(`/cars`)
       .then(({ data }) => {
         setCarsList(data);
         setTopCars(data.slice(0, 3));

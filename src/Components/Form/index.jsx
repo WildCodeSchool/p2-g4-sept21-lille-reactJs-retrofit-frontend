@@ -1,9 +1,43 @@
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
-import { SForm, Button } from './Style';
+import { SForm, Button, ParentButton } from './Style';
 
 export default function Form() {
   const [chooseOption, setChooseOption] = useState('info');
+  const [informations, setInformations] = useState({
+    lastname: '',
+    firstname: '',
+    email: '',
+    phoneNumber: '',
+    businessName: '',
+    companyName: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleChange = (evt) => {
+    const newInformations = { ...informations };
+    newInformations[evt.target.name] = evt.target.value;
+    setInformations(newInformations);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post(`/contact`, informations)
+      .then(() => {
+        toast(
+          'Message envoyé ! Nous vous répondrons dans les plus brefs délais.'
+        );
+      })
+      .catch(() => {
+        toast('Saisie incorrecte');
+      });
+  };
+
   window.scrollTo(0, 0);
+
   useEffect(() => {
     const url = window.location.href.split('/')[3];
     switch (url) {
@@ -32,7 +66,7 @@ export default function Form() {
 
   return (
     <SForm>
-      <form>
+      <form onSubmit={handleSubmit}>
         <select
           onChange={(e) => {
             setChooseOption(e.target.value);
@@ -57,17 +91,42 @@ export default function Form() {
             Service Après Vente
           </option>
         </select>
-        <input type="search" placeholder="Nom" />
-        <input type="search" placeholder="Prénom*" required="required" />
         <input
           type="search"
+          name="lastname"
+          value={informations.lastname}
+          onChange={handleChange}
+          placeholder="Nom"
+        />
+        <input
+          type="search"
+          name="firstname"
+          value={informations.firstname}
+          onChange={handleChange}
+          placeholder="Prénom*"
+          required="required"
+        />
+        <input
+          type="search"
+          name="email"
+          value={informations.email}
+          onChange={handleChange}
           placeholder="Adresse e-mail*"
           required="required"
         />
-        <input type="search" placeholder="Numéro de téléphone" />
+        <input
+          type="search"
+          name="phoneNumber"
+          value={informations.phoneNumber}
+          onChange={handleChange}
+          placeholder="Numéro de téléphone"
+        />
         <input
           className="tallInput"
           type="search"
+          name="businessName"
+          value={informations.businessName}
+          onChange={handleChange}
           placeholder="Raison Sociale"
           disabled={
             chooseOption === 'info' ||
@@ -77,10 +136,12 @@ export default function Form() {
             chooseOption === 'client'
           }
         />
-
         <input
           className="tallInput"
           type="search"
+          name="companyName"
+          value={informations.companyName}
+          onChange={handleChange}
           placeholder="Entreprise"
           disabled={
             chooseOption === 'info' ||
@@ -90,10 +151,12 @@ export default function Form() {
             chooseOption === 'client'
           }
         />
-
         <input
           className="tallInput"
           type="search"
+          name="subject"
+          value={informations.subject}
+          onChange={handleChange}
           placeholder="Motif*"
           disabled={
             chooseOption === 'info' ||
@@ -101,12 +164,18 @@ export default function Form() {
             chooseOption === 'advice'
           }
         />
-
-        <input className="comments" type="search" placeholder="Commentaire" />
+        <textarea
+          className="message"
+          name="message"
+          value={informations.message}
+          onChange={handleChange}
+          placeholder="Tapez votre message ici..."
+        />
+        <ParentButton className="parentButton">
+          <Button type="submit">Envoyer</Button>
+        </ParentButton>
+        <ToastContainer />
       </form>
-      <Button>
-        <input type="submit" value="Envoyer" />
-      </Button>
     </SForm>
   );
 }

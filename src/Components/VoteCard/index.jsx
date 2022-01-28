@@ -20,7 +20,7 @@ const VoteCard = ({ ...car }) => {
       setVoteValue(voteValue + 1);
     }
     axios
-      .put('http://localhost:3031/cars', {
+      .put('/cars', {
         carId: car.id,
         userId: userStorage,
       })
@@ -45,7 +45,9 @@ const VoteCard = ({ ...car }) => {
         <div className="imageContainer">
           <img src={car.image} alt="VW Golf 1 GTI" />
         </div>
-        <h1 className="titleArea">{car.model}</h1>
+        <h1 className="titleArea">
+          {car.brand} {car.model}
+        </h1>
         <p className="priceArea">A partir de {car.price}€</p>
 
         {voteStorage < 2 && userStorage ? (
@@ -64,7 +66,6 @@ const VoteCard = ({ ...car }) => {
               : `MERCI D'AVOIR PARTICIPÉ`}
           </button>
         )}
-
         <ProgressContainer>
           <progress max="30" value={voteValue} />
           {voteValue >= 30 ? (
