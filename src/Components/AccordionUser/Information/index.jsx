@@ -1,18 +1,31 @@
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Content, Row, Row2, Button } from './style';
 
 export default function Information() {
+  const {
+    id,
+    lastname,
+    firstname,
+    phone,
+    streetNumber,
+    street,
+    city,
+    postalCode,
+  } = useSelector((state) => state);
   const [informations, setInformations] = useState({
-    lastname: '',
-    firstname: '',
-    phone: '',
-    streetNumber: '',
-    street: '',
-    city: '',
-    postalCode: '',
+    lastname,
+    firstname,
+    phone,
+    streetNumber,
+    street,
+    city,
+    postalCode,
   });
+  const dispatch = useDispatch();
+  // const { id } = useParams();
 
   const handleChange = (evt) => {
     const newInformations = { ...informations };
@@ -23,8 +36,10 @@ export default function Information() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`/`, informations)
-      .then(() => {
+      .put(`/profile/${id}`, informations)
+      .then((response) => {
+        const user = response.data;
+        dispatch({ type: 'LOGGEDIN', user });
         toast('Vos informations ont changer');
       })
       .catch((err) => {
@@ -58,9 +73,7 @@ export default function Information() {
               value={informations.phone}
               onChange={handleChange}
             />
-            <Button>
-              <input type="submit" value="Modifier" />
-            </Button>
+            <Button type="submit">Modifier</Button>
           </Row>
           <Row2>
             <p>N° :</p>
