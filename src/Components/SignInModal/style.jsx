@@ -22,9 +22,8 @@ const ModalContainer = styled.div`
   font-size: 20px;
   padding: 20px;
   border-radius: 20px;
-  width: 32vw;
-  height: 68vh;
-  max-height: 650px;
+  min-width: 530px;
+  height: 650px;
   border: 3px solid var(--color--primary);
 `;
 
@@ -32,6 +31,9 @@ const ClosureContainer = styled.div`
   display: flex;
   justify-content: end;
   cursor: pointer;
+  svg:hover {
+    color: var(--color--primary);
+  }
 `;
 
 const MainContainer = styled.div`
