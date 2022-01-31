@@ -38,7 +38,7 @@ export default function Information() {
       .then((response) => {
         const user = response.data;
         dispatch({ type: 'LOGGEDIN', user });
-        toast('Vos informations ont changer');
+        toast('Vos informations ont changé');
       })
       .catch(() => {
         toast('Problèmes lors du changement de vos identifiants');
