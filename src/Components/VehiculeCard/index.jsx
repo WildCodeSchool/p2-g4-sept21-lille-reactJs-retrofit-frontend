@@ -33,7 +33,6 @@ VehiculeCard.propTypes = {
   image: PropTypes.string,
   brand: PropTypes.string,
   availability: PropTypes.string,
-
   price: PropTypes.number,
 };
 
