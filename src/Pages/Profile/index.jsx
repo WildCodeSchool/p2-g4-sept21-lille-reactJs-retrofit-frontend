@@ -35,7 +35,7 @@ export default function Profile() {
   return (
     <div>
       <Container>
-        <h1>Bienvenue {firstname}</h1>
+        <h1>Bienvenue sur votre espace utilisateur{firstname}</h1>
         {data.map(({ title, components }) => {
           return <BaseAccordion title={title} components={components} />;
         })}
