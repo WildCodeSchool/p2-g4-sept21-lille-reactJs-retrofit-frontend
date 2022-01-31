@@ -11,6 +11,10 @@ export const Container = styled.div`
     padding-top: 160px;
     font-size: 14px;
   }
+  span {
+    color: var(--color--primary);
+    text-transform: capitalize;
+  }
 `;
 
 export const Button = styled.button`

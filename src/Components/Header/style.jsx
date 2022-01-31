@@ -210,6 +210,9 @@ const DropLogin = styled.div`
       opacity: 1;
     }
   }
+  span {
+    text-transform: capitalize;
+  }
 `;
 
 const Overlay = styled.div`
