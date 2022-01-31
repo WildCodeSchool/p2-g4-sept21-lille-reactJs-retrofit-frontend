@@ -5,10 +5,9 @@ import { useLocation } from 'react-router-dom';
 import { VoteContainer, ProgressContainer } from './style';
 
 const VoteCard = ({ ...car }) => {
+  const [voteValue, setVoteValue] = useState(car.voteNbr);
   const location = useLocation().pathname;
   const dispatch = useDispatch();
-  const votes = car.VoteNbr;
-  const [voteValue, setVoteValue] = useState(votes);
   const voteStorage = useSelector((state) => state.vote);
   const userStorage = useSelector((state) => state.id);
   function upVote() {
@@ -69,7 +68,7 @@ const VoteCard = ({ ...car }) => {
           {voteValue >= 30 ? (
             <p className="progressLabel">Vote Terminé !</p>
           ) : (
-            <p className="progressLabel">{car.voteNbr || 0} Votes / 30 </p>
+            <p className="progressLabel">{voteValue || 0} Votes / 30 </p>
           )}
         </ProgressContainer>
       </VoteContainer>
