@@ -61,15 +61,6 @@ export default function Signup() {
           votre accord.
         </h2>
 
-        <button type="submit" className="fbButton">
-          Inscription avec Facebook
-        </button>
-        <button type="submit" className="googleButton">
-          Inscription avec Google
-        </button>
-
-        <h3>- ou -</h3>
-
         <Input>
           <p>Nom</p>
           <input
