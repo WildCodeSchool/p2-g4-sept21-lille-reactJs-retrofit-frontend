@@ -25,7 +25,6 @@ export default function Information() {
     postalCode,
   });
   const dispatch = useDispatch();
-  // const { id } = useParams();
 
   const handleChange = (evt) => {
     const newInformations = { ...informations };
