@@ -30,9 +30,9 @@ const Card = styled.div`
     flex-direction: column;
   }
 `;
+
 const Row2 = styled.div`
   height: 55px;
-
   }
 `;
 export { Col4, Card, Row2 };
