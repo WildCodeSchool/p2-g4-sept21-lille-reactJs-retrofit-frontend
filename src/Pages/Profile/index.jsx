@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Cookies from 'universal-cookie';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import BaseAccordion from 'Components/AccordionUser/BaseAccordion';
 import Information from 'Components/AccordionUser/Information';
 import Connexion from 'Components/AccordionUser/Connexion';
@@ -9,6 +11,7 @@ import Coment from 'Components/AccordionUser/Coment';
 import { Container, Button } from './style';
 
 export default function Profile() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const firstname = useSelector((state) => state.firstname);
 
@@ -30,12 +33,18 @@ export default function Profile() {
     const cookies = new Cookies();
     cookies.remove('user_token');
     dispatch({ type: 'LOGGOUT' });
+    navigate('/');
+    toast.success(`Vous êtes deconnecté`, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
   };
 
   return (
     <div>
       <Container>
-        <h1>Bienvenue sur votre espace utilisateur{firstname}</h1>
+        <h1>
+          Bienvenue sur votre espace, <span>{firstname}</span>
+        </h1>
         {data.map(({ title, components }) => {
           return <BaseAccordion title={title} components={components} />;
         })}
@@ -44,7 +53,7 @@ export default function Profile() {
             Loggout();
           }}
         >
-          Déconexion
+          Déconnexion
         </Button>
       </Container>
     </div>

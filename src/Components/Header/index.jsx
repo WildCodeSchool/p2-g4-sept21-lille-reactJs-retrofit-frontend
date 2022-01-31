@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import Cookies from 'universal-cookie';
 import Searchbar from 'Components/SearchBar';
 import {
@@ -20,6 +21,7 @@ export default function Header() {
   const [style, setStyle] = useState({ display: 'none' });
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const firstname = useSelector((state) => state.firstname);
   const isLogged = useSelector((state) => state.isLogged);
   const isAdmin = useSelector((state) => state.isAdmin);
@@ -39,6 +41,10 @@ export default function Header() {
     const cookies = new Cookies();
     cookies.remove('user_token');
     dispatch({ type: 'LOGGOUT' });
+    navigate('/');
+    toast.success(`Vous êtes deconnecté`, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
   };
 
   return (
@@ -87,7 +93,9 @@ export default function Header() {
                 dispatch({ type: 'OPENSIGNUP' });
               }}
             >
-              <Link to="/profile">{firstname}</Link>
+              <Link to="/profile">
+                <span>{firstname}</span>
+              </Link>
             </DropLogin>
             <DropLogin style={style} onClick={Loggout}>
               deconnexion
