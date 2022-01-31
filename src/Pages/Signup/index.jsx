@@ -60,7 +60,6 @@ export default function Signup() {
           Inscrivez-vous gratuitement en 2 secondes ! On ne postera rien sans
           votre accord.
         </h2>
-
         <Input>
           <p>Nom</p>
           <input
