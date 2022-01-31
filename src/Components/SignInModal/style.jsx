@@ -9,7 +9,7 @@ const Overlay = styled.div`
   height: 100vh;
   overflow: auto;
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
 `;
 
 const ModalContainer = styled.div`
@@ -22,9 +22,17 @@ const ModalContainer = styled.div`
   font-size: 20px;
   padding: 20px;
   border-radius: 20px;
-  min-width: 530px;
+  width: 530px;
   height: 650px;
   border: 3px solid var(--color--primary);
+  @media (max-width: 1400px) {
+    height: 620px;
+  }
+  @media (max-width: 768px) {
+    width: 90vw;
+    height: 550px;
+    top: 47.5%;
+  }
 `;
 
 const ClosureContainer = styled.div`
@@ -46,10 +54,24 @@ const MainContainer = styled.div`
     width: 27vw;
     margin-top: 10px;
     margin-bottom: 0px;
+    @media (max-width: 1400px) {
+      font-size: 32px;
+      width: 35vw;
+      padding-top: -5px;
+    }
+    @media (max-width: 768px) {
+      font-size: 25px;
+      width: 70vw;
+      margin-top: 0px;
+      margin-bottom: 5px;
+    }
   }
   p {
     font-size: 30px;
     margin: 20px;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
   span.error {
     padding-top: 15px;
@@ -71,6 +93,10 @@ const MainContainer = styled.div`
     :hover {
       color: var(--color--primary);
       background-color: var(--color--secondary);
+    }
+    @media (max-width: 768px) {
+      padding: 0 20px 0 0;
+      margin-top: 5px;
     }
   }
   button {
@@ -100,10 +126,16 @@ const Input = styled.div`
     margin: 10px 0 0 0;
     width: 350px;
     height: 35px;
+    @media (max-width: 768px) {
+      width: 75vw;
+    }
   }
   input:focus {
     outline: 2px solid var(--color--primary);
     border: 1px solid var(--color--primary);
+  }
+  @media (max-width: 768px) {
+    margin-top: 15px;
   }
 `;
 
