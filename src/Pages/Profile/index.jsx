@@ -44,7 +44,7 @@ export default function Profile() {
               Loggout();
             }}
           >
-            Déconexion
+            Déconnexion
           </Button>
         </Link>
       </Container>
