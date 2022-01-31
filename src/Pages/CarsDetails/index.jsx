@@ -141,10 +141,10 @@ export default function Configuration() {
             <p>GPS</p>
             <div>
               <label htmlFor="GPS">
-                OUI <input type="checkbox" name="toto" />
+                OUI <input type="checkbox" name="yes" />
               </label>
               <label htmlFor="GPS">
-                NON <input type="checkbox" name="toto" />
+                NON <input type="checkbox" name="no" />
               </label>
             </div>
           </div>
