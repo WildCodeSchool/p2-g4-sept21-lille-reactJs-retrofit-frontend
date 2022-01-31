@@ -25,8 +25,6 @@ export default function Information() {
     postalCode,
   });
   const dispatch = useDispatch();
-  // const { id } = useParams();
-
   const handleChange = (evt) => {
     const newInformations = { ...informations };
     newInformations[evt.target.name] = evt.target.value;
@@ -42,11 +40,11 @@ export default function Information() {
         dispatch({ type: 'LOGGEDIN', user });
         toast('Vos informations ont changer');
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        toast('Problèmes lors du changement de vos identifiants');
       });
   };
-  console.log(informations);
+
   return (
     <>
       <Content>
