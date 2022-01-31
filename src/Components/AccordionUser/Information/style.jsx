@@ -90,18 +90,16 @@ export const Row2 = styled.div`
   }
 `;
 
-export const Button = styled.form`
-  input {
-    background-color: var(--color--primary);
-    border: solid 2px var(--color--secondary);
-    width: 10vw;
+export const Button = styled.button`
+  background-color: var(--color--primary);
+  border: solid 2px var(--color--secondary);
+  width: 10vw;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  @media (max-width: 1400px) {
+    width: 32vw;
     height: 40px;
-    color: white;
-    font-size: 20px;
-    @media (max-width: 1400px) {
-      width: 32vw;
-      height: 40px;
-      margin-top: 40px;
-    }
+    margin-top: 40px;
   }
 `;
