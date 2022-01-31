@@ -11,7 +11,6 @@ const VoteCard = ({ ...car }) => {
   const [voteValue, setVoteValue] = useState(votes);
   const voteStorage = useSelector((state) => state.vote);
   const userStorage = useSelector((state) => state.id);
-
   function upVote() {
     dispatch({ type: 'UPVOTE' });
     if (voteValue >= 30) {
@@ -66,11 +65,11 @@ const VoteCard = ({ ...car }) => {
           </button>
         )}
         <ProgressContainer>
-          <progress max="30" value={voteValue} />
+          <progress max="30" value={car.voteNbr} />
           {voteValue >= 30 ? (
             <p className="progressLabel">Vote Terminé !</p>
           ) : (
-            <p className="progressLabel">{voteValue || 0} Votes / 30 </p>
+            <p className="progressLabel">{car.voteNbr || 0} Votes / 30 </p>
           )}
         </ProgressContainer>
       </VoteContainer>
