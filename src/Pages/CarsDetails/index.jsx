@@ -151,11 +151,11 @@ export default function Configuration() {
           <div>
             <p>VEHICULE</p>
             <label htmlFor="GPS">
-              OUI, j’ai le véhicule <input type="checkbox" name="toto" />
+              OUI, j’ai le véhicule <input type="checkbox" name="yes" />
             </label>
             <label htmlFor="GPS">
               NON, je n’ai pas le véhicule (+10 000€)
-              <input type="checkbox" name="toto" />
+              <input type="checkbox" name="no" />
             </label>
           </div>
           <div>
