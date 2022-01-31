@@ -1,6 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { RightArrow } from '@styled-icons/boxicons-solid/RightArrow';
-import { DownArrow } from '@styled-icons/boxicons-solid/DownArrow';
 
 const openAnimation = keyframes`
     0% {
@@ -24,71 +22,6 @@ const closeAnimation = keyframes`
     }
 `;
 
-export const SAccordion = styled.div`
-  margin: 0.6rem auto;
-  font-family: 'MyFont';
-`;
-
-export const ArrowRight = styled(RightArrow)`
-  height: 25px;
-  width: 25px;
-  @media (max-width: 1400px) {
-    height: 20px;
-    width: 20px;
-  }
-`;
-
-export const ArrowDown = styled(DownArrow)`
-  height: 25px;
-  width: 25px;
-  @media (max-width: 1400px) {
-    height: 20px;
-    width: 20px;
-  }
-`;
-
-export const Header = styled.div`
-  width: 70vw;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  background-color: var(--color--primary);
-  :hover {
-    background-color: var(--color--hover);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  @media (max-width: 1400px) {
-    width: 80vw;
-    height: 40px;
-  }
-  h1 {
-    display: flex;
-    flex-direction: row;
-    font-size: 30px;
-    color: white;
-    margin-right: 5px;
-    margin-top: 14px;
-    @media (max-width: 1400px) {
-      font-size: 20px;
-      margin-top: 12px;
-    }
-  }
-  div {
-    height: 50px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @media (max-width: 1400px) {
-      padding-bottom: 10px;
-    }
-  }
-`;
-
 export const Content = styled.div`
   background-color: rgb(1, 30, 38);
   color: white;
@@ -102,7 +35,6 @@ export const Content = styled.div`
     max-width: 80vw;
     height: 330px;
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-evenly;
     padding: 0;
   }
