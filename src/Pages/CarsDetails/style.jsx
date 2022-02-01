@@ -21,8 +21,7 @@ const SConfiguration = styled.div`
     justify-content: space-around;
   }
   img {
-    width: 40em;
-    height: 20em;
+    height: 300px;
   }
   div.BatteryText {
     color: #00e6c8;
@@ -36,8 +35,14 @@ const Page = styled.div`
 `;
 
 const Story = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin: 65px;
   font-size: 20px;
+  img {
+    height: 500px;
+  }
 `;
 
 const BatteryHeader = styled(BatteryFull)`
@@ -52,6 +57,7 @@ const EuroHeader = styled(CurrencyEuro)`
 
 const Advantage = styled.div`
   text-align: center;
+  font-size: 25px;
 `;
 
 const Cloud = styled(CloudSlash)`

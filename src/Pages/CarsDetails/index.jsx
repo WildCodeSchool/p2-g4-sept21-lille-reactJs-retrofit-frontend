@@ -1,5 +1,9 @@
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import Clio from '../../Assets/clio.png';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+
+import axios from 'axios';
 import {
   Page,
   SConfiguration,
@@ -19,33 +23,68 @@ import {
 } from './style';
 
 export default function Configuration() {
-  const { name } = useParams();
+  const { id } = useParams();
+  const [cars, setCars] = useState([]);
+  const userId = useSelector((state) => state.id);
+
+  useEffect(async () => {
+    axios.get(`/cars/${id}`).then(({ data }) => {
+      setCars(data[0]);
+    });
+  }, []);
+
+  const SendPreorder = (evt) => {
+    evt.preventDefault();
+    const orderInfo = {
+      id: userId,
+      cars: cars.id,
+      state: 1,
+    };
+    axios.post('/order', orderInfo).catch((error) => {
+      if (error.response) {
+        toast.error('error');
+      }
+    });
+  };
 
   return (
     <Page>
-      {name}
       <SConfiguration>
-        {name}
         <div className="row1">LE DETAIL DE VOTRE FUTUR VEHICULE</div>
         <div className="row2">
-          <BatteryHeader />
-          <img src={Clio} alt="clio" />
-          <EuroHeader />
+          <div className="col1">
+            <BatteryHeader />
+            <p>Une autonomie jusqu&apos;à ######</p>
+          </div>
+          <div className="col2">
+            <img src={cars.image} alt="clio" />
+            <p>
+              {cars.brand}
+              {cars.model}
+            </p>
+          </div>
+          <div className="col1">
+            <EuroHeader />
+            <p>Gain d’argent de ######</p>
+          </div>
         </div>
       </SConfiguration>
       <Story>
-        <div>
+        <div className="col1">
           <h2>
             La Citadine à l&apos;épreuve du
             <p>temps</p>
           </h2>
           <p>Cette citadine présente depuis les</p>
-          <p>années 2006. Elle a su faire sa</p>
+          <p>années ######. Elle a su faire sa</p>
           <p> place dans le marché français.</p>
-          <p>Présente en hybride, elle peut</p>
+          <p>Présente en ######, elle peut</p>
           <p>maintenant être accessible en</p>
           <p> voiture éléctrique grâce à notre</p>
           <p>rétrofit.</p>
+        </div>
+        <div className="col2">
+          <img src={cars.image} alt="clio" />
         </div>
       </Story>
       <Advantage>
@@ -98,6 +137,45 @@ export default function Configuration() {
       <ConfigurationOfCars>
         <div>
           <h2>Configuration du véhicule</h2>
+          <div>
+            <p>GPS</p>
+            <div>
+              <label htmlFor="GPS">
+                OUI <input type="checkbox" name="yes" />
+              </label>
+              <label htmlFor="GPS">
+                NON <input type="checkbox" name="no" />
+              </label>
+            </div>
+          </div>
+          <div>
+            <p>VEHICULE</p>
+            <label htmlFor="GPS">
+              OUI, j’ai le véhicule <input type="checkbox" name="yes" />
+            </label>
+            <label htmlFor="GPS">
+              NON, je n’ai pas le véhicule (+10 000€)
+              <input type="checkbox" name="no" />
+            </label>
+          </div>
+          <div>
+            <div>
+              <p>AUTONOMIE</p>
+              <select name="kilometer" id="kilometer">
+                <option value="">Choisissez une option</option>
+                <option value="200">200 Km</option>
+                <option value="220">220 Km</option>
+                <option value="240">240 Km</option>
+                <option value="260">260 Km</option>
+                <option value="280">280 Km</option>
+                <option value="300">300 Km</option>
+                <option value="320">320 Km</option>
+                <option value="340">340 Km</option>
+                <option value="360">360 Km</option>
+                <option value="380">380 Km</option>
+              </select>
+            </div>
+          </div>
         </div>
       </ConfigurationOfCars>
       <Warranty>
@@ -107,7 +185,7 @@ export default function Configuration() {
         <p>fournir un devis si des composants sont obsolètes.</p>
         <p>Notre système est garantie 2 ans.</p>
         <p>Premier contrôle à 5000 km gratuit.</p>
-        <button className="pre-order" type="button">
+        <button className="pre-order" type="button" onClick={SendPreorder}>
           PRE-COMMANDE
         </button>
       </Warranty>

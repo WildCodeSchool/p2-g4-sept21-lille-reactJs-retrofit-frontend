@@ -35,8 +35,7 @@ export const Text = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 150px;
-  width: 220px;
+  height: 120px;
   margin-top: 10px;
   justify-content: center;
   border-radius: 5px;

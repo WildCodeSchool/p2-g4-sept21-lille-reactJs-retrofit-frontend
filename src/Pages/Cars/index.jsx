@@ -12,16 +12,11 @@ function Vehicules() {
       setCars(data);
     });
   }, []);
+
   return (
     <SCarsView>
       {cars.map((data) => {
-        return (
-          <VehiculeCard
-            model={data.model}
-            image={data.image}
-            price={data.price}
-          />
-        );
+        return <VehiculeCard {...data} />;
       })}
     </SCarsView>
   );
