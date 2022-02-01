@@ -51,7 +51,7 @@ const MainContainer = styled.div`
   align-items: center;
   h1 {
     text-align: center;
-    width: 27vw;
+    width: 350px;
     margin-top: 10px;
     margin-bottom: 0px;
     @media (max-width: 1400px) {

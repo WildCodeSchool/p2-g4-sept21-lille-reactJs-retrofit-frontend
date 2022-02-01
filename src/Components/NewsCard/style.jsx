@@ -8,13 +8,15 @@ const Card = styled.div`
   width: 320px;
   height: 490px;
   border-radius: 10px;
-  border: solid 3px var(--color--primary);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  @media only screen and (max-width: 768px) {
+    min-width: 320px;
+  }
   img {
     height: 210px;
     padding-right: 0;
     border-radius: 8px 8px 0 0;
   }
-
   h1 {
     margin: 20px 0 0 10px;
     font-size: 14px;
@@ -22,9 +24,11 @@ const Card = styled.div`
     padding-left: 2%;
     padding-right: 2%;
   }
-
   :hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 `;
 
@@ -36,13 +40,11 @@ const Texte = styled.div`
     padding-left: 2%;
     padding-right: 2%;
   }
-
   p {
     font-size: 20px;
     margin: 10px;
     color: white;
   }
-
   a {
     text-decoration: none;
     color: var(--color--secondary);
