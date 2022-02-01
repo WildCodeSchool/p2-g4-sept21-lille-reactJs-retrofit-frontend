@@ -57,6 +57,7 @@ export default function App() {
         <Route path="/sav" element={<Form />} />
         <Route path="/equipe" element={<Team />} />
         <Route path="/technologie" element={<Technologie />} />
+        <Route path="/localisation" element={<Localisation />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/localisation" element={<Localisation />} />
         <Route path="/register" element={<Signup />} />

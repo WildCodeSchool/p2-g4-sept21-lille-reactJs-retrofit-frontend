@@ -72,9 +72,21 @@ export default function Header() {
           <Link to="/">
             <BlueHome />
           </Link>
-          <Link to="/">
-            <BlueUser onMouseEnter={showLogin} onMouseLeave={hideLogin} />
-          </Link>
+          {isLogged ? (
+            <Link to="/profile">
+              <BlueUser onMouseEnter={showLogin} onMouseLeave={hideLogin} />
+            </Link>
+          ) : (
+            <Link to="/">
+              <BlueUser
+                onMouseEnter={showLogin}
+                onMouseLeave={hideLogin}
+                onClick={() => {
+                  dispatch({ type: 'OPENSIGNIN' });
+                }}
+              />
+            </Link>
+          )}
           <BlueBars onClick={showMenu} />
         </div>
       </Row>
@@ -98,7 +110,6 @@ export default function Header() {
             <DropLogin style={style}>
               <Link to="/register">inscription</Link>
             </DropLogin>
-
             <DropLogin
               style={style}
               onClick={() => {

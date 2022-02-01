@@ -6,12 +6,12 @@ import Connexion from 'Components/AccordionUser/Connexion';
 import Ordered from 'Components/AccordionUser/Ordered';
 import Question from 'Components/AccordionUser/Question';
 import Coment from 'Components/AccordionUser/Coment';
+import { Link } from 'react-router-dom';
 import { Container, Button } from './style';
 
 export default function Profile() {
   const dispatch = useDispatch();
   const firstname = useSelector((state) => state.firstname);
-
   const data = [
     {
       title: 'Modifier vos informations personelles',
@@ -35,17 +35,21 @@ export default function Profile() {
   return (
     <div>
       <Container>
-        <h1>Bienvenue sur votre espace utilisateur{firstname}</h1>
+        <h1>
+          Bienvenue sur votre espace <span>{firstname}</span>
+        </h1>
         {data.map(({ title, components }) => {
           return <BaseAccordion title={title} components={components} />;
         })}
-        <Button
-          onClick={() => {
-            Loggout();
-          }}
-        >
-          Déconexion
-        </Button>
+        <Link to="/">
+          <Button
+            onClick={() => {
+              Loggout();
+            }}
+          >
+            Déconnexion
+          </Button>
+        </Link>
       </Container>
     </div>
   );

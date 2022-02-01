@@ -55,7 +55,9 @@ export default function Signup() {
   return (
     <>
       <MainContainer>
-        <h1>Devenez membre de EVeRetrofit </h1>
+        <h1>
+          Devenez membre de <span>EVeR</span>etrofit
+        </h1>
         <h2>
           Inscrivez-vous gratuitement en 2 secondes ! On ne postera rien sans
           votre accord.
@@ -77,6 +79,18 @@ export default function Signup() {
           />
         </Input>
         <Input>
+          <p>Adresse e-mail</p>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <span className="success">{resMessage && resMessage}</span>
+          <span className="error">
+            {resErrorMessage && !resMessage && resErrorMessage}
+          </span>
+        </Input>
+        <Input>
           <p>Mot de passe</p>
           {/* - at least 8 characters - must contain at least 1
           uppercase letter, 1 lowercase letter, and 1 number - Can contain
@@ -95,18 +109,7 @@ export default function Signup() {
             onChange={(e) => setRepeatPass(e.target.value)}
           />
         </Input>
-        <Input>
-          <p>Adresse e-mail</p>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <span className="success">{resMessage && resMessage}</span>
-          <span className="error">
-            {resErrorMessage && !resMessage && resErrorMessage}
-          </span>
-        </Input>
+
         <button type="submit" className="submitButton" onClick={SendInfo}>
           Crée mon compte
         </button>
