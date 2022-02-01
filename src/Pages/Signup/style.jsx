@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MainContainer = styled.div`
   width: 100vw;
-  padding-top: 90px;
+  padding: 90px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,7 @@ const MainContainer = styled.div`
   h1 {
     font-size: 50px;
     font-weight: 100;
-    margin: 30px 0 0 0;
+    margin: 60px 0 0 0;
     @media (max-width: 768px) {
       width: 80vw;
       font-size: 35px;
@@ -51,6 +51,14 @@ const MainContainer = styled.div`
   p {
     text-align: start;
   }
+  span.error {
+    color: red;
+    font-size: 20px;
+  }
+  span.success {
+    color: green;
+    font-size: 20px;
+  }
 `;
 
 const Input = styled.div`
@@ -73,14 +81,7 @@ const Input = styled.div`
   p {
     margin: 5px 0;
   }
-  span.error {
-    color: red;
-    font-size: 20px;
-  }
-  span.success {
-    color: green;
-    font-size: 20px;
-  }
+
   @media (max-width: 768px) {
     width: 80vw;
   }
