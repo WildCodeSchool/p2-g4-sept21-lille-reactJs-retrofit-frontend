@@ -3,7 +3,9 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-import Yatch from 'Assets/yatch.png';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import Car from 'Assets/returnOfCar.png';
 import Bge from 'Assets/bge.png';
 import Clap from 'Assets/clap.png';
 import Creinov from 'Assets/creinnov.png';
@@ -70,27 +72,49 @@ export default function Home() {
       });
   }, []);
 
+  useEffect(() => {
+    Aos.init({
+      offset: 200,
+      duration: 800,
+      easing: 'ease-in-out-sine',
+      delay: 200,
+      mirror: true,
+    });
+    Aos.refresh();
+  }, []);
+
   return (
     <>
       <HomeContainer>
         <MainContainer>
           <RowHeadline>
-            <Headline>
+            <Headline
+              data-aos="fade-down"
+              data-aos-offset="500"
+              data-aos-duration="800"
+              data-aos-anchor-placement="top"
+            >
               <p>
                 <span>EVeR</span>etrofit,
               </p>
-              <p>votre bateau,</p>
+              <p>votre voiture,</p>
               <p>
                 pour <span>toujours</span>
               </p>
               <p className="subHeadline">
-                Vous êtes attaché à votre bateau mais il est désormais trop
+                Vous êtes attaché à votre voiture mais il est désormais trop
                 polluant ? Trop chère à entretenir ? Le prix du carburant
                 classique est trop élevé ? Nous avons la solution !
               </p>
             </Headline>
-
-            <img src={Yatch} alt="Une voiture" />
+            <img
+              src={Car}
+              alt="Une voiture"
+              data-aos="fade-left"
+              data-aos-offset="500"
+              data-aos-duration="800"
+              data-aos-anchor-placement="top"
+            />
           </RowHeadline>
           <Container>
             <div className="Row1"> Le retrofit c&apos;est :</div>
@@ -138,34 +162,42 @@ export default function Home() {
             </div>
           </Container>
         </MainContainer>
-
         <div className="TextArea">
-          <p>
+          <p data-aos="fade-down">
             Autorisé en France depuis avril 2020, le rétrofit commence de plus
             en plus à trouver sa place sur le marché français.
           </p>
-          <p>
-            Se ballader dans une voiture ancienne en centre ville ? <br />
-            Faire des économies continuellement dès que vous prenez la route ?
-            <br />
-            Recharger votre véhicule le soir chez vous comme vous le feriez avec
-            un téléphone ? <br /> Oublier le bruit des vibrations et adopter une
-            conduite plus plaisante. <br />
-            Gardez votre véhicule avec qui vous avez passé tellement de bon et
-            mauvais moment ?
+          <p data-aos="fade-right">
+            Se ballader dans une voiture ancienne en centre ville ?
           </p>
-          <p>
+          <p data-aos="fade-left">
+            Faire des économies continuellement dès que vous prenez la route ?
+          </p>
+          <p data-aos="fade-down">
+            Recharger votre véhicule le soir chez vous comme vous le feriez avec
+            un téléphone ?
+          </p>
+          <p data-aos="fade-right">
+            Oublier le bruit des vibrations et adopter une conduite plus
+            plaisante.
+          </p>
+          <p data-aos="fade-left">
+            Gardez votre véhicule avec qui vous avez passé de bon et mauvais
+            moment ?
+          </p>
+          <p data-aos="fade-down">
             Tout cela est possible grâce au rétrofit. Mais le rétrofit
-            c&apos;est quoi ? C&apos;est tout simplement la transoformation
-            d&apos;un véhicule thermique en électrique. Ainsi, vous pouvez
-            continuer de rouler avec style dans vote véhicule,mais en émettant
-            0g de CO2/km.
+            c&apos;est quoi ?
+          </p>
+          <p data-aos="fade-right">
+            C&apos;est tout simplement la transoformation d&apos;un véhicule
+            thermique en électrique. Ainsi, vous pouvez continuer de rouler avec
+            style dans vote véhicule,mais en émettant 0g de CO2/km.
           </p>
         </div>
         <Link to="/vote">
           <VoteContainer>
             <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
-
             <div className="VoteCardContainer">
               {topCars.map((car) => {
                 return <VoteCard {...car} />;
@@ -187,6 +219,7 @@ export default function Home() {
           })}
         </News>
         <Rating>
+          <h2>Ils nous recommande</h2>
           <Carousel />
         </Rating>
         <PartnerContainer>
