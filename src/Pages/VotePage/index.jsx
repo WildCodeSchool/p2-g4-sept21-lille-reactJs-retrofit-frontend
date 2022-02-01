@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import VoteCard from '../../Components/VoteCard';
 import VoteContainer from './style';
@@ -15,7 +16,7 @@ export default function VotePage() {
         setTopCars(data.slice(0, 3));
       })
       .catch((err) => {
-        console.log(err);
+        toast.error(err);
       });
   }, []);
 

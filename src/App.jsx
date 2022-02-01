@@ -17,7 +17,7 @@ import LegalNotice from './Pages/LegalNotice';
 import Technologie from './Pages/Technologie/index';
 import Team from './Pages/Team/index';
 import Localisation from './Pages/Localisation';
-import Cars from './Pages/Cars/index';
+import Cars from './Pages/Cars';
 import CarsDetails from './Pages/CarsDetails/index';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -28,7 +28,7 @@ export default function App() {
     window.scrollTo(0, 0);
     const cookies = new Cookies();
     axios
-      .post('http://localhost:3031/auth/login', {
+      .post('/auth/login', {
         token: cookies.get('user_token'),
       })
       .then((response) => {
@@ -63,9 +63,9 @@ export default function App() {
         <Route path="/register" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
-        <Route path="Vehicules/:name" element={<CarsDetails />} />
-        <Route path="Vehicules/" element={<Cars />} />
+        <Route path="Vehicules/:id" element={<CarsDetails />} />
         <Route path="/vote" element={<VotePage />} />
+        <Route path="/vehicules" element={<Cars />} />
       </Routes>
       <Footer />
       <ToastContainer />
