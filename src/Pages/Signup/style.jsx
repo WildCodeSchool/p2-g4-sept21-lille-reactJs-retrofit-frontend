@@ -81,7 +81,6 @@ const Input = styled.div`
   p {
     margin: 5px 0;
   }
-
   @media (max-width: 768px) {
     width: 80vw;
   }
