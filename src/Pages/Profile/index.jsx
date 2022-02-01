@@ -6,6 +6,7 @@ import Connexion from 'Components/AccordionUser/Connexion';
 import Ordered from 'Components/AccordionUser/Ordered';
 import Question from 'Components/AccordionUser/Question';
 import Coment from 'Components/AccordionUser/Coment';
+import { Link } from 'react-router-dom';
 import { Container, Button } from './style';
 
 export default function Profile() {
@@ -40,13 +41,15 @@ export default function Profile() {
         {data.map(({ title, components }) => {
           return <BaseAccordion title={title} components={components} />;
         })}
-        <Button
-          onClick={() => {
-            Loggout();
-          }}
-        >
-          Déconnexion
-        </Button>
+        <Link to="/">
+          <Button
+            onClick={() => {
+              Loggout();
+            }}
+          >
+            Déconnexion
+          </Button>
+        </Link>
       </Container>
     </div>
   );
