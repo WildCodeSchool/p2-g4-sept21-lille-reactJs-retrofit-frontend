@@ -74,6 +74,10 @@ export const Header = styled.div`
     @media (max-width: 768px) {
       font-size: 20px;
       margin-top: 12px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      height: 50px;
     }
   }
   div {
