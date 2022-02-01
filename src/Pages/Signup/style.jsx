@@ -1,66 +1,78 @@
 import styled from 'styled-components';
 
 const MainContainer = styled.div`
-  padding-top: 81px;
+  width: 100vw;
+  padding-top: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1% 30%;
   h1 {
     font-size: 50px;
     font-weight: 100;
-    margin: 20px 0 10px 0;
+    margin: 30px 0 0 0;
+    @media (max-width: 768px) {
+      width: 80vw;
+      font-size: 35px;
+      padding-top: 30px;
+      text-align: center;
+    }
   }
   h2 {
-    font-size: 1em;
+    font-size: 18px;
     font-weight: 101;
+    margin-bottom: 25px;
+    @media (max-width: 768px) {
+      width: 80vw;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  span {
+    color: var(--color--primary);
   }
   button {
-    width: 55%;
+    width: 230px;
+    height: 65px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     padding: 20px;
-    border-radius: 35px;
+    border-radius: 15px;
     margin: 20px;
-    border: none;
+    border: solid 2px var(--color--secondary);
+    background-color: var(--color--thirdary);
+    color: #000000;
+    :hover {
+      border: solid 2px var(--color--primary);
+      background-color: var(--color--primary);
+      color: white;
+    }
   }
-
-  button.fbButton {
-    background-color: #3b5998;
-    color: white;
-  }
-
-  button.googleButton {
-    background-color: #fff;
-    color: black;
-    border: 1px solid black;
-  }
-
-  button.submitButton {
-    background-color: #00e6c8;
-    color: white;
-  }
-
   p {
     text-align: start;
   }
 `;
+
 const Input = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 5px 0;
   input {
-    width: 20vw;
+    width: 370px;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid grey;
+    border: solid 2px var(--color--primary);
+    @media (max-width: 768px) {
+      width: 80vw;
+    }
+  }
+  input[type='text'] {
+    font-size: 20px;
   }
   p {
     margin: 5px 0;
   }
-
   span.error {
     color: red;
     font-size: 20px;
@@ -68,6 +80,9 @@ const Input = styled.div`
   span.success {
     color: green;
     font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    width: 80vw;
   }
 `;
 
