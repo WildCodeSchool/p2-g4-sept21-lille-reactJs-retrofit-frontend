@@ -85,16 +85,9 @@ export default function Signup() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <span className="success">{resMessage && resMessage}</span>
-          <span className="error">
-            {resErrorMessage && !resMessage && resErrorMessage}
-          </span>
         </Input>
         <Input>
           <p>Mot de passe</p>
-          {/* - at least 8 characters - must contain at least 1
-          uppercase letter, 1 lowercase letter, and 1 number - Can contain
-          special characters */}
           <input
             type="password"
             value={password}
@@ -109,10 +102,13 @@ export default function Signup() {
             onChange={(e) => setRepeatPass(e.target.value)}
           />
         </Input>
-
         <button type="submit" className="submitButton" onClick={SendInfo}>
           Crée mon compte
         </button>
+        <span className="success">{resMessage && resMessage}</span>
+        <span className="error">
+          {resErrorMessage && !resMessage && resErrorMessage}
+        </span>
       </MainContainer>
     </>
   );

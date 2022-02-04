@@ -17,7 +17,11 @@ export default function OrderCard({ brand, model, quantities, price, state }) {
         <p>{price}</p>
       </Col4>
       <Row2>
-        <progress max="100" value={state} data-text="Progression de votre commande" />
+        <progress
+          max="100"
+          value={state}
+          data-text="Progression de votre commande"
+        />
       </Row2>
     </Card>
   );
