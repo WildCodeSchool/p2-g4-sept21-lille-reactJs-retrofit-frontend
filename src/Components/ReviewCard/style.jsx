@@ -9,8 +9,11 @@ const Card = styled.div`
   font-size: 30px;
   width: 30vw;
   height: 300px;
-  @media only screen and (max-width: 600px) {
-    width: 75vw;
+  @media only screen and (max-width: 768px) {
+    width: 80vw;
+    height: 240px;
+    font-size: 25px;
+    padding: 20px;
   }
 `;
 

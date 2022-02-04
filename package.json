@@ -16,6 +16,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "aos": "^2.3.4",
     "axios": "^0.24.0",
     "leaflet": "^1.7.1",
     "prop-types": "^15.7.2",
@@ -61,6 +62,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.15.8",
+    "@types/aos": "^3.0.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",

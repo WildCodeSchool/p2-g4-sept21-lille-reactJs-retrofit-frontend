@@ -153,7 +153,6 @@ const Row = styled.div`
       justify-content: center;
       margin: auto;
       order: 4;
-
       height: 55px;
     }
   }
@@ -236,6 +235,7 @@ const Overlay = styled.div`
   ul {
     & > * {
       padding: 0 0 40px 0;
+      margin: 0;
     }
   }
 `;

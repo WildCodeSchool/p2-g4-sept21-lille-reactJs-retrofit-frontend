@@ -41,7 +41,7 @@ const VoteCard = ({ ...car }) => {
     <>
       <VoteContainer>
         <div className="imageContainer">
-          <img src={car.image} alt="VW Golf 1 GTI" />
+          <img src={car.image} alt="Top Vote Voiture" />
         </div>
         <h1 className="titleArea">
           {car.brand} {car.model}
@@ -58,9 +58,11 @@ const VoteCard = ({ ...car }) => {
             disabled
             className="disabledBtn"
           >
-            {!userStorage
-              ? 'CONNECTEZ-VOUS POUR VOTER'
-              : `MERCI D'AVOIR PARTICIPÉ`}
+            {!userStorage ? (
+              <h3>CONNECTEZ-VOUS POUR VOTER</h3>
+            ) : (
+              <h3>MERCI D&apos;AVOIR PARTICIPÉ</h3>
+            )}
           </button>
         )}
         <ProgressContainer>
