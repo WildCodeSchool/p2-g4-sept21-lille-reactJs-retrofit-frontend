@@ -51,14 +51,16 @@ export default function Footer() {
           <img src={Logo} alt="Logo EveRetrofit" />
         </Link>
         <ul>
-          <li>Français</li>
-          <li>Anglais</li>
+          <li title="Coming Soon">Français</li>
+          <li title="Coming Soon">Anglais</li>
         </ul>
       </LogoContainer>
 
       <Entree>
         <CategoryContact>
-          <h2>Contacts</h2>
+          <Link to="/renseignements" className="bla">
+            <h2>Contacts</h2>
+          </Link>
           <ul>
             <Link to="/renseignements">
               <li>Renseignements</li>
@@ -73,7 +75,9 @@ export default function Footer() {
         </CategoryContact>
 
         <SavCategory>
-          <h2>Service Client</h2>
+          <Link to="/serviceclient">
+            <h2>Service Client</h2>
+          </Link>
           <ul>
             <Link to="/serviceclient">
               <li>Service Client</li>
@@ -88,18 +92,21 @@ export default function Footer() {
         </SavCategory>
 
         <MentionCategory>
-          <h2>Mentions Légales</h2>
+          <Link to="/mentionsLegales">
+            <h2>Mentions Légales</h2>
+          </Link>
+
           <ul>
-            <Link to="/mentionslegales">
+            <Link to="/mentionsLegales">
               <li>Mentions Légales</li>
             </Link>
-            <Link to="/cgv">
+            <Link to="/mentionsLegales">
               <li>CGV</li>
             </Link>
-            <Link to="/cookies">
+            <Link to="/mentionsLegales">
               <li>Politique de cookies</li>
             </Link>
-            <Link to="/sas">
+            <Link to="/mentionsLegales">
               <li>EVeRetrofit SAS</li>
             </Link>
           </ul>
