@@ -48,7 +48,7 @@ export default function Home() {
         setTopCars(data.slice(0, 3));
       })
       .catch((err) => {
-        console.log(err);
+        toast.error(err);
       });
   }, []);
 
