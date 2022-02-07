@@ -9,7 +9,6 @@ function Vehicules() {
   useEffect(() => {
     axios.get(`/cars`).then(({ data }) => {
       setCars(data);
-      console.log(data);
     });
   }, []);
 
