@@ -9,11 +9,11 @@ import SContainerMap from './style';
 
 const Garage = new L.Icon({
   iconUrl: GarageIcon,
-  iconSize: [25, 25],
+  iconSize: [50, 50],
 });
 const Home = new L.Icon({
   iconUrl: HomeIcon,
-  iconSize: [25, 25],
+  iconSize: [60, 60],
 });
 
 function Map() {
