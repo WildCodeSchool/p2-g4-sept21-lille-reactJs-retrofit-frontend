@@ -27,7 +27,7 @@ function Localisation() {
         <SListAdress>
           {adressResults.map((result) => {
             return (
-              <SAdress>
+              <SAdress key={result.id}>
                 <h3>{[result.name]}</h3>
                 <p>
                   <AdressWhite />

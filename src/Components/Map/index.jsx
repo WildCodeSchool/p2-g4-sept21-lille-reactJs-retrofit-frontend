@@ -41,6 +41,7 @@ function Map() {
             <Marker
               position={[result.longitude, result.latitude]}
               icon={result.type === 'port' ? Garage : Home}
+              key={result.id}
             >
               <Popup>{[result.name]}</Popup>
             </Marker>

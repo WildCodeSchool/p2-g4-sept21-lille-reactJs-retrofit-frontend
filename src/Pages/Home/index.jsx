@@ -200,7 +200,7 @@ export default function Home() {
             <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
             <div className="VoteCardContainer">
               {topCars.map((car) => {
-                return <VoteCard {...car} />;
+                return <VoteCard {...car} key={car.id} />;
               })}
             </div>
           </VoteContainer>
@@ -214,6 +214,7 @@ export default function Home() {
                 description={data.description}
                 source={data.source}
                 date={data.date}
+                key={data.id}
               />
             );
           })}

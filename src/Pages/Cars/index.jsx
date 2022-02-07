@@ -16,7 +16,7 @@ function Vehicules() {
   return (
     <SCarsView>
       {cars.map((data) => {
-        return <VehiculeCard {...data} />;
+        return <VehiculeCard {...data} key={data.id} />;
       })}
     </SCarsView>
   );
