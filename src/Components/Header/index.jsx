@@ -65,7 +65,7 @@ export default function Header() {
         </div>
         <div className="Col4">
           {isAdmin && (
-            <a href="http://localhost:3010/#/">
+            <a href={process.env.REACT_APP_BACKOFFICE_URL}>
               <Gears />
             </a>
           )}
