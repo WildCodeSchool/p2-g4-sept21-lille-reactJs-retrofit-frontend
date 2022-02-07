@@ -12,6 +12,7 @@ function Vehicules() {
       console.log(data);
     });
   }, []);
+
   return (
     <div>
       <Title>Choisissez votre prochain véhicule à rétrofité</Title>

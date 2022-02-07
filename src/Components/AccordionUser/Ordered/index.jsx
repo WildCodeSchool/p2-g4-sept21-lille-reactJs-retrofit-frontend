@@ -1,25 +1,17 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import OrderCard from 'Components/OrderCard';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import {
-  Content,
-  Row,
-  Row2,
-  Units,
-  Numbers,
-  Col,
-  Col2,
-  Col3,
-  Col4,
-  Button,
-  Btncontainer,
-} from './style';
+import { Content, Units, Col2, Col3, Button, Btncontainer } from './style';
 
 export default function Ordered() {
   const [items, setItems] = useState([]);
+  const userStorage = { id: useSelector((state) => state.id) };
+
   useEffect(async () => {
     await axios
-      .get(`/order`)
+      .post(`/order/preorder`, userStorage)
       .then(({ data }) => {
         const res = data.map((i) => {
           return {
@@ -29,7 +21,6 @@ export default function Ordered() {
           };
         });
         setItems(res);
-        console.log(items);
       })
       .catch(() => {
         toast.error('Pas de commandes en cours !', {
@@ -47,74 +38,30 @@ export default function Ordered() {
   return (
     <>
       <Content>
-        <Row>
-          <Col>
-            <img
-              src={items.map((data) => {
-                return data.image;
-              })}
-              alt="bateau"
-            />
-          </Col>
-          <Col2>
-            <Units>
-              <Col3>
-                <p>Marque</p>
-              </Col3>
-              <Col3>
-                <p>Modèle</p>
-              </Col3>
-              <Col3>
-                <p>Quantités</p>
-              </Col3>
-              <Col3>
-                <p>Prix</p>
-              </Col3>
-            </Units>
-            <Numbers>
-              <Col4>
-                <p>
-                  {items.map((data) => {
-                    return data.brand;
-                  })}
-                </p>
-              </Col4>
-              <Col4>
-                <p>
-                  {items.map((data) => {
-                    return data.model;
-                  })}
-                </p>
-              </Col4>
-              <Col4>
-                <p>
-                  {items.map((data) => {
-                    return data.quantities;
-                  })}
-                </p>
-              </Col4>
-              <Col4>
-                <p>
-                  {items.map((data) => {
-                    return data.finalprice;
-                  })}
-                </p>
-              </Col4>
-            </Numbers>
-            <Btncontainer>
-              <Button>Ajouter un commentaire</Button>
-            </Btncontainer>
-          </Col2>
-        </Row>
-        <Row2>
-          <progress
-            max="100"
-            value={items.map((data) => {
-              return data.progress;
+        <Col2>
+          <Units>
+            <Col3>
+              <p>Marque</p>
+            </Col3>
+            <Col3>
+              <p>Modèle</p>
+            </Col3>
+            <Col3>
+              <p>Quantités</p>
+            </Col3>
+            <Col3>
+              <p>Prix</p>
+            </Col3>
+          </Units>
+          <>
+            {items.map((item) => {
+              return <OrderCard {...item} />;
             })}
-            data-text="coucou"
-          />
-        </Row2>
+          </>
+          <Btncontainer>
+            <Button>Ajouter un commentaire</Button>
+          </Btncontainer>
+        </Col2>
       </Content>
     </>
   );

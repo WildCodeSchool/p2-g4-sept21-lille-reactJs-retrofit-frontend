@@ -6,9 +6,16 @@ const ReviewCard = ({ ...review }) => {
     <>
       <CardContainer>
         <Card>
-          <Rating name="read-only" value={review.stars} size="large" readOnly />
-          <h3>{review.name} </h3>
-          <p>{review.review}</p>
+          <Rating
+            name="read-only"
+            value={review.rating}
+            size="large"
+            readOnly
+          />
+          <h3>
+            {review.firstname} {review.lastname}
+          </h3>
+          <p>{review.content}</p>
         </Card>
       </CardContainer>
     </>

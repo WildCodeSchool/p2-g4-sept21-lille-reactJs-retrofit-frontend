@@ -1,38 +1,24 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 import ReviewCard from '../ReviewCard/index';
 import { Slider, SliderContent, ArrowLeft, ArrowRight } from './style';
 
-const reviews = [
-  {
-    id: 1,
-    name: 'Danny D.',
-    review: "Salut c'est cool votre site",
-    stars: 5,
-  },
-  {
-    id: 2,
-    name: 'Pierre P.',
-    review: 'Whaaouuu !',
-    stars: 4,
-  },
-  {
-    id: 3,
-    name: 'Alphonse Z.',
-    review: 'Deçu de la prestation ...',
-    stars: 2,
-  },
-  {
-    id: 4,
-    name: 'Nacyme G.',
-    review: 'Au top merci ! :)',
-    stars: 5,
-  },
-];
-
 export default function Carousel() {
-  const [instructions] = useState(reviews);
+  const [instructions, setInstructions] = useState([]);
   const [activSlice, setActivSlice] = useState(1);
+
+  useEffect(() => {
+    axios
+      .get(`/review`)
+      .then(({ data }) => {
+        setInstructions(data);
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
+  }, []);
 
   const nextSlide = () => {
     setActivSlice(activSlice >= instructions.length ? 1 : activSlice + 1);
@@ -46,11 +32,11 @@ export default function Carousel() {
     <Slider>
       <ArrowLeft onClick={prevSlide} />
 
-      {reviews.map((review) => {
+      {instructions.map((instruction) => {
         return (
           <SliderContent onClick={nextSlide}>
-            <div className={review.id === activSlice && 'slide-active'}>
-              {review.id === activSlice && <ReviewCard {...review} />}
+            <div className={instruction.id === activSlice && 'slide-active'}>
+              {instruction.id === activSlice && <ReviewCard {...instruction} />}
             </div>
           </SliderContent>
         );
