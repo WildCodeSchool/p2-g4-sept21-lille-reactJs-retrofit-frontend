@@ -20,7 +20,7 @@ export default function Faq() {
         eros ut sem aliquet, auctor aliquam est posuere. Aliquam non posuere lectus. `,
         },
         {
-          question: `Pourquoi le rétrofitage ?`,
+          question: `Pourquoi le retrofitting ?`,
           content: `Quisque eu fringilla dolor, sed feugiat nulla. 
         Pellentesque et lorem et ante volutpat efficitur. 
         Pellentesque fringilla, lorem eget consectetur luctus, 
@@ -50,7 +50,7 @@ export default function Faq() {
         eros ut sem aliquet, auctor aliquam est posuere. Aliquam non posuere lectus. `,
         },
         {
-          question: `Pourquoi le rétrofitage ?`,
+          question: `Pourquoi le retrofitting ?`,
           content: `Quisque eu fringilla dolor, sed feugiat nulla. 
         Pellentesque et lorem et ante volutpat efficitur. 
         Pellentesque fringilla, lorem eget consectetur luctus, 
@@ -68,7 +68,7 @@ export default function Faq() {
       title: `L'environnement`,
       questions: [
         {
-          question: `Combien de temps prend un rétrofitage ?`,
+          question: `Combien de temps prend un retrofitting ?`,
           content: `Quisque eu fringilla dolor, sed feugiat nulla. 
         Pellentesque et lorem et ante volutpat efficitur. 
         Pellentesque fringilla, lorem eget consectetur luctus, 
@@ -80,7 +80,7 @@ export default function Faq() {
         eros ut sem aliquet, auctor aliquam est posuere. Aliquam non posuere lectus. `,
         },
         {
-          question: `Pourquoi le rétrofitage ?`,
+          question: `Pourquoi le retrofitting ?`,
           content: `Quisque eu fringilla dolor, sed feugiat nulla. 
         Pellentesque et lorem et ante volutpat efficitur. 
         Pellentesque fringilla, lorem eget consectetur luctus, 
