@@ -63,6 +63,7 @@ const Entree = styled.div`
     align-items: center;
     width: 100vw;
     height: 60vh;
+    margin-bottom: 18px;
   }
 `;
 
@@ -73,8 +74,10 @@ const CopyRight = styled.div`
   align-items: flex-end;
   justify-content: center;
   font-size: 13px;
+  margin-top: 50px;
   @media (max-width: 768px) {
-    margin-top: -1.5vh;
+    margin-top: -3.5vh;
+    font-size: 10px;
   }
 `;
 
@@ -106,10 +109,17 @@ const LogoContainer = styled.div`
     line-height: 24px;
     list-style-type: none;
   }
+
+  li {
+    cursor: pointer;
+    :hover {
+      color: var(--color--primary);
+    }
+  }
 `;
 
 const MentionCategory = styled.section`
-  margin-top: 18px;
+  margin-top: 7px;
   font-size: 23px;
   width: 15vw;
   height: 19vh;
@@ -142,7 +152,7 @@ const MentionCategory = styled.section`
 const SavCategory = styled.section`
   width: 15vw;
   height: 15vh;
-  margin-top: 18px;
+  margin-top: 7px;
   font-size: 23px;
   @media (max-width: 768px) {
     width: 100vw;
@@ -177,7 +187,7 @@ const SavCategory = styled.section`
 `;
 
 const CategoryContact = styled.section`
-  margin-top: 18px;
+  margin-top: 12px;
   width: 15vw;
   height: 15vh;
   @media (max-width: 768px) {
@@ -193,6 +203,7 @@ const CategoryContact = styled.section`
     margin-bottom: -14px;
     @media (max-width: 768px) {
       text-align: center;
+      margin-top: -5px;
     }
   }
 
@@ -222,6 +233,7 @@ const LastCategory = styled.section`
   @media (max-width: 768px) {
     margin: 0;
     height: 40vh;
+    margin-top: 25px;
   }
 
   p {
