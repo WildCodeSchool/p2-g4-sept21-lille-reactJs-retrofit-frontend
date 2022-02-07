@@ -9,6 +9,7 @@ function Vehicules() {
   useEffect(() => {
     axios.get(`/cars`).then(({ data }) => {
       setCars(data);
+      console.log(data);
     });
   }, []);
   return (
@@ -16,14 +17,7 @@ function Vehicules() {
       <Title>Choisissez votre prochain véhicule à rétrofité</Title>
       <SCarsView>
         {cars.map((data) => {
-          return (
-            <VehiculeCard
-              brand={data.brand}
-              model={data.model}
-              image={data.image}
-              price={data.price}
-            />
-          );
+          return <VehiculeCard {...data} />;
         })}
       </SCarsView>
     </div>

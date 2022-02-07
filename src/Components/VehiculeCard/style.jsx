@@ -47,26 +47,28 @@ export const Text = styled.div`
   color: var(--color--thirdary);
   h2 {
     font-size: 30px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 50%;
     text-align: center;
     margin-bottom: 10px;
   }
   h2:nth-child(1) {
-    margin-left: 20px;
+    padding-left: 20px;
   }
   h2:nth-child(2) {
-    margin-right: 10px;
+    padding-right: 20px;
   }
   div {
     display: flex;
     flex-direction: row;
   }
   p {
+    height: 30px;
     font-size: 18px;
-    padding-bottom: 4px;
+    padding: 0;
+    margin: 5px 0 0 0;
     @media (max-width: 768px) {
-      padding-bottom: 15px;
+      margin: 10px 0 0 0;
     }
   }
 `;
