@@ -12,15 +12,16 @@ export default function VehiculeCard({
 }) {
   return (
     <SVehiculeCard>
+      <Image src={image} alt="image voiture" />
+      <Text>
+        <div>
+          <h2>{brand}</h2>
+          <h2>{model}</h2>
+        </div>
+        <p>A partir de {price} €</p>
+        <p>Disponible en {availability}</p>
+      </Text>
       <Link to={`/Vehicules/${id}`}>
-        <Image src={image} alt={model} />
-        <Text>
-          <h2>
-            {brand} {model}
-          </h2>
-          <p>A partir de {price} €</p>
-          <p>Disponible en {availability}</p>
-        </Text>
         <Btn>Configurer</Btn>
       </Link>
     </SVehiculeCard>
@@ -30,8 +31,8 @@ export default function VehiculeCard({
 VehiculeCard.propTypes = {
   id: PropTypes.number,
   model: PropTypes.string,
-  image: PropTypes.string,
   brand: PropTypes.string,
+  image: PropTypes.string,
   availability: PropTypes.string,
   price: PropTypes.number,
 };
