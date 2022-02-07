@@ -47,6 +47,7 @@ const Col = styled.div`
     background: none;
     :hover {
       background: var(--color--primary);
+      color: white;
       cursor: pointer;
     }
   }
