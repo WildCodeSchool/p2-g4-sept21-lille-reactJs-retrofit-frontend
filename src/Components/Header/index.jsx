@@ -51,7 +51,7 @@ export default function Header() {
         </div>
         <div className="Col2">
           <ul>
-            <Link onCLick={showMenu} to="/vehicules">
+            <Link onClick={showMenu} to="/vehicules">
               Véhicules
             </Link>
             <Link to="/technologie">Technologie</Link>
@@ -99,7 +99,9 @@ export default function Header() {
                 dispatch({ type: 'OPENSIGNUP' });
               }}
             >
-              <Link to="/profile">{firstname}</Link>
+              <Link to="/profile">
+                <span>{firstname}</span>
+              </Link>
             </DropLogin>
             <DropLogin style={style} onClick={Loggout}>
               deconnexion
