@@ -28,17 +28,17 @@ function Localisation() {
           {adressResults.map((result) => {
             return (
               <SAdress>
-                <h3>{[result.name]}</h3>
+                <h3>{result.name}</h3>
                 <p>
                   <AdressWhite />
-                  {[result.streetNumber]} {[result.street]}
+                  {result.streetNumber} {result.street}
                 </p>
                 <p>
-                  {[result.postalCode]} {[result.city]}
+                  {result.postalCode} {result.city}
                 </p>
                 <p>
                   <PhoneWhite />
-                  {[result.phone]}
+                  {result.phone}
                 </p>
               </SAdress>
             );
