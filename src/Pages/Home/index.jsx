@@ -190,7 +190,7 @@ export default function Home() {
             c&apos;est quoi ?
           </p>
           <p data-aos="fade-right">
-            C&apos;est tout simplement la transoformation d&apos;un véhicule
+            C&apos;est tout simplement la transformation d&apos;un véhicule
             thermique en électrique. Ainsi, vous pouvez continuer de rouler avec
             style dans vote véhicule,mais en émettant 0g de CO2/km.
           </p>
@@ -198,7 +198,7 @@ export default function Home() {
         <Link to="/vote">
           <VoteContainer>
             <h1>Votez pour le prochain véhicule à rétrofiter !</h1>
-            <div className="VoteCardContainer">
+            <div className="VoteCardContainer" data-aos="fade-right">
               {topCars.map((car) => {
                 return <VoteCard {...car} key={car.id} />;
               })}
@@ -226,16 +226,66 @@ export default function Home() {
         <PartnerContainer>
           <h2>Ils nous font confiance</h2>
           <div>
-            <img src={Bge} alt="Logo d'un Partenaire" />
-            <img src={Clap} alt="Logo d'un Partenaire" />
-            <img src={Creinov} alt="Logo d'un Partenaire" />
-            <img src={HEV} alt="Logo d'un Partenaire" />
-            <img src={L2EP} alt="Logo d'un Partenaire" />
-            <img src={MEL} alt="Logo d'un Partenaire" />
-            <img src={HDF} alt="Logo d'un Partenaire" />
-            <img src={Transalley} alt="Logo d'un Partenaire" />
-            <img src={UnivLille1} alt="Logo d'un Partenaire" />
-            <img src={LogoWild} alt="Logo d'un Partenaire" />
+            <img
+              src={Bge}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="750"
+            />
+            <img
+              src={Clap}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            />
+            <img
+              src={Creinov}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="750"
+            />
+            <img
+              src={HEV}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            />
+            <img
+              src={L2EP}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="750"
+            />
+            <img
+              src={MEL}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            />
+            <img
+              src={HDF}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="750"
+            />
+            <img
+              src={Transalley}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            />
+            <img
+              src={UnivLille1}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="750"
+            />
+            <img
+              src={LogoWild}
+              alt="Logo d'un Partenaire"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            />
           </div>
         </PartnerContainer>
       </HomeContainer>

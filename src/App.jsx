@@ -26,6 +26,7 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
     const cookies = new Cookies();
     axios
       .post('/auth/login', {
