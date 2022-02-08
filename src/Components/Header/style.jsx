@@ -196,6 +196,9 @@ const DropLogin = styled.div`
   padding-left: 3px;
   animation: Fade 0.4s ease-in-out;
   cursor: pointer;
+  span {
+    text-transform: capitalize;
+  }
   :hover {
     color: var(--color--primary);
   }

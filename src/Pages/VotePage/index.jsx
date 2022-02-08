@@ -26,7 +26,7 @@ export default function VotePage() {
         <h1>TOP VOTE</h1>
         <div className="TopVoteCardWrapper">
           {topCars.map((car) => {
-            return <VoteCard {...car} />;
+            return <VoteCard {...car} key={car.id} />;
           })}
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function VotePage() {
       </div>
       <div className="VoteCardContainer">
         {carsList.map((car) => {
-          return <VoteCard {...car} />;
+          return <VoteCard {...car} key={car.id} />;
         })}
       </div>
     </VoteContainer>

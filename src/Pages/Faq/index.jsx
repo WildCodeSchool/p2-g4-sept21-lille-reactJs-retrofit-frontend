@@ -4,6 +4,7 @@ import { Container, SendBtn } from './style';
 export default function Faq() {
   const accordionData = [
     {
+      id: 1,
       title: 'Le rétrofit',
       questions: [
         {
@@ -33,6 +34,7 @@ export default function Faq() {
       ],
     },
     {
+      id: 2,
       title: `L'entreprise`,
       questions: [
         {
@@ -62,6 +64,7 @@ export default function Faq() {
       ],
     },
     {
+      id: 3,
       title: `L'environnement`,
       questions: [
         {
@@ -95,8 +98,8 @@ export default function Faq() {
   return (
     <div>
       <Container>
-        {accordionData.map(({ title, questions }) => (
-          <Accordion title={title} questions={questions} />
+        {accordionData.map(({ title, questions, id }) => (
+          <Accordion title={title} questions={questions} key={id} />
         ))}
         <SendBtn>Envoyez-nous vos questions</SendBtn>
       </Container>

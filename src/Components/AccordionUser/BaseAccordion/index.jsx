@@ -9,7 +9,6 @@ export default function AccordionUsers({ title, components }) {
   const animation = () => {
     setToggle(!toggle);
   };
-
   return (
     <>
       <SAccordion>
@@ -31,7 +30,7 @@ export default function AccordionUsers({ title, components }) {
 
 AccordionUsers.propTypes = {
   title: propTypes.string,
-  components: propTypes.elementType,
+  components: propTypes.node,
 };
 AccordionUsers.defaultProps = {
   title: '',

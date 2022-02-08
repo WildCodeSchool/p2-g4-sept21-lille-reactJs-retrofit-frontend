@@ -9,6 +9,7 @@ export const Container = styled.div`
   font-size: 20px;
   span {
     color: var(--color--primary);
+    text-transform: capitalize;
   }
   h1:nth-child(1) {
     text-align: center;

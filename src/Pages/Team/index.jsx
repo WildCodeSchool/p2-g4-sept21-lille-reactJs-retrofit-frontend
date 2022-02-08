@@ -61,6 +61,7 @@ export default function Team() {
               role={data.role}
               profilPic={data.profilPic}
               linkedinUrl={data.linkedinUrl}
+              key={data.id}
             />
           );
         })}
