@@ -27,15 +27,16 @@ export default function Carousel() {
   const prevSlide = () => {
     setActivSlice(activSlice <= 1 ? instructions.length : activSlice - 1);
   };
-
   return (
     <Slider>
       <ArrowLeft onClick={prevSlide} />
 
       {instructions.map((instruction) => {
         return (
-          <SliderContent onClick={nextSlide}>
-            <div className={instruction.id === activSlice && 'slide-active'}>
+          <SliderContent onClick={nextSlide} key={instruction.id}>
+            <div
+              className={instruction.id === activSlice ? 'slide-active' : null}
+            >
               {instruction.id === activSlice && <ReviewCard {...instruction} />}
             </div>
           </SliderContent>

@@ -16,14 +16,20 @@ export default function Profile() {
     {
       title: 'Modifier vos informations personelles',
       components: <Information />,
+      id: 1,
     },
     {
       title: 'Modifier vos identifiants de connexion',
       components: <Connexion />,
+      id: 2,
     },
-    { title: 'Vos commandes', components: <Ordered /> },
-    { title: 'Vos questions', components: <Question /> },
-    { title: 'Envoyer un avis suite à une commande', components: <Coment /> },
+    { title: 'Vos commandes', components: <Ordered />, id: 3 },
+    { title: 'Vos questions', components: <Question />, id: 4 },
+    {
+      title: 'Envoyer un avis suite à une commande',
+      components: <Coment />,
+      id: 5,
+    },
   ];
 
   const Loggout = () => {
@@ -38,8 +44,10 @@ export default function Profile() {
         <h1>
           Bienvenue sur votre espace <span>{firstname}</span>
         </h1>
-        {data.map(({ title, components }) => {
-          return <BaseAccordion title={title} components={components} />;
+        {data.map(({ title, components, id }) => {
+          return (
+            <BaseAccordion title={title} components={components} key={id} />
+          );
         })}
         <Link to="/">
           <Button

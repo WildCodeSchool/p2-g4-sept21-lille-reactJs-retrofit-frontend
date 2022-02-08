@@ -34,7 +34,6 @@ export default function Ordered() {
         });
       });
   }, []);
-
   return (
     <>
       <Content>
@@ -55,7 +54,7 @@ export default function Ordered() {
           </Units>
           <>
             {items.map((item) => {
-              return <OrderCard {...item} />;
+              return <OrderCard {...item} key={item.key} />;
             })}
           </>
           <Btncontainer>

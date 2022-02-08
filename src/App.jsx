@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Cookies from 'universal-cookie';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
 import VotePage from 'Pages/VotePage';
 import Form from './Components/Form';
@@ -37,7 +37,7 @@ export default function App() {
       })
       .catch((error) => {
         if (error.response) {
-          console.log(error.response);
+          toast.error(error.response);
         }
       });
   }, []);

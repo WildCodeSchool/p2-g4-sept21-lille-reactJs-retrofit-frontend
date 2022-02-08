@@ -14,13 +14,14 @@ function Vehicules() {
 
   return (
     <div>
-      <Title>Choisissez votre véhicule à rétrofiter</Title>
-      <SCarsView>
-        {cars.map((data) => {
-          return <VehiculeCard {...data} />;
-        })}
-      </SCarsView>
-    </div>
+     <Title>Choisissez votre prochain véhicule à rétrofiter</Title>
+    <SCarsView>
+      {cars.map((data) => {
+        return <VehiculeCard {...data} key={data.id} />;
+      })}
+    </SCarsView>
+</div>
+
   );
 }
 

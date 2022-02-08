@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { VoteContainer, ProgressContainer } from './style';
 
 const VoteCard = ({ ...car }) => {
@@ -27,7 +28,7 @@ const VoteCard = ({ ...car }) => {
       })
       .catch((error) => {
         if (error.response) {
-          console.log(error);
+          toast.error(error);
         }
       });
   }
