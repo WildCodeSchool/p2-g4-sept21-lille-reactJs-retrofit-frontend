@@ -7,13 +7,20 @@ const SContainerMap = styled.div`
   margin-left: 20px;
   z-index: 0;
 
+  .leaflet-control-zoom-in {
+    margin: 0;
+  }
+  .leaflet-control-zoom-out {
+    margin: 0;
+  }
+
   .leaflet-container {
     width: 100%;
     height: 100%;
   }
   @media only screen and (max-width: 768px) {
     width: 100%;
-    height: 70vh;
+    height: 40vh;
     margin: 0;
   }
   .leaflet-container {
