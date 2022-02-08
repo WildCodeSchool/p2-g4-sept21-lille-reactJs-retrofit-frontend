@@ -64,9 +64,10 @@ export default function App() {
         <Route path="/register" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/mentionsLegales" element={<LegalNotice />} />
-        <Route path="Vehicules/:id" element={<CarsDetails />} />
+        <Route path="/Vehicules/:id" element={<CarsDetails />} />
         <Route path="/vote" element={<VotePage />} />
         <Route path="/vehicules" element={<Cars />} />
+        <Route path="/vehicules/:name" element={<Cars />} />
       </Routes>
       <Footer />
       <ToastContainer />
