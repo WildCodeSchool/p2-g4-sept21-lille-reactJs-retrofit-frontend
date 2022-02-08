@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SCarsView = styled.div`
-  margin: 150px 20%;
+  margin: 50px 20%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -13,12 +13,15 @@ const SCarsView = styled.div`
 
 const Title = styled.h1`
   color: black;
-  margin-top: 110px;
+  margin-top: 120px;
   margin-bottom: 30px;
   text-align: center;
+  font-size: 40px;
   @media (max-width: 768px) {
-    min-width: 80vw;
+    width: 80vw;
     margin-top: 160px;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SendBtn = styled.button`
-  width: 50vw;
+  width: 30vw;
   height: 50px;
   display: flex;
   justify-content: center;
