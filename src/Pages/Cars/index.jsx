@@ -14,7 +14,7 @@ function Vehicules() {
 
   return (
     <div>
-      <Title>Choisissez votre prochain véhicule à rétrofité</Title>
+      <Title>Choisissez votre prochain véhicule à rétrofiter</Title>
       <SCarsView>
         {cars.map((data) => {
           return <VehiculeCard {...data} key={data.id}/>;
