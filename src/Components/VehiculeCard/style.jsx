@@ -37,7 +37,7 @@ export const Btn = styled.button`
     cursor: pointer;
   }
   @media (max-width: 768px) {
-    width: 320px;
+    width: 280px;
     height: 60px;
   }
 `;
@@ -81,6 +81,6 @@ export const Image = styled.img`
   margin-right: auto;
   @media (max-width: 768px) {
     height: 200px;
-    width: 320px;
+    width: 280px;
   }
 `;

@@ -12,7 +12,7 @@ export const SContainer = styled.div`
   @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
-    margin: 160px 20px 20px 20px;
+    margin: 150px 20px 20px 20px;
   }
 `;
 
@@ -28,7 +28,6 @@ export const SListAdress = styled.div`
   overflow-x: hidden;
   @media only screen and (max-width: 768px) {
     margin-top: 5px;
-
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -41,7 +40,6 @@ export const SAdress = styled.div`
   margin: 5px;
   background-color: var(--color--secondary);
   color: white;
-
   h3 {
     text-align: center;
     padding-top: 3px;
@@ -57,6 +55,7 @@ export const SAdress = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const PhoneWhite = styled(Telephone)`
   color: white;
   height: 15px;
@@ -64,6 +63,7 @@ export const PhoneWhite = styled(Telephone)`
   margin-right: 3px;
   margin-left: 5px;
 `;
+
 export const AdressWhite = styled(LocationPin)`
   color: white;
   height: 20px;
