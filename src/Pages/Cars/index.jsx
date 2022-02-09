@@ -1,11 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import VehiculeCard from '../../Components/VehiculeCard';
 import { SCarsView, Title } from './style';
 
 function Vehicules() {
-  const { needle } = useParams();
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
