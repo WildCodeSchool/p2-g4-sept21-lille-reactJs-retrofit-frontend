@@ -13,8 +13,6 @@ function Vehicules() {
       setCars(data);
     });
   }, []);
-  console.log(needle);
-  console.log(cars);
   return (
     <div>
       <Title>Choisissez votre prochain véhicule à rétrofiter</Title>
