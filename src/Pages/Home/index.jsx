@@ -220,7 +220,7 @@ export default function Home() {
           })}
         </News>
         <Rating>
-          <h2>Ils nous recommande</h2>
+          <h2>Ils nous recommandent</h2>
           <Carousel />
         </Rating>
         <PartnerContainer>
