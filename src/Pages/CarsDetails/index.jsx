@@ -40,11 +40,16 @@ export default function Configuration() {
       cars: cars.id,
       state: 1,
     };
-    axios.post('/order', orderInfo).catch((error) => {
-      if (error.response) {
-        toast.error('error');
-      }
-    });
+    axios
+      .post('/order', orderInfo)
+      .then(() => {
+        toast('Véhicule commandé');
+      })
+      .catch((error) => {
+        if (error.response) {
+          toast.error('error');
+        }
+      });
   };
 
   return (
