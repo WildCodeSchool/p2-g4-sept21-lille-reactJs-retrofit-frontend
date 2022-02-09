@@ -36,6 +36,7 @@ const Content = styled.div`
   animation-fill-mode: forwards;
   animation-name: ${(props) => (props.toggle ? openAnimation : closeAnimation)};
   transition: 0.5s linear all;
+  overflow-y: scroll;
   @media (max-width: 768px) {
     max-width: 80vw;
   }

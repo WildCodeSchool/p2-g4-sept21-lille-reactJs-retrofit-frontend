@@ -231,60 +231,70 @@ export default function Home() {
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="750"
+              offset="500"
             />
             <img
               src={Clap}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="1000"
+              offset="500"
             />
             <img
               src={Creinov}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="750"
+              offset="500"
             />
             <img
               src={HEV}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="1000"
+              offset="500"
             />
             <img
               src={L2EP}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="750"
+              offset="500"
             />
             <img
               src={MEL}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="1000"
+              offset="500"
             />
             <img
               src={HDF}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="750"
+              offset="500"
             />
             <img
               src={Transalley}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="1000"
+              offset="500"
             />
             <img
               src={UnivLille1}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="750"
+              offset="500"
             />
             <img
               src={LogoWild}
               alt="Logo d'un Partenaire"
               data-aos="zoom-in"
               data-aos-duration="1000"
+              offset="500"
             />
           </div>
         </PartnerContainer>
