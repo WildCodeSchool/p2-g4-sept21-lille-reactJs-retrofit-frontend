@@ -38,7 +38,7 @@ export default function Configuration() {
     const orderInfo = {
       id: userId,
       cars: cars.id,
-      state: 1,
+      state: 30,
     };
     axios
       .post('/order', orderInfo)
