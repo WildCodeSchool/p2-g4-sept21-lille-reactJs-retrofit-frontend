@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -24,8 +24,10 @@ import {
 
 export default function Configuration() {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const [cars, setCars] = useState([]);
   const userId = useSelector((state) => state.id);
+  const isLogged = useSelector((state) => state.isLogged);
 
   useEffect(async () => {
     axios.get(`/cars/${id}`).then(({ data }) => {
@@ -34,6 +36,9 @@ export default function Configuration() {
   }, []);
 
   const SendPreorder = (evt) => {
+    if (!isLogged) {
+      dispatch({ type: 'OPENSIGNIN' });
+    }
     evt.preventDefault();
     const orderInfo = {
       id: userId,
@@ -54,7 +59,7 @@ export default function Configuration() {
         <div className="row2">
           <div className="col1">
             <BatteryHeader />
-            <p>Une autonomie jusqu&apos;à</p>
+            <p>Une autonomie jusqu&apos;à 350km</p>
           </div>
           <div className="col2">
             <img src={cars.image} alt="voiture" />
