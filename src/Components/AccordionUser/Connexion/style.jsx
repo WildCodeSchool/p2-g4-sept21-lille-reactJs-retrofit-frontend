@@ -73,6 +73,10 @@ export const Row = styled.div`
     flex-direction: column;
     justify-content: start;
   }
+  @media (max-width: 768px) {
+    width: 35vw;
+    text-align: center;
+  }
 `;
 
 export const Row2 = styled.div`
@@ -88,6 +92,10 @@ export const Row2 = styled.div`
     flex-direction: column;
     justify-content: start;
     margin-right: 0px;
+  }
+  @media (max-width: 768px) {
+    width: 35vw;
+    text-align: center;
   }
 `;
 
