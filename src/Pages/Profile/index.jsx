@@ -14,7 +14,7 @@ export default function Profile() {
   const firstname = useSelector((state) => state.firstname);
   const data = [
     {
-      title: 'Modifier vos informations personelles',
+      title: 'Modifier vos informations personnelles',
       components: <Information />,
       id: 1,
     },
