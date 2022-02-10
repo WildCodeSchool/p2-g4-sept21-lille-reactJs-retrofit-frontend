@@ -61,6 +61,20 @@ export const Content = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  @media (max-width: 1400px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70vw;
+  }
+  @media (max-width: 768px) {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -71,6 +85,12 @@ export const Row = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: start;
+    width: 50vw;
+  }
+  @media (max-width: 768px) {
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
@@ -86,7 +106,12 @@ export const Row2 = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: start;
-    margin-right: 0px;
+    width: 50vw;
+  }
+  @media (max-width: 768px) {
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
@@ -99,7 +124,7 @@ export const Button = styled.button`
   font-size: 20px;
   @media (max-width: 1400px) {
     width: 32vw;
-    height: 40px;
-    margin-top: 40px;
+    min-height: 40px;
+    margin-top: 42px;
   }
 `;

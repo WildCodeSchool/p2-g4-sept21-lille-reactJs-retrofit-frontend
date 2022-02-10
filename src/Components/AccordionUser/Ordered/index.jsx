@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import OrderCard from 'Components/OrderCard';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { Content, Units, Col2, Col3, Button, Btncontainer } from './style';
+import { Content, Button, Btncontainer } from './style';
 
 export default function Ordered() {
   const [items, setItems] = useState([]);
@@ -37,30 +37,14 @@ export default function Ordered() {
   return (
     <>
       <Content>
-        <Col2>
-          <Units>
-            <Col3>
-              <p>Marque</p>
-            </Col3>
-            <Col3>
-              <p>Modèle</p>
-            </Col3>
-            <Col3>
-              <p>Quantités</p>
-            </Col3>
-            <Col3>
-              <p>Prix</p>
-            </Col3>
-          </Units>
-          <>
-            {items.map((item) => {
-              return <OrderCard {...item} key={item.key} />;
-            })}
-          </>
-          <Btncontainer>
-            <Button>Ajouter un commentaire</Button>
-          </Btncontainer>
-        </Col2>
+        <>
+          {items.map((item) => {
+            return <OrderCard {...item} key={item.key} />;
+          })}
+        </>
+        <Btncontainer>
+          <Button>Ajouter un commentaire</Button>
+        </Btncontainer>
       </Content>
     </>
   );

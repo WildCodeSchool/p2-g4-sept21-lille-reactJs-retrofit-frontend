@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Content, Row, Row2, Button } from './style';
+import { Content, Row, Row2, Button, Form } from './style';
 
 export default function Information() {
   const {
@@ -48,7 +48,7 @@ export default function Information() {
   return (
     <>
       <Content>
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <Row>
             <p>Nom :</p>
             <input
@@ -104,7 +104,7 @@ export default function Information() {
             />
           </Row2>
           <ToastContainer />
-        </form>
+        </Form>
       </Content>
     </>
   );

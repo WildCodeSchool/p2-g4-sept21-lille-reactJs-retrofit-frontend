@@ -7,7 +7,7 @@ export default function Connexion() {
         <Row>
           <p>e-mail :</p>
           <input type="email" />
-          <p>Confirmer le-mail :</p>
+          <p>Confirmer l&apos;e-mail :</p>
           <input type="email" />
           <Button>
             <input type="submit" value="Modifier" />
