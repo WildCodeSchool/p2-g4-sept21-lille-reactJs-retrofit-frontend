@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import Cookies from 'universal-cookie';
 import { useDispatch } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import Header from 'Components/Header';
 import VotePage from 'Pages/VotePage';
@@ -23,10 +23,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function App() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [navigate]);
 
+  useEffect(() => {
     const cookies = new Cookies();
     axios
       .post('/auth/login', {
@@ -41,6 +44,8 @@ export default function App() {
           toast.error(error.response);
         }
       });
+
+    return window.scrollTo(0, 0);
   }, []);
 
   return (
